@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>github-page</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <script src="https://darian1996.gitee.io/js/darian.own.js"></script>
+    <!-- 添加 PWA, Service Worker 注册,解开就行了 -->
+<!--    <script src="https://darian1996.gitee.io/js/sw-registration.js"></script>-->
+
+
+
+
+    <!-- un-comment this code to enable service worker -->
+<!--    <script>-->
+<!--        if ('serviceWorker' in navigator) {-->
+<!--            navigator.serviceWorker.register('js/darian.own.js').then(function (registration) {-->
+<!--                // 注册成功-->
+<!--                console.log('ServiceWorker registration successful with scope: ', registration.scope);-->
+<!--            }).catch(function (err) {-->
+<!--                // 注册失败 :(-->
+<!--                console.log('ServiceWorker registration failed: ', err);-->
+<!--            });-->
+<!--            self.addEventListener('install', event => {-->
+<!--                event.waitUntil(-->
+<!--                    caches.open('static-v1')-->
+<!--                        .then(cache => cache.addAll([-->
+<!--                            'offline.html'-->
+<!--                        ]))-->
+<!--                )-->
+<!--            })-->
+<!--            self.addEventListener('fetch', event => {-->
+<!--                event.responseWith(-->
+<!--                    caches.match(event.request)-->
+<!--                        .then(response = response || fetch(event.request))-->
+<!--                        .catch(() => {-->
+<!--                            if (event.request.mode == 'navigate') {-->
+<!--                                return caches.match('/offline.html')-->
+<!--                            }-->
+<!--                        })-->
+<!--                )-->
+<!--            })-->
+<!--            ;-->
+<!--        }-->
+<!--    </script>-->
+</head>
+<body>
+<h3>sdfsdfsdfdsf</h3>
+</body>
+</html>

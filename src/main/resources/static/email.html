@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>email.html</title>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/darian.own.js"></script>
+</head>
+
+<style>
+
+    #email_body {
+        width: 70%;
+        height: 600px;
+        display: block;
+        margin: auto auto;
+        font-size: 30px;
+    }
+
+    .input_row_desc {
+        width: 70%;
+        height: 50px;
+        font-size: 25px;
+        margin: auto auto;
+    }
+
+    .customer_input {
+        width: 80%;
+        font-size: 25px;
+        height: auto
+    }
+
+    .email_customer_button {
+        width: 250px;
+        font-size: 25px;
+        height: 35px;
+    }
+
+    #notifyMsg_id {
+        color: #2d78f4;
+    }
+
+</style>
+
+<body>
+<div class="input_row_desc" id="notifyMsg_id">
+
+</div>
+
+<div class="input_row_desc">
+    <input value="清空本草稿箱" type="button" class="email_customer_button" onclick="clear_all_cache()"/>
+    <input value="发送邮件" type="button" class="email_customer_button" onclick="send_email()"/>
+</div>
+
+
+<div class="input_row_desc">
+    收件人 :<input id="email_to" class="customer_input" maxlength="40"/>
+</div>
+
+<div class="input_row_desc">
+    邮件标题 :<input id="email_title" class="customer_input" maxlength="40"/>
+</div>
+
+
+<div class="input_row_desc">
+    邮件内容 :
+</div>
+
+<textarea id="email_body">
+
+</textarea>
+
+</body>
+
+<script>
+
+    $(function () {
+// email_to 标签，添加 变化监听事件
+        /*
+        * $("#email_to").bind('input porpertychange', function () {
+        *    console.log($("#email_to").val());
+        * });
+        */
+
+
+// 失去焦点动作
+        $("#email_to").blur(function () {
+            console.log($("#email_to").val());
+            setCookie7Days('email_to', $("#email_to").val());
+        });
+        $("#email_title").blur(function () {
+            console.log($("#email_title").val());
+            setCookie7Days('email_title', $("#email_title").val());
+        });
+
+        $("#email_body").blur(function () {
+            console.log($("#email_body").val());
+            setCookie7Days('email_body', $("#email_body").val());
+        });
+
+
+    });
+
+
+    window.onload = function () {
+        console.log(getCookie('email_to'));
+        console.log(getCookie('email_title'));
+
+        $("#email_to").val(getCookie('email_to'));
+        $("#email_title").val(getCookie('email_title'));
+        $("#email_body").val(getCookie('email_body'));
+    }
+
+    function clear_all_cache() {
+        setCookie1Days('email_to', '');
+        setCookie1Days('email_title', '');
+        setCookie1Days('email_body', '');
+
+        $("#email_to").val(getCookie('email_to'));
+        $("#email_title").val(getCookie('email_title'));
+        $("#email_body").val(getCookie('email_body'));
+    }
+
+    function before_send_email_check() {
+        var email_to_value = $("#email_to").val();
+
+        if (!email_to_value) {
+            $('#notifyMsg_id').html("收件人不能为空");
+            return false;
+        }
+        var email_title_value = $("#email_title").val();
+        if (!email_title_value) {
+            $('#notifyMsg_id').html("邮件标题不能为空");
+            return false;
+        }
+
+        var email_body_value = $("#email_body").val();
+
+        if (!email_body_value) {
+            $('#notifyMsg_id').html("邮件内容不能为空");
+            return false;
+        }
+        return true;
+    }
+
+    function send_email() {
+        if (!before_send_email_check()) {
+            return false;
+        }
+
+        var email_to_value = $("#email_to").val();
+        var email_title_value = $("#email_title").val();
+        var email_body_value = $("#email_body").val();
+
+        $.ajax({
+                url: '/sendEmail',
+                type: 'get',
+                dataType: 'json',
+                changeOrigin: true, // 是否跨域
+                data: 'emailTo=' + email_to_value + '&emailTitle=' + email_title_value + '&emailBody=' + email_body_value,
+
+                headers: {
+                    'token': getCookie("token"),
+                }
+                ,
+                beforeSend: function (XMLHttpRequest) {
+                    $('#notifyMsg_id').html("Please waiting, Loading data ....");
+                }
+                ,
+                success: function (datas, state) {
+                    console.log(state);
+                    $('#notifyMsg_id').html(datas.notifyMsg);
+                }
+                ,
+                error: function (xhr, state, errorThrown) {
+                    console.log(state);
+                    $('#notifyMsg_id').html("发送邮件失败");
+                }
+
+            }
+        );
+    }
+</script>
+</html>

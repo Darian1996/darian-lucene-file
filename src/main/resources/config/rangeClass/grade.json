@@ -1,0 +1,53 @@
+{
+  "7": {
+    "gradeNum": 7,
+    "courseCountMap": {
+      "CHINESE": "4",
+      "CHINESE_COMPOSITION": "2",
+      "MATH": "6",
+      "ENGLISH": "5",
+      "POLITICAL": "2",
+      "HISTORY": "2",
+      "GEOGRAPHY": "2",
+      "BIOLOGY": "2",
+      "MUSIC": "1",
+      "PAINTING": "1",
+      "MICROCOMPUTER": "1",
+      "PSYCHOLOGICAL_SAFETY": "1",
+      "SAFETY_EDUCATION": "1",
+      "PHYSICAL_EDUCATION": "3"
+    }
+  },
+  "8": {
+    "gradeNum": 8,
+    "courseCountMap": {
+      "CHINESE": "4",
+      "CHINESE_COMPOSITION": "2",
+      "MATH": "6",
+      "ENGLISH": "5",
+      "PHYSICAL": "4",
+      "POLITICAL": "2",
+      "HISTORY": "2",
+      "GEOGRAPHY": "2",
+      "BIOLOGY": "2",
+      "MUSIC": "1",
+      "PAINTING": "1",
+      "MICROCOMPUTER": "1",
+      "PHYSICAL_EDUCATION": "3"
+    }
+  },
+  "9": {
+    "gradeNum": 9,
+    "courseCountMap": {
+      "CHINESE": "4",
+      "CHINESE_COMPOSITION": "2",
+      "MATH": "6",
+      "ENGLISH": "6",
+      "PHYSICAL": "4",
+      "CHEMISTRY": "4",
+      "POLITICAL": "2",
+      "HISTORY": "2",
+      "PHYSICAL_EDUCATION": "3"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+/* 提示语格式 */
+#notifyMsg_id {
+    color: #2d78f4;
+    background-color: white;
+    font-weight: bold;
+}
+
+/* 自定义的 input 框的 button 按钮样式 */
+.customer_button {
+    background-color: #2d78f4;
+    color: white;
+    width: 11%;
+    height: 50px;
+    font-size: 25px;
+    min-width: 80px;
+}

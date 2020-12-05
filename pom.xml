@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.0.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.darian</groupId>
+    <artifactId>darian-lucene-file</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>darian-lucene-file</name>
+    <description>根据 文件夹指定的路径生成对应的文件，然后进行生成索引，最后进行检索</description>
+
+    <properties>
+        <java.version>11</java.version>
+
+        <lucene.version>7.0.1</lucene.version>
+        <!--        <lucene.version>4.10.2</lucene.version>-->
+        <lucene-core.version>${lucene.version}</lucene-core.version>
+        <lucene-queryparser.version>${lucene.version}</lucene-queryparser.version>
+        <lucene-analyzers-common.version>${lucene.version}</lucene-analyzers-common.version>
+        <lucene-highlighter.version>${lucene.version}</lucene-highlighter.version>
+
+        <commons-lang3.version>3.9</commons-lang3.version>
+        <commons-io.version>1.3.2</commons-io.version>
+        <ik-analyzer.version>8.3.0</ik-analyzer.version>
+        <concurrentlinkedhashmap-lru.version>1.4.2</concurrentlinkedhashmap-lru.version>
+
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <commons-codec.version>1.12</commons-codec.version>
+        <com.lmax.disruptor.version>3.4.1</com.lmax.disruptor.version>
+<!--        <fastjson.version>1.2.73</fastjson.version>-->
+
+    </properties>
+
+    <dependencies>
+
+        <!-- 邮箱发送通知 -->
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+        </dependency>
+
+        <!-- JDK 6 -->
+        <!-- https://github.com/ben-manes/concurrentlinkedhashmap -->
+        <!-- 性能比 concurrentHashMap 还要好 -->
+        <dependency>
+            <groupId>com.googlecode.concurrentlinkedhashmap</groupId>
+            <artifactId>concurrentlinkedhashmap-lru</artifactId>
+        </dependency>
+
+
+        <!--        <dependency>-->
+        <!--            <groupId>commons-codec</groupId>-->
+        <!--            <artifactId>commons-codec</artifactId>-->
+        <!--        </dependency>-->
+
+
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.commons</groupId>-->
+        <!--            <artifactId>commons-lang3</artifactId>-->
+        <!--        </dependency>-->
+
+
+        <!--        <dependency>-->
+        <!--            <groupId>commons-io</groupId>-->
+        <!--            <artifactId>commons-io</artifactId>-->
+        <!--        </dependency>-->
+
+        <!--  https://github.com/magese/ik-analyzer-solr 5/6/7//8  -->
+        <dependency>
+            <groupId>com.github.magese</groupId>
+            <artifactId>ik-analyzer</artifactId>
+        </dependency>
+
+
+        <!-- lucene核心库 -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-core</artifactId>
+        </dependency>
+        <!-- Lucene的查询解析器 -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-queryparser</artifactId>
+        </dependency>
+        <!-- lucene的默认分词器库 -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-analyzers-common</artifactId>
+        </dependency>
+        <!-- lucene的高亮显示 -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-highlighter</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <exclusions><!-- 去掉springboot默认配置 -->
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency> <!-- 引入log4j2依赖 -->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+        </dependency>
+
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-thymeleaf</artifactId>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- JDK 6 -->
+            <!-- https://github.com/ben-manes/concurrentlinkedhashmap -->
+            <!-- 性能比 concurrentHashMap 还要好 -->
+            <dependency>
+                <groupId>com.googlecode.concurrentlinkedhashmap</groupId>
+                <artifactId>concurrentlinkedhashmap-lru</artifactId>
+                <version>${concurrentlinkedhashmap-lru.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lmax</groupId>
+                <artifactId>disruptor</artifactId>
+                <version>${com.lmax.disruptor.version}</version>
+            </dependency>
+
+
+            <!--        <dependency>-->
+            <!--            <groupId>commons-codec</groupId>-->
+            <!--            <artifactId>commons-codec</artifactId>-->
+            <!--            <version>${commons-codec.version}</version>-->
+            <!--        </dependency>-->
+
+
+            <!--        <dependency>-->
+            <!--            <groupId>org.apache.commons</groupId>-->
+            <!--            <artifactId>commons-lang3</artifactId>-->
+            <!--            <version>${commons-lang3.version}</version>-->
+            <!--        </dependency>-->
+
+
+            <!--        <dependency>-->
+            <!--            <groupId>commons-io</groupId>-->
+            <!--            <artifactId>commons-io</artifactId>-->
+            <!--            <version>${commons-io.version}</version>-->
+            <!--        </dependency>-->
+
+            <!--  https://github.com/magese/ik-analyzer-solr 5/6/7//8  -->
+            <dependency>
+                <groupId>com.github.magese</groupId>
+                <artifactId>ik-analyzer</artifactId>
+                <version>${ik-analyzer.version}</version>
+            </dependency>
+
+
+            <!-- lucene核心库 -->
+            <dependency>
+                <groupId>org.apache.lucene</groupId>
+                <artifactId>lucene-core</artifactId>
+                <version>${lucene-core.version}</version>
+            </dependency>
+            <!-- Lucene的查询解析器 -->
+            <dependency>
+                <groupId>org.apache.lucene</groupId>
+                <artifactId>lucene-queryparser</artifactId>
+                <version>${lucene-queryparser.version}</version>
+            </dependency>
+            <!-- lucene的默认分词器库 -->
+            <dependency>
+                <groupId>org.apache.lucene</groupId>
+                <artifactId>lucene-analyzers-common</artifactId>
+                <version>${lucene-analyzers-common.version}</version>
+            </dependency>
+            <!-- lucene的高亮显示 -->
+            <dependency>
+                <groupId>org.apache.lucene</groupId>
+                <artifactId>lucene-highlighter</artifactId>
+                <version>${lucene-highlighter.version}</version>
+            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.alibaba</groupId>-->
+<!--                <artifactId>fastjson</artifactId>-->
+<!--                <version>${fastjson.version}</version>-->
+<!--            </dependency>-->
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+                <!--                <configuration>-->
+                <!--                    <skipTests>true</skipTests>-->
+                <!--                </configuration>-->
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

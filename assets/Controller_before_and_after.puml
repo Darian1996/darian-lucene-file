@@ -1,0 +1,41 @@
+@startuml state-sample
+
+
+title 搜索文件流程图
+
+ControllerAdvice : 返回对应的异常包装信息
+
+[*] --> HTTP
+
+HTTP --> RefererFilter
+
+RefererFilter : 验证 Referer 是否合法
+RefererFilter --> LoginFilter : Referer 合法
+RefererFilter -> ControllerAdvice : Referer 不合法
+
+
+
+
+LoginFilter : 验证 登陆人 是否合法
+LoginFilter --> SemaphoreLimitFilter :登陆 合法
+LoginFilter -> ControllerAdvice : 登陆人 不合法
+
+
+SemaphoreLimitFilter : 验证是否限流
+
+SemaphoreLimitFilter --> CorsFilter : 没有触发限流
+CorsFilter : 增加跨域的返回头部信息
+SemaphoreLimitFilter -> ControllerAdvice : 触发限流
+
+CorsFilter --> Controller
+
+Controller : 执行业务逻辑
+
+Controller -> ControllerAdvice: 业务逻辑异常
+
+Controller --> [*] : 业务逻辑正常， 返回通用返回参数
+
+ControllerAdvice --> [*] : 包装异常返回参数
+note right: 统一返回值结果
+
+@enduml

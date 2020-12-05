@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> 文章详情 </title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/github-markdown.css">
+    <!-- toc 边框 -->
+    <link rel="stylesheet" href="/css/zTreeStyle.css">
+    <link rel="stylesheet" href="/css/darian.own.css">
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/marked.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+    <script src="/js/jquery.ztree_toc.min.js"></script>
+    <script src="/js/jquery.ztree.all-3.5.min.js"></script>
+    <script src="/js/darian.own.js"></script>
+    <!-- 添加 PWA, Service Worker 注册 -->
+<!--    <script src="/js/sw-registration.js"></script>-->
+
+    <script>
+        var contentDetailUrl = "https://www.darian.top/getCustomerFile";
+        var contentImgUrl = "https://www.darian.top/getImgContent";
+        var locationData;
+
+        /* 初始化连接常量 */
+        function initContantsUrl() {
+            console.log("function{initContantsUrl}.start")
+            // 当前网页的地址
+            if (new RegExp("^http://localhost").test(location.href)) {
+                contentDetailUrl = "/getCustomerFile";
+                contentImgUrl = "/getImgContent";
+            }
+            console.log('\t[location.href]:' + location.href);
+            console.log('\t[contentDetailUrl]:' + contentDetailUrl);
+            console.log('\t[contentImgUrl]:' + contentImgUrl);
+        }
+
+        marked.setOptions({
+            renderer: new marked.Renderer(),
+            gfm: true,
+            tables: true,
+            escaped: true,
+            breaks: false,
+            pedantic: false,
+            sanitize: false,
+            smartLists: true,
+            smartypants: false,
+            highlight: function (code, lang) {
+                return hljs.highlightAuto(code).value;
+            }
+        });
+
+
+        var text = '';
+
+        window.onload = function () {
+            initContantsUrl();
+
+            var file_path_sub_docs_file_path = getQueryVariable("filePathSubDocsFilePath");
+            var cache_value = getQueryVariable("cache");
+            if (!cache_value) {
+                $('#notifyMsg_id').html("无缓存");
+                cache_value = false;
+            }
+
+            var token_value = getCookie('token');
+
+            if (!check_file_path_sub_docs_file_path(file_path_sub_docs_file_path) || !check_token_value(token_value)) {
+                return false;
+            }
+
+            $.ajax({
+                url: contentDetailUrl,
+                type: 'get',
+                dataType: 'json',
+                changeOrigin: true, // 是否跨域
+                headers: {
+                    'token': getCookie("token"),
+                },
+                data: "cache=" + cache_value + "&filePathSubDocsFilePath=" + encodeURIComponent(file_path_sub_docs_file_path),
+                beforeSend: function (XMLHttpRequest) {
+                    $('#notifyMsg_id').html("Please waiting, Loading data ....");
+                },
+                success: function (datas, state) {
+                    locationData = datas;
+                    // alert(state);
+                    $('#notifyMsg_id').html(datas.notifyMsg);
+                    $('#application_start_time').html("项目启动时间：" + datas.applicationStartTime);
+
+                    console.log(datas.dataBody);
+                    // 填充 md 的文档，渲染 html 文件
+                    $("#content_html_id").html(marked(datas.dataBody.contentDetail)); //这个是jquery代码
+
+                    var fileSimpleName = datas.dataBody.fileSimpleName;
+                    $("#content_title_id").html(fileSimpleName);
+                    $("title").html(fileSimpleName);
+
+                    $('#tree').ztree_toc({
+                        // 是否开启，标题自动添加序号, false 去掉。
+                        is_auto_number: false,
+                        documment_selector: '.markdown-body'
+                    });
+                    $('#tree').css('width', '23%').css('margin-top', '2px');
+
+                    console.log("======================================")
+                    console.log(" user gitee.io img...........")
+                    return;
+
+                    if (fileSimpleName.endsWith(".png")
+                        || fileSimpleName.endsWith(".jpg")
+                        || fileSimpleName.endsWith("JPEG")
+                        || fileSimpleName.endsWith("svg")
+                        || fileSimpleName.endsWith(".gif")
+                    ) {
+                        console.log("this file is img .... not need to getImage Url ")
+                        return;
+                    }
+
+
+                    var fullName = locationData.dataBody.fileFullName;
+                    get_img_base64_data_url_function(fullName);
+
+
+                }
+                ,
+                error: function (xhr, state, errorThrown) {
+                    $('#notifyMsg_id').html("查询出错，请联系管理员！！！");
+                }
+
+            })
+
+
+        };
+
+
+        if (typeof String.prototype.endsWith != 'function') {
+            String.prototype.endsWith = function (suffix) {
+                return this.indexOf(suffix, this.length - suffix.length) !== -1;
+            };
+        }
+
+        if (typeof String.prototype.startsWith != 'function') {
+            String.prototype.startsWith = function (prefix) {
+                return this.slice(0, prefix.length) === prefix;
+            };
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+
+<br>
+<div align="center">
+
+    <a href="http://darian1996.github.io" target="_blank">
+        <input type="button" value="个人博客" class="customer_button">
+    </a>
+    <a href="/index.html" target="_blank">
+        <input type="button" value="搜索主页" class="customer_button">
+    </a>
+</div>
+<br>
+<div align="center">
+    <a id="application_start_time"></a>
+    <a id="notifyMsg_id"></a>
+    [未完成]
+</div>
+
+
+<div style="width:100%; " class="markdown-body">
+    <div style="width: 25%; ">
+        <ul id="tree" class="ztree" style="margin-top: 2px; top: 150px;">
+
+        </ul>
+    </div>
+
+
+    <div style="margin-left: 25%; width: 68%">
+        <div align="center">
+            <h1 id="content_title_id"></h1>
+            <br/>
+        </div>
+        <div id="content_html_id" class="typo markdown-body">
+
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<div align="center">
+    豫ICP备20012533号
+</div>
+</body>
+
+
+<script>
+
+
+    /* 这个是替换 base64 位的 图片链接，淘汰 */
+    function get_img_base64_data_url_function(fullName) {
+        console.log("get img........start");
+
+        var elementsByTagName = document.getElementsByTagName("img");
+        for (i = 0; i < elementsByTagName.length; i++) {
+            let elementsByTagNameElement = elementsByTagName[i];
+            var src = elementsByTagNameElement.src;
+
+            // console.log(src);
+
+            var lastIndex1 = fullName.lastIndexOf("\\");
+            var lastIndex2 = fullName.lastIndexOf("/");
+            var lastIndex;
+            if (lastIndex1 > lastIndex2) {
+                lastIndex = lastIndex1;
+            } else {
+                lastIndex = lastIndex2;
+            }
+
+            // console.log(fullName)
+
+            var fullNamePre = fullName.substring(0, lastIndex);
+
+            // console.log(fullNamePre)
+
+            src = src.substring(src.indexOf('/assets'));
+            // console.log(src);
+
+            src = fullNamePre + src;
+            // console.log('fullNamePre + src:' + src);
+
+            // console.log(src);
+
+            src = src.replace(/\\/g, "_");
+            // console.log(src);
+            src = src.replace(/\//g, "_");
+            // console.log(src);
+            var src_img_path_parmter = encodeURI(src);
+            // console.log('parmter' + src_img_path_parmter);
+            var get_img_base64_data_url = contentImgUrl + '?imgFilePath=' + src_img_path_parmter;
+
+            // console.log(get_img_base64_data_url)
+
+            $.ajax({
+                url: get_img_base64_data_url,
+                type: 'get',
+                dataType: 'json',
+                changeOrigin: true, // 是否跨域
+                data: '',
+                headers: {
+                    'token': getCookie("token"),
+                },
+                beforeSend: function (XMLHttpRequest) {
+                    $('#notifyMsg_id').html("Please waiting, Loading data ....");
+                },
+                success: function (datas, state) {
+
+                    // console.log(datas.dataBody);
+                    elementsByTagNameElement.setAttribute("src", datas.dataBody.giteeRawUrl);
+
+                    // 前期是读取 Base64 编码，现在改为 gitee CDN
+                    // datas.dataBody.contentDetail;
+                    // console.log(datas.dataBody.contentDetail);
+                    // elementsByTagNameElement.setAttribute("src",datas.dataBody.contentDetail);
+                    // [''] = ;
+                }
+                ,
+                error: function (xhr, state, errorThrown) {
+
+                    $('#notifyMsg_id').html("查询出错，请联系管理员！！！");
+                    return "xxx";
+                }
+            });
+        }
+    }
+</script>
+
+<style>
+
+    /* 原生的 github markdown 较窄。。 */
+
+    /*
+    .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+
+    */
+
+    /* 添加，markdown 里边的图片，填充整个宽度， */
+    .markdown-body img {
+        width: 100%;
+    }
+
+
+    .hljs-class .hljs-title {
+        color: #fdcc59
+    }
+
+    .hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition {
+        color: #8fc13e
+    }
+
+    .hljs-meta {
+        color: #149b93
+    }
+
+    .hljs-comment, .hljs-quote {
+        color: #989498
+    }
+
+    .hljs-variable, .hljs-template-variable, .hljs-attribute, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-link, .hljs-deletion {
+        color: #dd464c
+    }
+
+    .hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params {
+        color: #fd8b19
+    }
+
+    .hljs-function, .hljs-section, .hljs-title {
+        color: #1290bf
+    }
+
+    .hljs-keyword, .hljs-selector-tag {
+        color: #c85e7c
+    }
+
+    .hljs {
+        display: block;
+        background: #322931;
+        color: #b9b5b8;
+        padding: 0.5em
+    }
+
+    .hljs-emphasis {
+        font-style: italic
+    }
+
+    .hljs-strong {
+        font-weight: bold
+    }
+
+</style>
+</html>

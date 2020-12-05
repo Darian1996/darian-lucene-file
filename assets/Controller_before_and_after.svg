@@ -1,0 +1,1484 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="952px" preserveAspectRatio="none" style="width:543px;height:952px;" version="1.1" viewBox="0 0 543 952" width="543px" zoomAndPan="magnify"><defs/><g><text fill="#222222" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="98" x="216" y="16.0439">搜索文件流程图</text><g id="ControllerAdvice"><rect fill="#BBDEFB" height="62.3374" rx="12.5" ry="12.5" style="stroke: #90CAF9; stroke-width: 1.5;" width="174" x="261" y="760.1201"/><line style="stroke: #90CAF9; stroke-width: 1.5;" x1="261" x2="435" y1="793.3374" y2="793.3374"/><text fill="#222222" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="17" lengthAdjust="spacingAndGlyphs" textLength="119" x="288.5" y="784.6021">ControllerAdvice</text><text fill="#222222" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="154" x="266" y="814.3813">返回对应的异常包装信息</text></g><ellipse cx="407" cy="35.1201" fill="#37A77C" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;"/><g id="HTTP"><rect fill="#BBDEFB" height="50" rx="12.5" ry="12.5" style="stroke: #90CAF9; stroke-width: 1.5;" width="60" x="377" y="106.1201"/><line style="stroke: #90CAF9; stroke-width: 1.5;" x1="377" x2="437" y1="139.3374" y2="139.3374"/><text fill="#222222" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="17" lengthAdjust="spacingAndGlyphs" textLength="40" x="387" y="130.6021">HTTP</text></g><g id="RefererFilter"><rect fill="#BBDEFB" height="62.3374" rx="12.5" ry="12.5" style="stroke: #90CAF9; stroke-width: 1.5;" width="160" x="327" y="217.1201"/><line style="stroke: #90CAF9; stroke-width: 1.5;" x1="327" x2="487" y1="250.3374" y2="250.3374"/><text fill="#222222" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="17" lengthAdjust="spacingAndGlyphs" textLength="91" x="361.5" y="241.6021">RefererFilter</text><text fill="#222222" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="140" x="332" y="271.3813">验证 Referer 是否合法</text></g><g id="LoginFilter"><rect fill="#BBDEFB" height="62.3374" rx="12.5" ry="12.5" style="stroke: #90CAF9; stroke-width: 1.5;" width="154" x="247" y="357.1201"/><line style="stroke: #90CAF9; stroke-width: 1.5;" x1="247" x2="401" y1="390.3374" y2="390.3374"/><text fill="#222222" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="17" lengthAdjust="spacingAndGlyphs" textLength="76" x="286" y="381.6021">LoginFilter</text><text fill="#222222" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="134" x="252" y="411.3813">验证 登陆人 是否合法</text></g><g id="SemaphoreLimitFilter"><rect fill="#BBDEFB" height="62.3374" rx="12.5" ry="12.5" style="stroke: #90CAF9; stroke-width: 1.5;" width="174" x="127" y="497.1201"/><line style="stroke: #90CAF9; stroke-width: 1.5;" x1="127" x2="301" y1="530.3374" y2="530.3374"/><text fill="#222222" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="17" lengthAdjust="spacingAndGlyphs" textLength="154" x="137" y="521.6021">SemaphoreLimitFilter</text><text fill="#222222" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="84" x="132" y="551.3813">验证是否限流</text></g><g id="CorsFilter"><rect fill="#BBDEFB" height="62.3374" rx="12.5" ry="12.5" style="stroke: #90CAF9; stroke-width: 1.5;" width="174" x="7" y="637.1201"/><line style="stroke: #90CAF9; stroke-width: 1.5;" x1="7" x2="181" y1="670.3374" y2="670.3374"/><text fill="#222222" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="17" lengthAdjust="spacingAndGlyphs" textLength="71" x="58.5" y="661.6021">CorsFilter</text><text fill="#222222" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="154" x="12" y="691.3813">增加跨域的返回头部信息</text></g><g id="Controller"><rect fill="#BBDEFB" height="62.3374" rx="12.5" ry="12.5" style="stroke: #90CAF9; stroke-width: 1.5;" width="104" x="48" y="760.1201"/><line style="stroke: #90CAF9; stroke-width: 1.5;" x1="48" x2="152" y1="793.3374" y2="793.3374"/><text fill="#222222" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="17" lengthAdjust="spacingAndGlyphs" textLength="70" x="65" y="784.6021">Controller</text><text fill="#222222" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="84" x="53" y="814.3813">执行业务逻辑</text></g><ellipse cx="237" cy="930.6201" fill="none" rx="10" ry="10" style="stroke: #F6363F; stroke-width: 1.0;"/><ellipse cx="237.5" cy="931.1201" fill="#F6363F" rx="6" ry="6" style="stroke: none; stroke-width: 1.0;"/><path d="M282.5,916.1201 L282.5,926.6201 L247.254,930.6201 L282.5,934.6201 L282.5,945.2402 A0,0 0 0 0 282.5,945.2402 L401.5,945.2402 A0,0 0 0 0 401.5,945.2402 L401.5,926.1201 L391.5,916.1201 L282.5,916.1201 A0,0 0 0 0 282.5,916.1201 " fill="#90A4AE" style="stroke: #90A4AE; stroke-width: 1.0;"/><path d="M391.5,916.1201 L391.5,926.1201 L401.5,926.1201 L391.5,916.1201 " fill="#90A4AE" style="stroke: #90A4AE; stroke-width: 1.0;"/><text fill="#FFFFFF" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="98" x="288.5" y="937.1641">统一返回值结果</text><!--MD5=[bc9e409ffe97045e3e1addd0d898ecef]
+link *start to HTTP--><path d="M407,45.1331 C407,57.8181 407,81.5291 407,100.6901 " fill="none" id="*start-to-HTTP" style="stroke: #F6363F; stroke-width: 1.0;"/><polygon fill="#F6363F" points="407,105.9601,411,96.9601,407,100.9601,403,96.9601,407,105.9601" style="stroke: #F6363F; stroke-width: 1.0;"/><!--MD5=[0df4dd9f0c1692c3703112556c3183f6]
+link HTTP to RefererFilter--><path d="M407,156.2281 C407,172.2241 407,193.4971 407,211.4411 " fill="none" id="HTTP-to-RefererFilter" style="stroke: #F6363F; stroke-width: 1.0;"/><polygon fill="#F6363F" points="407,216.8931,411,207.8931,407,211.8931,403,207.8931,407,216.8931" style="stroke: #F6363F; stroke-width: 1.0;"/><!--MD5=[8d325911a2cbc20da1b9032356dec283]
+link RefererFilter to LoginFilter--><path d="M379.61,279.3631 C372.058,288.5381 364.235,298.9031 358,309.1201 C349.844,322.4841 342.614,338.1521 336.941,351.9251 " fill="none" id="RefererFilter-to-LoginFilter" style="stroke: #F6363F; stroke-width: 1.0;"/><polygon fill="#F6363F" points="334.922,356.9061,342.0082,350.0662,336.7991,352.2719,334.5934,347.0627,334.922,356.9061" style="stroke: #F6363F; stroke-width: 1.0;"/><text fill="#616161" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="68" x="359" y="323.8721">Referer 合法</text><!--MD5=[9b5d67683aaa5639e0e63f1d5dbee6ff]
+link RefererFilter to ControllerAdvice--><path d="M423.703,279.3561 C437.212,306.6671 454,348.3961 454,387.1201 C454,387.1201 454,387.1201 454,669.1201 C454,705.1881 427.022,735.6601 400.287,757.0021 " fill="none" id="RefererFilter-to-ControllerAdvice" style="stroke: #F6363F; stroke-width: 1.0;"/><polygon fill="#F6363F" points="396.347,760.0841,405.9007,757.6909,400.2857,757.004,400.9725,751.389,396.347,760.0841" style="stroke: #F6363F; stroke-width: 1.0;"/><text fill="#616161" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="80" x="455" y="533.8721">Referer 不合法</text><!--MD5=[50679899d530961054484025004205e8]
+link LoginFilter to SemaphoreLimitFilter--><path d="M299.199,419.2351 C291.411,428.7591 282.809,439.3491 275,449.1201 C263.62,463.3591 251.202,479.1841 240.559,492.8381 " fill="none" id="LoginFilter-to-SemaphoreLimitFilter" style="stroke: #F6363F; stroke-width: 1.0;"/><polygon fill="#F6363F" points="237.316,497.0011,246.0026,492.3597,240.3889,493.0568,239.6917,487.4431,237.316,497.0011" style="stroke: #F6363F; stroke-width: 1.0;"/><text fill="#616161" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="51" x="276" y="463.8721">登陆 合法</text><!--MD5=[98c633511b17c1e1ce11219ead26543c]
+link LoginFilter to ControllerAdvice--><path d="M328.535,419.2791 C329.829,428.8061 331.124,439.3861 332,449.1201 C342.02,560.5031 345.962,692.9541 347.342,754.9001 " fill="none" id="LoginFilter-to-ControllerAdvice" style="stroke: #F6363F; stroke-width: 1.0;"/><polygon fill="#F6363F" points="347.452,759.9551,351.2556,750.8704,347.3434,754.9563,343.2575,751.0441,347.452,759.9551" style="stroke: #F6363F; stroke-width: 1.0;"/><text fill="#616161" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="75" x="344" y="603.8721">登陆人 不合法</text><!--MD5=[7fe74db6775aa2a34b46b58ed62129fd]
+link SemaphoreLimitFilter to CorsFilter--><path d="M180.197,559.2001 C170.417,568.4551 159.968,578.9041 151,589.1201 C139.067,602.7131 127.073,618.6961 117.186,632.6431 " fill="none" id="SemaphoreLimitFilter-to-CorsFilter" style="stroke: #F6363F; stroke-width: 1.0;"/><polygon fill="#F6363F" points="114.188,636.9011,122.6398,631.8448,117.0664,632.8128,116.0985,627.2393,114.188,636.9011" style="stroke: #F6363F; stroke-width: 1.0;"/><text fill="#616161" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="72" x="152" y="603.8721">没有触发限流</text><!--MD5=[6458309b3ad03c1e9a6559142b809a85]
+link SemaphoreLimitFilter to ControllerAdvice--><path d="M222.355,559.1631 C232.724,594.0801 252.234,652.8271 278,699.1201 C289.081,719.0291 304.223,739.3021 317.59,755.6451 " fill="none" id="SemaphoreLimitFilter-to-ControllerAdvice" style="stroke: #F6363F; stroke-width: 1.0;"/><polygon fill="#F6363F" points="320.947,759.7131,318.3044,750.2254,317.7648,755.8565,312.1337,755.3169,320.947,759.7131" style="stroke: #F6363F; stroke-width: 1.0;"/><text fill="#616161" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="279" y="673.8721">触发限流</text><!--MD5=[81a3b3fcc3fa60feae4dce7bdd82d8a8]
+link CorsFilter to Controller--><path d="M95.4986,699.3411 C96.329,716.0881 97.3663,737.0061 98.2357,754.5401 " fill="none" id="CorsFilter-to-Controller" style="stroke: #F6363F; stroke-width: 1.0;"/><polygon fill="#F6363F" points="98.4997,759.8651,102.05,750.6784,98.2526,754.8712,94.0597,751.0738,98.4997,759.8651" style="stroke: #F6363F; stroke-width: 1.0;"/><!--MD5=[050776c762880f8c308be480a4b0fdea]
+link Controller to ControllerAdvice--><path d="M152.291,791.1201 C182.226,791.1201 220.654,791.1201 255.522,791.1201 " fill="none" id="Controller-to-ControllerAdvice" style="stroke: #F6363F; stroke-width: 1.0;"/><polygon fill="#F6363F" points="260.639,791.1201,251.639,787.1201,255.639,791.1201,251.639,795.1201,260.639,791.1201" style="stroke: #F6363F; stroke-width: 1.0;"/><text fill="#616161" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="72" x="170.5" y="784.8721">业务逻辑异常</text><!--MD5=[769190fdf4ac2270ea66a96d6ca87f92]
+link Controller to *end--><path d="M117.264,822.4231 C129.461,842.1031 147.128,867.4664 167,886.1201 C184.246,902.3085 208.408,915.7288 223.363,923.2056 " fill="none" id="Controller-to-*end" style="stroke: #F6363F; stroke-width: 1.0;"/><polygon fill="#F6363F" points="228.058,925.5087,221.7386,917.9546,223.5688,923.3072,218.2161,925.1373,228.058,925.5087" style="stroke: #F6363F; stroke-width: 1.0;"/><text fill="#616161" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="84" x="172.5" y="866.8721">业务逻辑正常，</text><text fill="#616161" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="96" x="168" y="883.2607">返回通用返回参数</text><!--MD5=[a444bd8821a548cfaba0257126646b24]
+link ControllerAdvice to *end--><path d="M323.641,822.2951 C299.213,852.5546 262.885,897.5551 246.103,918.3433 " fill="none" id="ControllerAdvice-to-*end" style="stroke: #F6363F; stroke-width: 1.0;"/><polygon fill="#F6363F" points="242.83,922.3978,251.5951,917.9065,245.9703,918.507,245.3698,912.8821,242.83,922.3978" style="stroke: #F6363F; stroke-width: 1.0;"/><text fill="#616161" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="96" x="301" y="874.8721">包装异常返回参数</text><!--MD5=[44c680190553cc102e94fd2a6e0b6ac8]
+@startuml state-sample
+!define DC_1 #BBBBBB
+!define DC_2 #535353
+!define DC_4 #2B2B2B
+!define DC_3 #3C3F41
+!define DC_5 #438AA3
+!define DC_6 #5E8A4F
+!define DC_7 #589DF6
+!define DC_8 #FF6464
+
+!define MD_RED_50 #FFEBEE
+!define MD_RED_100 #FFCDD2
+!define MD_RED_200 #EF9A9A
+!define MD_RED_300 #E57373
+!define MD_RED_400 #EF5350
+!define MD_RED_500 #F44336
+!define MD_RED_600 #E53935
+!define MD_RED_700 #D32F2F
+!define MD_RED_800 #C62828
+!define MD_RED_900 #B71C1C
+!define MD_RED_A100 #FF8A80
+!define MD_RED_A200 #FF5252
+!define MD_RED_A400 #FF1744
+!define MD_RED_A700 #D50000
+!define MD_PINK_50 #FCE4EC
+!define MD_PINK_100 #F8BBD0
+!define MD_PINK_200 #F48FB1
+!define MD_PINK_300 #F06292
+!define MD_PINK_400 #EC407A
+!define MD_PINK_500 #E91E63
+!define MD_PINK_600 #D81B60
+!define MD_PINK_700 #C2185B
+!define MD_PINK_800 #AD1457
+!define MD_PINK_900 #880E4F
+!define MD_PINK_A100 #FF80AB
+!define MD_PINK_A200 #FF4081
+!define MD_PINK_A400 #F50057
+!define MD_PINK_A700 #C51162
+!define MD_PURPLE_50 #F3E5F5
+!define MD_PURPLE_100 #E1BEE7
+!define MD_PURPLE_200 #CE93D8
+!define MD_PURPLE_300 #BA68C8
+!define MD_PURPLE_400 #AB47BC
+!define MD_PURPLE_500 #9C27B0
+!define MD_PURPLE_600 #8E24AA
+!define MD_PURPLE_700 #7B1FA2
+!define MD_PURPLE_800 #6A1B9A
+!define MD_PURPLE_900 #4A148C
+!define MD_PURPLE_A100 #EA80FC
+!define MD_PURPLE_A200 #E040FB
+!define MD_PURPLE_A400 #D500F9
+!define MD_PURPLE_A700 #AA00FF
+!define MD_DPURPLE_50 #EDE7F6
+!define MD_DPURPLE_100 #D1C4E9
+!define MD_DPURPLE_200 #B39DDB
+!define MD_DPURPLE_300 #9575CD
+!define MD_DPURPLE_400 #7E57C2
+!define MD_DPURPLE_500 #673AB7
+!define MD_DPURPLE_600 #5E35B1
+!define MD_DPURPLE_700 #512DA8
+!define MD_DPURPLE_800 #4527A0
+!define MD_DPURPLE_900 #311B92
+!define MD_DPURPLE_A100 #B388FF
+!define MD_DPURPLE_A200 #7C4DFF
+!define MD_DPURPLE_A400 #651FFF
+!define MD_DPURPLE_A700 #6200EA
+!define MD_INDIGO_50 #E8EAF6
+!define MD_INDIGO_100 #C5CAE9
+!define MD_INDIGO_200 #9FA8DA
+!define MD_INDIGO_300 #7986CB
+!define MD_INDIGO_400 #5C6BC0
+!define MD_INDIGO_500 #3F51B5
+!define MD_INDIGO_600 #3949AB
+!define MD_INDIGO_700 #303F9F
+!define MD_INDIGO_800 #283593
+!define MD_INDIGO_900 #1A237E
+!define MD_INDIGO_A100 #8C9EFF
+!define MD_INDIGO_A200 #536DFE
+!define MD_INDIGO_A400 #3D5AFE
+!define MD_INDIGO_A700 #304FFE
+!define MD_BLUE_50 #E3F2FD
+!define MD_BLUE_100 #BBDEFB
+!define MD_BLUE_200 #90CAF9
+!define MD_BLUE_300 #64B5F6
+!define MD_BLUE_400 #42A5F5
+!define MD_BLUE_500 #2196F3
+!define MD_BLUE_600 #1E88E5
+!define MD_BLUE_700 #1976D2
+!define MD_BLUE_800 #1565C0
+!define MD_BLUE_900 #0D47A1
+!define MD_BLUE_A100 #82B1FF
+!define MD_BLUE_A200 #448AFF
+!define MD_BLUE_A400 #2979FF
+!define MD_BLUE_A700 #2962FF
+!define MD_LBLUE_50 #E1F5FE
+!define MD_LBLUE_100 #B3E5FC
+!define MD_LBLUE_200 #81D4FA
+!define MD_LBLUE_300 #4FC3F7
+!define MD_LBLUE_400 #29B6F6
+!define MD_LBLUE_500 #03A9F4
+!define MD_LBLUE_600 #039BE5
+!define MD_LBLUE_700 #0288D1
+!define MD_LBLUE_800 #0277BD
+!define MD_LBLUE_900 #01579B
+!define MD_LBLUE_A100 #80D8FF
+!define MD_LBLUE_A200 #40C4FF
+!define MD_LBLUE_A400 #00B0FF
+!define MD_LBLUE_A700 #0091EA
+!define MD_CYAN_50 #E0F7FA
+!define MD_CYAN_100 #B2EBF2
+!define MD_CYAN_200 #80DEEA
+!define MD_CYAN_300 #4DD0E1
+!define MD_CYAN_400 #26C6DA
+!define MD_CYAN_500 #00BCD4
+!define MD_CYAN_600 #00ACC1
+!define MD_CYAN_700 #0097A7
+!define MD_CYAN_800 #00838F
+!define MD_CYAN_900 #006064
+!define MD_CYAN_A100 #84FFFF
+!define MD_CYAN_A200 #18FFFF
+!define MD_CYAN_A400 #00E5FF
+!define MD_CYAN_A700 #00B8D4
+!define MD_TEAL_50 #E0F2F1
+!define MD_TEAL_100 #B2DFDB
+!define MD_TEAL_200 #80CBC4
+!define MD_TEAL_300 #4DB6AC
+!define MD_TEAL_400 #26A69A
+!define MD_TEAL_500 #009688
+!define MD_TEAL_600 #00897B
+!define MD_TEAL_700 #00796B
+!define MD_TEAL_800 #00695C
+!define MD_TEAL_900 #004D40
+!define MD_TEAL_A100 #A7FFEB
+!define MD_TEAL_A200 #64FFDA
+!define MD_TEAL_A400 #1DE9B6
+!define MD_TEAL_A700 #00BFA5
+!define MD_GREEN_50 #E8F5E9
+!define MD_GREEN_100 #C8E6C9
+!define MD_GREEN_200 #A5D6A7
+!define MD_GREEN_300 #81C784
+!define MD_GREEN_400 #66BB6A
+!define MD_GREEN_500 #4CAF50
+!define MD_GREEN_600 #43A047
+!define MD_GREEN_700 #388E3C
+!define MD_GREEN_800 #2E7D32
+!define MD_GREEN_900 #1B5E20
+!define MD_GREEN_A100 #B9F6CA
+!define MD_GREEN_A200 #69F0AE
+!define MD_GREEN_A400 #00E676
+!define MD_GREEN_A700 #00C853
+!define MD_LGREEN_50 #F1F8E9
+!define MD_LGREEN_100 #DCEDC8
+!define MD_LGREEN_200 #C5E1A5
+!define MD_LGREEN_300 #AED581
+!define MD_LGREEN_400 #9CCC65
+!define MD_LGREEN_500 #8BC34A
+!define MD_LGREEN_600 #7CB342
+!define MD_LGREEN_700 #689F38
+!define MD_LGREEN_800 #558B2F
+!define MD_LGREEN_900 #33691E
+!define MD_LGREEN_A100 #CCFF90
+!define MD_LGREEN_A200 #B2FF59
+!define MD_LGREEN_A400 #76FF03
+!define MD_LGREEN_A700 #64DD17
+!define MD_LIME_50 #F9FBE7
+!define MD_LIME_100 #F0F4C3
+!define MD_LIME_200 #E6EE9C
+!define MD_LIME_300 #DCE775
+!define MD_LIME_400 #D4E157
+!define MD_LIME_500 #CDDC39
+!define MD_LIME_600 #C0CA33
+!define MD_LIME_700 #AFB42B
+!define MD_LIME_800 #9E9D24
+!define MD_LIME_900 #827717
+!define MD_LIME_A100 #F4FF81
+!define MD_LIME_A200 #EEFF41
+!define MD_LIME_A400 #C6FF00
+!define MD_LIME_A700 #AEEA00
+!define MD_YELLOW_50 #FFFDE7
+!define MD_YELLOW_100 #FFF9C4
+!define MD_YELLOW_200 #FFF59D
+!define MD_YELLOW_300 #FFF176
+!define MD_YELLOW_400 #FFEE58
+!define MD_YELLOW_500 #FFEB3B
+!define MD_YELLOW_600 #FDD835
+!define MD_YELLOW_700 #FBC02D
+!define MD_YELLOW_800 #F9A825
+!define MD_YELLOW_900 #F57F17
+!define MD_YELLOW_A100 #FFFF8D
+!define MD_YELLOW_A200 #FFFF00
+!define MD_YELLOW_A400 #FFEA00
+!define MD_YELLOW_A700 #FFD600
+!define MD_AMBER_50 #FFF8E1
+!define MD_AMBER_100 #FFECB3
+!define MD_AMBER_200 #FFE082
+!define MD_AMBER_300 #FFD54F
+!define MD_AMBER_400 #FFCA28
+!define MD_AMBER_500 #FFC107
+!define MD_AMBER_600 #FFB300
+!define MD_AMBER_700 #FFA000
+!define MD_AMBER_800 #FF8F00
+!define MD_AMBER_900 #FF6F00
+!define MD_AMBER_A100 #FFE57F
+!define MD_AMBER_A200 #FFD740
+!define MD_AMBER_A400 #FFC400
+!define MD_AMBER_A700 #FFAB00
+!define MD_ORANGE_50 #FFF3E0
+!define MD_ORANGE_100 #FFE0B2
+!define MD_ORANGE_200 #FFCC80
+!define MD_ORANGE_300 #FFB74D
+!define MD_ORANGE_400 #FFA726
+!define MD_ORANGE_500 #FF9800
+!define MD_ORANGE_600 #FB8C00
+!define MD_ORANGE_700 #F57C00
+!define MD_ORANGE_800 #EF6C00
+!define MD_ORANGE_900 #E65100
+!define MD_ORANGE_A100 #FFD180
+!define MD_ORANGE_A200 #FFAB40
+!define MD_ORANGE_A400 #FF9100
+!define MD_ORANGE_A700 #FF6D00
+!define MD_DORANGE_50 #FBE9E7
+!define MD_DORANGE_100 #FFCCBC
+!define MD_DORANGE_200 #FFAB91
+!define MD_DORANGE_300 #FF8A65
+!define MD_DORANGE_400 #FF7043
+!define MD_DORANGE_500 #FF5722
+!define MD_DORANGE_600 #F4511E
+!define MD_DORANGE_700 #E64A19
+!define MD_DORANGE_800 #D84315
+!define MD_DORANGE_900 #BF360C
+!define MD_DORANGE_A100 #FF9E80
+!define MD_DORANGE_A200 #FF6E40
+!define MD_DORANGE_A400 #FF3D00
+!define MD_DORANGE_A700 #DD2C00
+!define MD_BROWN_50 #EFEBE9
+!define MD_BROWN_100 #D7CCC8
+!define MD_BROWN_200 #BCAAA4
+!define MD_BROWN_300 #A1887F
+!define MD_BROWN_400 #8D6E63
+!define MD_BROWN_500 #795548
+!define MD_BROWN_600 #6D4C41
+!define MD_BROWN_700 #5D4037
+!define MD_BROWN_800 #4E342E
+!define MD_BROWN_900 #3E2723
+!define MD_GRAY_50 #FAFAFA
+!define MD_GRAY_100 #F5F5F5
+!define MD_GRAY_200 #EEEEEE
+!define MD_GRAY_300 #E0E0E0
+!define MD_GRAY_400 #BDBDBD
+!define MD_GRAY_500 #9E9E9E
+!define MD_GRAY_600 #757575
+!define MD_GRAY_700 #616161
+!define MD_GRAY_800 #424242
+!define MD_GRAY_900 #212121
+!define MD_BGRAY_50 #ECEFF1
+!define MD_BGRAY_100 #CFD8DC
+!define MD_BGRAY_200 #B0BEC5
+!define MD_BGRAY_300 #90A4AE
+!define MD_BGRAY_400 #78909C
+!define MD_BGRAY_500 #607D8B
+!define MD_BGRAY_600 #546E7A
+!define MD_BGRAY_700 #455A64
+!define MD_BGRAY_800 #37474F
+!define MD_BGRAY_900 #263238
+!define MD_BLACK #000000
+!define MD_WHITE #FFFFFF
+!define Black   #222222
+!define MidnightBlue   #363D5D
+!define Red     #F6363F
+!define Pink    #F6216E
+!define Magenta #A54FBD
+!define Green   #37A77C
+!define Yellow  #F97A00
+!define Blue    #1E98F2
+!define CYan    #25AFCA
+!define AntiqueWhite   #FEF2DC
+!define Grey #444444
+
+!define NOTE_BG_COLOR MD_BGRAY_300
+!define NOTE_BORDER_COLOR MD_BGRAY_300
+
+!define NOTE_Q_BG_COLOR MD_YELLOW_800
+!define NOTE_Q_BORDER_COLOR MD_YELLOW_800
+
+!define EL_BG_COLOR_900 MD_BLUE_900
+!define EL_BORDER_COLOR_900 MD_BLUE_900
+!define EL_BG_COLOR_800 MD_BLUE_800
+!define EL_BORDER_COLOR_800 MD_BLUE_800
+!define EL_BG_COLOR_600 MD_BLUE_600
+!define EL_BORDER_COLOR_600 MD_BLUE_600
+
+!define EL_BG_COLOR_400 MD_BLUE_400
+!define EL_BORDER_COLOR_400 MD_BLUE_400
+
+!define EL_BG_COLOR_300 MD_BLUE_300
+!define EL_BORDER_COLOR_300 MD_BLUE_300
+
+
+
+
+
+
+
+
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+skinparam ComponentStyle uml2
+skinparam Shadowing false
+
+skinparam Default {
+    FontName "'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace"
+    FontColor Black
+    FontSize  14
+    FontStyle plain
+    Shadowing false
+    TextAlignment center
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+
+skinparam Note {
+    BackgroundColor NOTE_BG_COLOR
+    BorderColor NOTE_BORDER_COLOR
+    BorderThickness 1
+    FontColor White
+    Shadowing false
+    TextAlignment left
+}
+
+skinparam Note<<quit>> {
+
+    BackgroundColor NOTE_Q_BG_COLOR
+    BorderColor NOTE_Q_BORDER_COLOR
+}
+
+skinparam Sequence {
+    ActorBorderThickness 1
+    LifeLineBorderColor GREEN
+    ParticipantBorderThickness 0
+    Shadowing false
+
+
+    GroupBorderThickness 1
+    GroupBorderColor MD_BLUE_800
+    GroupBackgroundColor MD_BLUE_100
+}
+
+skinparam Activity {
+
+    StartColor Green
+    EndColor Red
+    AttributeFontColor white
+    AttributeFontSize  15
+    AttributeFontname  Droid Sans Mono
+
+    BackgroundColor MD_BLUE_100
+    BorderColor MD_BLUE_200
+    BorderThickness 1
+
+    ArrowThickness 1
+
+
+    BarColor   MD_BLUE_900
+
+
+    DiamondBackgroundColor   MD_ORANGE_100
+    DiamondBorderColor    MD_ORANGE_200
+
+
+}
+
+skinparam Class {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_BLUE_300
+    BorderThickness 1
+
+
+    StereotypeFontColor DC_7
+    StereotypeFontSize 14
+}
+
+
+
+skinparam Interface {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+    FontSize 14
+
+
+    StereotypeFontColor DC_7
+    StereotypeFontSize 1
+}
+
+
+
+skinparam Participant {
+    BackgroundColor EL_BG_COLOR_800
+    BorderColor EL_BORDER_COLOR_800
+    FontColor White
+    Shadowing false
+}
+
+skinparam Actor {
+    BackgroundColor EL_BG_COLOR_800
+    BorderColor EL_BORDER_COLOR_800
+    Shadowing false
+}
+
+skinparam UseCase {
+    BackgroundColor EL_BG_COLOR_300
+    BorderColor EL_BG_COLOR_300
+    Shadowing false
+    ArrowThickness 1
+    ArrowColor EL_BORDER_COLOR_800
+
+    ActorBackgroundColor EL_BG_COLOR_800
+    ActorBorderColor MD_BLUE_900
+    ActorShadowing false
+
+}
+
+
+skinparam State {
+    FontSize           17
+
+    AttributeFontSize  14
+
+    BackgroundColor    MD_BLUE_100
+    BorderColor        MD_BLUE_200
+    StartColor Green
+    EndColor Red
+}
+
+skinparam Partition {
+    BorderColor MD_GRAY_800
+    BorderStyle dashed
+
+    BorderThickness 1
+}
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam Queue {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+skinparam Agent {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+skinparam Artifact {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+
+skinparam Boundary {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+skinparam Card {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+
+skinparam Cloud {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+
+skinparam Component {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+skinparam Control {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+skinparam Database {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+
+skinparam Entity {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+skinparam File {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+skinparam Folder {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+
+}
+skinparam Frame {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+skinparam Node {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+
+
+skinparam Package {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+skinparam Stack {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+
+skinparam Rectangle {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+
+skinparam Storage {
+    BackgroundColor MD_BLUE_50
+    BorderColor MD_GRAY_800
+}
+
+skinparam rectangle<<usercase>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor MD_GRAY_800
+    BorderColor MD_GRAY_800
+    BorderStyle dashed
+    BackgroundColor White
+}
+
+
+
+!define TECHN_FONT_SIZE 12
+
+!define LAYOUT_TOP_DOWN top to bottom direction
+!define LAYOUT_LEFT_RIGHT left to right direction
+
+!definelong LAYOUT_AS_SKETCH
+skinparam backgroundColor #EEEBDC
+skinparam handwritten true
+center footer <font color=red>Warning:</font> Created for discussion, needs to be validated
+!enddefinelong
+
+
+!define RED_ARROW skinparam ArrowColor Red
+!define MEGENTA_ARROW skinparam ArrowColor Magenta
+!define GREEN_ARROW skinparam ArrowColor MD_GREEN_200
+!define GREY_ARROW skinparam ArrowColor DC_1
+!define YELLOW_ARROW skinparam ArrowColor Yellow
+
+
+!define Lay_D(e_from, e_to) e_from -[hidden]D- e_to
+!define Lay_U(e_from, e_to) e_from -[hidden]U- e_to
+!define Lay_R(e_from, e_to) e_from -[hidden]R- e_to
+!define Lay_L(e_from, e_to) e_from -[hidden]L- e_to
+
+
+!define UserCasePackage(e_alias, e_label) rectangle "==e_label" <<usercase>> as e_alias
+!define UserCasePackage(e_alias, e_label, e_type) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[e_type]</size>" <<usercase>> as e_alias
+
+!define ELEMENT_FONT_COLOR MD_WHITE
+
+!define PERSON_BG_COLOR MD_BLUE_800
+!define PERSON_BORDER_COLOR MD_BLUE_900
+!define EXTERNAL_PERSON_BG_COLOR MD_GRAY_700
+!define EXTERNAL_PERSON_BORDER_COLOR MD_GRAY_800
+
+!define SYSTEM_BG_COLOR MD_BLUE_700
+!define SYSTEM_BORDER_COLOR MD_BLUE_800
+!define EXTERNAL_SYSTEM_BG_COLOR MD_GRAY_600
+!define EXTERNAL_SYSTEM_BORDER_COLOR MD_GRAY_700
+
+!define DATABASE_BG_COLOR MD_BLUE_700
+!define DATABASE_BORDER_COLOR MD_BLUE_800
+
+!define ACTOR_BG_COLOR MD_BLUE_800
+!define ACTOR_BORDER_COLOR MD_BLUE_900
+!define INTERNAL_ACTOR_BG_COLOR MD_GRAY_700
+!define INTERNAL_ACTOR_BORDER_COLOR MD_GRAY_800
+
+!define CONTAINER_BG_COLOR MD_BLUE_600
+!define CONTAINER_BORDER_COLOR MD_BLUE_600
+
+!define COMPONENT_BG_COLOR MD_BLUE_200
+!define COMPONENT_BORDER_COLOR MD_BLUE_300
+!define COMPONENT_FONT_COLOR Black
+
+
+!define TECHN_FONT_SIZE 12
+
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam Arrow {
+    Color MD_GRAY_700
+    FontColor MD_GRAY_700
+    FontSize 12
+}
+
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor MD_GRAY_800
+    BorderColor MD_GRAY_800
+    BorderStyle dashed
+    BackgroundColor White
+}
+
+
+
+
+!define Boundary(e_alias, e_label) rectangle "==e_label" <<boundary>> as e_alias
+!define Boundary(e_alias, e_label, e_type) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[e_type]</size>" <<boundary>> as e_alias
+
+
+!define Rel_(e_alias1, e_alias2, e_label, e_direction="") e_alias1 e_direction e_alias2 : "===e_label"
+!define Rel_(e_alias1, e_alias2, e_label, e_techn, e_direction="") e_alias1 e_direction e_alias2 : "===e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//"
+
+!define Rel(e_from,e_to, e_label) Rel_(e_from,e_to, e_label, "- ->")
+!define Rel(e_from,e_to, e_label, e_techn) Rel_(e_from,e_to, e_label, e_techn, "- ->")
+
+!define Rel_Back(e_to, e_from, e_label) Rel_(e_to, e_from, e_label, "<- -")
+!define Rel_Back(e_to, e_from, e_label, e_techn) Rel_(e_to, e_from, e_label, e_techn, "<- -")
+
+!define Rel_Neighbor(e_from,e_to, e_label) Rel_(e_from,e_to, e_label, "->")
+!define Rel_Neighbor(e_from,e_to, e_label, e_techn) Rel_(e_from,e_to, e_label, e_techn, "->")
+
+!define Rel_Back_Neighbor(e_to, e_from, e_label) Rel_(e_to, e_from, e_label, "<-")
+!define Rel_Back_Neighbor(e_to, e_from, e_label, e_techn) Rel_(e_to, e_from, e_label, e_techn, "<-")
+
+!define Rel_D(e_from,e_to, e_label) Rel_(e_from,e_to, e_label, "-DOWN->")
+!define Rel_D(e_from,e_to, e_label, e_techn) Rel_(e_from,e_to, e_label, e_techn, "-DOWN->")
+!define Rel_Down(e_from,e_to, e_label) Rel_D(e_from,e_to, e_label)
+!define Rel_Down(e_from,e_to, e_label, e_techn) Rel_D(e_from,e_to, e_label, e_techn)
+
+!define Rel_U(e_from,e_to, e_label) Rel_(e_from,e_to, e_label, "-UP->")
+!define Rel_U(e_from,e_to, e_label, e_techn) Rel_(e_from,e_to, e_label, e_techn, "-UP->")
+!define Rel_Up(e_from,e_to, e_label) Rel_U(e_from,e_to, e_label)
+!define Rel_Up(e_from,e_to, e_label, e_techn) Rel_U(e_from,e_to, e_label, e_techn)
+
+!define Rel_L(e_from,e_to, e_label) Rel_(e_from,e_to, e_label, "-LEFT->")
+!define Rel_L(e_from,e_to, e_label, e_techn) Rel_(e_from,e_to, e_label, e_techn, "-LEFT->")
+!define Rel_Left(e_from,e_to, e_label) Rel_L(e_from,e_to, e_label)
+!define Rel_Left(e_from,e_to, e_label, e_techn) Rel_L(e_from,e_to, e_label, e_techn)
+
+!define Rel_R(e_from,e_to, e_label) Rel_(e_from,e_to, e_label, "-RIGHT->")
+!define Rel_R(e_from,e_to, e_label, e_techn) Rel_(e_from,e_to, e_label, e_techn, "-RIGHT->")
+!define Rel_Right(e_from,e_to, e_label) Rel_R(e_from,e_to, e_label)
+!define Rel_Right(e_from,e_to, e_label, e_techn) Rel_R(e_from,e_to, e_label, e_techn)
+
+
+
+skinparam actor<<person>> {
+  BorderColor ACTOR_BORDER_COLOR
+  BackgroundColor ACTOR_BG_COLOR
+}
+
+skinparam actor<<internal_person>> {
+  BorderColor INTERNAL_ACTOR_BORDER_COLOR
+  BackgroundColor INTERNAL_ACTOR_BG_COLOR
+}
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor PERSON_BG_COLOR
+    BorderColor PERSON_BORDER_COLOR
+}
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor EXTERNAL_PERSON_BG_COLOR
+    BorderColor EXTERNAL_PERSON_BORDER_COLOR
+}
+
+skinparam rectangle<<system>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor SYSTEM_BG_COLOR
+    BorderColor SYSTEM_BORDER_COLOR
+}
+
+skinparam rectangle<<external_system>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor EXTERNAL_SYSTEM_BG_COLOR
+    BorderColor EXTERNAL_SYSTEM_BORDER_COLOR
+}
+
+skinparam database<<system>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor SYSTEM_BG_COLOR
+    BorderColor SYSTEM_BORDER_COLOR
+}
+
+skinparam database<<external_system>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor EXTERNAL_SYSTEM_BG_COLOR
+    BorderColor EXTERNAL_SYSTEM_BORDER_COLOR
+}
+
+!definelong LAYOUT_WITH_LEGEND_CN
+hide stereotype
+legend right
+|=   颜色           |= 类型 |
+|<PERSON_BG_COLOR>      | 用户 |
+|<EXTERNAL_PERSON_BG_COLOR>      | 外部用户 |
+|<SYSTEM_BG_COLOR>   | 系统 |
+|<EXTERNAL_SYSTEM_BG_COLOR>      | 外部系统 |
+endlegend
+!enddefinelong
+
+!definelong LAYOUT_WITH_LEGEND
+hide stereotype
+legend right
+|=    color          |= Type |
+|<PERSON_BG_COLOR>      | person |
+|<EXTERNAL_PERSON_BG_COLOR>      | external person |
+|<SYSTEM_BG_COLOR>   | system |
+|<EXTERNAL_SYSTEM_BG_COLOR>      | external system |
+endlegend
+!enddefinelong
+
+
+!define Actor(e_alias, e_label) actor "==e_label" <<person>> as e_alias
+!define Actor(e_alias, e_label, e_descr) actor "==e_label\n\n e_descr" <<person>> as e_alias
+
+!define Actor_Ext(e_alias, e_label) actor "==e_label" <<internal_person>> as e_alias
+!define Actor_Ext(e_alias, e_label, e_descr) actor "==e_label\n\n e_descr" <<internal_person>> as e_alias
+
+
+!define Person(e_alias, e_label) rectangle "==e_label" <<person>> as e_alias
+!define Person(e_alias, e_label, e_descr) rectangle "==e_label\n\n e_descr" <<person>> as e_alias
+
+!define Person_Ext(e_alias, e_label) rectangle "==e_label" <<external_person>> as e_alias
+!define Person_Ext(e_alias, e_label, e_descr) rectangle "==e_label\n\n e_descr" <<external_person>> as e_alias
+
+!define System(e_alias, e_label) rectangle "==e_label" <<system>> as e_alias
+!define System(e_alias, e_label, e_descr) rectangle "==e_label\n\n e_descr" <<system>> as e_alias
+
+!define System_Ext(e_alias, e_label) rectangle "==e_label" <<external_system>> as e_alias
+!define System_Ext(e_alias, e_label, e_descr) rectangle "==e_label\n\n e_descr" <<external_system>> as e_alias
+
+!define SystemDb(e_alias, e_label) database "==e_label" <<system>> as e_alias
+!define SystemDb(e_alias, e_label, e_descr) database "==e_label\n\n e_descr" <<system>> as e_alias
+
+!define SystemDb_Ext(e_alias, e_label) database "==e_label" <<external_system>> as e_alias
+!define SystemDb_Ext(e_alias, e_label, e_descr) database "==e_label\n\n e_descr" <<external_system>> as e_alias
+
+
+!define Enterprise_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Enterprise")
+!define System_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "System")
+
+
+
+
+skinparam rectangle<<container>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor CONTAINER_BG_COLOR
+    BorderColor CONTAINER_BORDER_COLOR
+}
+
+skinparam database<<container>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor CONTAINER_BG_COLOR
+    BorderColor CONTAINER_BORDER_COLOR
+}
+
+!definelong LAYOUT_WITH_LEGEND_CN
+hide stereotype
+legend right
+|=    颜色          |= 类型 |
+|<PERSON_BG_COLOR>      | 用户 |
+|<EXTERNAL_PERSON_BG_COLOR>      | 外部用户 |
+|<SYSTEM_BG_COLOR>   | 系统 |
+|<EXTERNAL_SYSTEM_BG_COLOR>      | 外部系统 |
+|<CONTAINER_BG_COLOR>   | 容器 |
+endlegend
+!enddefinelong
+
+!definelong LAYOUT_WITH_LEGEND
+hide stereotype
+legend right
+|=              |= Type |
+|<PERSON_BG_COLOR>      | person |
+|<EXTERNAL_PERSON_BG_COLOR>      | external person |
+|<SYSTEM_BG_COLOR>   | system |
+|<EXTERNAL_SYSTEM_BG_COLOR>      | external system |
+|<CONTAINER_BG_COLOR>   | container |
+endlegend
+!enddefinelong
+
+
+!define Container(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<container>> as e_alias
+!define Container(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<container>> as e_alias
+
+!define ContainerDb(e_alias, e_label, e_techn) database "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<container>> as e_alias
+!define ContainerDb(e_alias, e_label, e_techn, e_descr) database "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<container>> as e_alias
+
+
+!define Container_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Container")
+
+
+
+skinparam rectangle<<component>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor COMPONENT_FONT_COLOR
+    BackgroundColor COMPONENT_BG_COLOR
+    BorderColor COMPONENT_BORDER_COLOR
+}
+
+skinparam database<<component>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor COMPONENT_FONT_COLOR
+    BackgroundColor COMPONENT_BG_COLOR
+    BorderColor COMPONENT_BORDER_COLOR
+}
+
+
+!definelong LAYOUT_WITH_LEGEND_CN
+hide stereotype
+legend right
+|=              |= Type |
+|<PERSON_BG_COLOR>      | 用户 |
+|<EXTERNAL_PERSON_BG_COLOR>      | 外部用户 |
+|<SYSTEM_BG_COLOR>   | 系统 |
+|<EXTERNAL_SYSTEM_BG_COLOR>      | 外部系统 |
+|<CONTAINER_BG_COLOR>   | 容器 |
+|<COMPONENT_BG_COLOR>   | 组件 |
+endlegend
+!enddefinelong
+
+
+!definelong LAYOUT_WITH_LEGEND
+hide stereotype
+legend right
+|=              |= Type |
+|<PERSON_BG_COLOR>      | person |
+|<EXTERNAL_PERSON_BG_COLOR>      | external person |
+|<SYSTEM_BG_COLOR>   | system |
+|<EXTERNAL_SYSTEM_BG_COLOR>      | external system |
+|<CONTAINER_BG_COLOR>   | container |
+|<COMPONENT_BG_COLOR>   | component |
+endlegend
+!enddefinelong
+
+
+!define Component(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<component>> as e_alias
+!define Component(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<component>> as e_alias
+
+!define ComponentDb(e_alias, e_label, e_techn) database "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<component>> as e_alias
+!define ComponentDb(e_alias, e_label, e_techn, e_descr) database "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<component>> as e_alias
+
+
+!define CLASS_LINE_FONT_SIZE 12
+
+!define Link_(e_alias1, e_alias2, e_label, e_direction="") e_alias1 e_direction e_alias2 : "e_label"
+!define Link_(e_alias1, e_alias2, e_label, e_techn, e_direction="") e_alias1 e_direction e_alias2 : "e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//"
+
+!define Link(e_from,e_to, e_label) Link_(e_from,e_to, e_label, "- ->")
+!define Link(e_from,e_to, e_label, e_techn) Link_(e_from,e_to, e_label, e_techn, "- ->")
+
+!define Generalize(e_from,e_to, e_label) Link_(e_from,e_to, e_label, "- -|>")
+!define Generalize(e_from,e_to, e_label, e_techn) Link_(e_from,e_to, e_label, e_techn, "- -|>")
+!define GeneralizeBack(e_from,e_to, e_label) Link_(e_from,e_to, e_label, "<|- -")
+!define GeneralizeBack(e_from,e_to, e_label, e_techn) Link_(e_from,e_to, e_label, e_techn, "<|- -")
+
+
+
+
+!define Realize(e_from,e_to, e_label) Link_(e_from,e_to, e_label, "..|>")
+!define Realize(e_from,e_to, e_label, e_techn) Link_(e_from,e_to, e_label, e_techn, "..|>")
+!define RealizeBack(e_from,e_to, e_label) Link_(e_from,e_to, e_label, "<|..")
+!define RealizeBack(e_from,e_to, e_label, e_techn) Link_(e_from,e_to, e_label, e_techn, "<|..")
+
+
+!define Aggregation(e_from,e_to, e_label) Link_(e_from,e_to, e_label, "- -o")
+!define Aggregation(e_from,e_to, e_label, e_techn) Link_(e_from,e_to, e_label, e_techn, "- -o")
+!define AggregationBack(e_from,e_to, e_label) Link_(e_from,e_to, e_label, "o- -")
+!define AggregationBack(e_from,e_to, e_label, e_techn) Link_(e_from,e_to, e_label, e_techn, "o- -")
+
+
+
+!define Composition(e_from,e_to, e_label) Link_(e_from,e_to, e_label, "- -*")
+!define Composition(e_from,e_to, e_label, e_techn) Link_(e_from,e_to, e_label, e_techn, "- -*")
+!define CompositionBack(e_from,e_to, e_label) Link_(e_from,e_to, e_label, "*- -")
+!define CompositionBack(e_from,e_to, e_label, e_techn) Link_(e_from,e_to, e_label, e_techn, "*- -")
+
+
+
+
+!define Dependency(e_from,e_to, e_label) Link_(e_from,e_to, e_label, "..>")
+!define Dependency(e_from,e_to, e_label, e_techn) Link_(e_from,e_to, e_label, e_techn, "..>")
+!define DependencyBack(e_from,e_to, e_label) Link_(e_from,e_to, e_label, "<..")
+!define DependencyBack(e_from,e_to, e_label, e_techn) Link_(e_from,e_to, e_label, e_techn, "<..")
+
+
+!define Association(e_from,e_to, e_label) Link_(e_from,e_to, e_label, "- -")
+!define Association(e_from,e_to, e_label, e_techn) Link_(e_from,e_to, e_label, e_techn, "- -")
+
+RED_ARROW
+
+
+title 搜索文件流程图
+
+ControllerAdvice : 返回对应的异常包装信息
+
+[*] - -> HTTP
+
+HTTP - -> RefererFilter
+
+RefererFilter : 验证 Referer 是否合法
+RefererFilter - -> LoginFilter : Referer 合法
+RefererFilter -> ControllerAdvice : Referer 不合法
+
+
+
+
+LoginFilter : 验证 登陆人 是否合法
+LoginFilter - -> SemaphoreLimitFilter :登陆 合法
+LoginFilter -> ControllerAdvice : 登陆人 不合法
+
+
+SemaphoreLimitFilter : 验证是否限流
+
+SemaphoreLimitFilter - -> CorsFilter : 没有触发限流
+CorsFilter : 增加跨域的返回头部信息
+SemaphoreLimitFilter -> ControllerAdvice : 触发限流
+
+CorsFilter - -> Controller
+
+Controller : 执行业务逻辑
+
+Controller -> ControllerAdvice: 业务逻辑异常
+
+Controller - -> [*] : 业务逻辑正常， 返回通用返回参数
+
+ControllerAdvice - -> [*] : 包装异常返回参数
+note right: 统一返回值结果
+
+@enduml
+
+@startuml state-sample
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+skinparam ComponentStyle uml2
+skinparam Shadowing false
+
+skinparam Default {
+    FontName "'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace"
+    FontColor #222222
+    FontSize  14
+    FontStyle plain
+    Shadowing false
+    TextAlignment center
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+
+skinparam Note {
+    BackgroundColor #90A4AE
+    BorderColor #90A4AE
+    BorderThickness 1
+    FontColor White
+    Shadowing false
+    TextAlignment left
+}
+
+skinparam Note<<quit>> {
+
+    BackgroundColor #F9A825
+    BorderColor #F9A825
+}
+
+skinparam Sequence {
+    ActorBorderThickness 1
+    LifeLineBorderColor GREEN
+    ParticipantBorderThickness 0
+    Shadowing false
+
+
+    GroupBorderThickness 1
+    GroupBorderColor #1565C0
+    GroupBackgroundColor #BBDEFB
+}
+
+skinparam Activity {
+
+    StartColor #37A77C
+    EndColor #F6363F
+    AttributeFontColor white
+    AttributeFontSize  15
+    AttributeFontname  Droid Sans Mono
+
+    BackgroundColor #BBDEFB
+    BorderColor #90CAF9
+    BorderThickness 1
+
+    ArrowThickness 1
+
+
+    BarColor   #0D47A1
+
+
+    DiamondBackgroundColor   #FFE0B2
+    DiamondBorderColor    #FFCC80
+
+
+}
+
+skinparam Class {
+    BackgroundColor #E3F2FD
+    BorderColor #64B5F6
+    BorderThickness 1
+
+
+    StereotypeFontColor #589DF6
+    StereotypeFontSize 14
+}
+
+
+
+skinparam Interface {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+    FontSize 14
+
+
+    StereotypeFontColor #589DF6
+    StereotypeFontSize 1
+}
+
+
+
+skinparam Participant {
+    BackgroundColor #1565C0
+    BorderColor #1565C0
+    FontColor White
+    Shadowing false
+}
+
+skinparam Actor {
+    BackgroundColor #1565C0
+    BorderColor #1565C0
+    Shadowing false
+}
+
+skinparam UseCase {
+    BackgroundColor #64B5F6
+    BorderColor #64B5F6
+    Shadowing false
+    ArrowThickness 1
+    ArrowColor #1565C0
+
+    ActorBackgroundColor #1565C0
+    ActorBorderColor #0D47A1
+    ActorShadowing false
+
+}
+
+
+skinparam State {
+    FontSize           17
+
+    AttributeFontSize  14
+
+    BackgroundColor    #BBDEFB
+    BorderColor        #90CAF9
+    StartColor #37A77C
+    EndColor #F6363F
+}
+
+skinparam Partition {
+    BorderColor #424242
+    BorderStyle dashed
+
+    BorderThickness 1
+}
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam Queue {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+skinparam Agent {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+skinparam Artifact {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+
+skinparam Boundary {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+skinparam Card {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+
+skinparam Cloud {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+
+skinparam Component {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+skinparam Control {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+skinparam Database {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+
+skinparam Entity {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+skinparam File {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+skinparam Folder {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+
+}
+skinparam Frame {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+skinparam Node {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+
+
+skinparam Package {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+skinparam Stack {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+
+skinparam Rectangle {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+
+skinparam Storage {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+
+skinparam rectangle<<usercase>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor #424242
+    BorderColor #424242
+    BorderStyle dashed
+    BackgroundColor White
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam Arrow {
+    Color #616161
+    FontColor #616161
+    FontSize 12
+}
+
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor #424242
+    BorderColor #424242
+    BorderStyle dashed
+    BackgroundColor White
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam actor<<person>> {
+  BorderColor #0D47A1
+  BackgroundColor #1565C0
+}
+
+skinparam actor<<internal_person>> {
+  BorderColor #424242
+  BackgroundColor #616161
+}
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1565C0
+    BorderColor #0D47A1
+}
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #616161
+    BorderColor #424242
+}
+
+skinparam rectangle<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1976D2
+    BorderColor #1565C0
+}
+
+skinparam rectangle<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #757575
+    BorderColor #616161
+}
+
+skinparam database<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1976D2
+    BorderColor #1565C0
+}
+
+skinparam database<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #757575
+    BorderColor #616161
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1E88E5
+    BorderColor #1E88E5
+}
+
+skinparam database<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1E88E5
+    BorderColor #1E88E5
+}
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<component>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #222222
+    BackgroundColor #90CAF9
+    BorderColor #64B5F6
+}
+
+skinparam database<<component>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #222222
+    BackgroundColor #90CAF9
+    BorderColor #64B5F6
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam ArrowColor #F6363F
+
+
+title 搜索文件流程图
+
+ControllerAdvice : 返回对应的异常包装信息
+
+[*] - -> HTTP
+
+HTTP - -> RefererFilter
+
+RefererFilter : 验证 Referer 是否合法
+RefererFilter - -> LoginFilter : Referer 合法
+RefererFilter -> ControllerAdvice : Referer 不合法
+
+
+
+
+LoginFilter : 验证 登陆人 是否合法
+LoginFilter - -> SemaphoreLimitFilter :登陆 合法
+LoginFilter -> ControllerAdvice : 登陆人 不合法
+
+
+SemaphoreLimitFilter : 验证是否限流
+
+SemaphoreLimitFilter - -> CorsFilter : 没有触发限流
+CorsFilter : 增加跨域的返回头部信息
+SemaphoreLimitFilter -> ControllerAdvice : 触发限流
+
+CorsFilter - -> Controller
+
+Controller : 执行业务逻辑
+
+Controller -> ControllerAdvice: 业务逻辑异常
+
+Controller - -> [*] : 业务逻辑正常， 返回通用返回参数
+
+ControllerAdvice - -> [*] : 包装异常返回参数
+note right: 统一返回值结果
+
+@enduml
+
+PlantUML version 1.2020.19(Mon Oct 12 23:10:01 CST 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: GBK
+Language: zh
+Country: CN
+--></g></svg>

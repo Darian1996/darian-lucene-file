@@ -1,0 +1,44 @@
+@startuml
+'指向线的宽度
+skinparam ArrowThickness 2
+' 指向线的颜色
+skinparam ArrowColor black
+' 指向线连接字体的颜色颜色
+skinparam ArrowFontColor blue
+
+' box的背景色
+skinparam SequenceBoxBackgroundColor yellow
+
+
+' 参与者背景颜色
+skinparam ParticipantBackgroundColor PapayaWhip
+' 参与者字体加粗
+'skinparam ParticipantFontStyle bold
+' 参与者的边框颜色
+skinparam ParticipantBorderColor black
+
+' 参与者字体颜色
+skinparam ParticipantFontColor blue
+' 参与者边框宽度
+'skinparam SequenceParticipantBorderThickness 3
+' 笔记的颜色
+' skinparam NoteFontColor red
+' 笔记框内背景色
+skinparam NoteBackgroundColor PapayaWhip
+' 笔记是否加粗
+'skinparam NoteFontStyle bold
+' 生命线颜色
+skinparam SequenceLifeLineBorderColor red
+' 生命线宽度
+' skinparam SequenceLifeLineBorderThickness 2
+' 生命周期填充颜色
+skinparam SequenceLifeLineBackgroundColor Pink
+' 时序图 分组标题背景色
+skinparam SequenceGroupBorderColor blue
+
+' 时序图 分组 背景填充色
+'skinparam SequenceGroupBodyBackgroundColor GreenYellow
+' Sequence 开头的时序图group 是分组
+skinparam SequenceGroupBackgroundColor GreenYellow
+
+@enduml

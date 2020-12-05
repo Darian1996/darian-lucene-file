@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>darian-私人全文检索页.html</title>
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/darian.own.css">
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/darian.own.js"></script>
+    <!--    <script src="/js/sw-registration.js"></script>-->
+
+</head>
+
+<div id="my_html_body_id">
+    <br>
+    <div align="center">
+        <input type="button" value="重启" class="customer_button"
+               onclick="refresh_button_onclick()"/>
+
+        <input id="token_id" type="password" maxlength="20" autocomplete="off"/>
+
+        <input type="button" id="login_button_id" value="登陆" class="customer_button"
+               onclick="login_button_onclick()"/>
+
+        <a href="http://darian1996.github.io" target="_blank">
+            <input type="button" value="个人博客" class="customer_button">
+        </a>
+
+        <a href="/index.html" target="_blank">
+            <input type="button" value="搜索主页" class="customer_button">
+        </a>
+    </div>
+
+    <br/>
+
+    <div align="center">
+        <form id="form">
+            <input id="parm_id" maxlength="50" autocomplete="OFF" type="text"
+                   onkeypress="submit_button_onclick()" placeholder="请在这里输入关键词^_^"/>
+
+            <input type="button" id="submit_button_id" class="customer_button" value="搜索"
+                   onclick="submit_button_onclick()"/>
+        </form>
+    </div>
+
+    <div align="center">
+
+        <a target="_blank" id="_README_DIRECTORY_DOC_id">
+            <input type="button" value="工程目录" style="font-size: 25px;">
+        </a>
+        <a target="_blank" href="https://gitee.com/Darian1996/docs">
+            <input type="button" value="docs" style="font-size: 25px;">
+        </a>
+        <a target="_blank" href="https://gitee.com/-/ide/project/Darian1996/docs/edit/master/-/">
+            <input type="button" value="docs/edit" style="font-size: 25px;">
+        </a>
+        <a target="_blank" href="https://gitee.com/Darian1996/docs/settings">
+            <input type="button" value="docs/setting" style="font-size: 25px;">
+        </a>
+        <a target="_blank" href="https://gitee.com/Darian1996/projects">
+            <input type="button" value="gitee/projects" style="font-size: 25px;">
+        </a>
+
+<!--        <a target="_blank" href="http://www.darian.top:8848/nacos/">-->
+<!--            <input type="button" value="nacos" style="font-size: 25px;">-->
+<!--        </a>-->
+
+        <a target="_blank" href="http://www.darian.top:6004/nacos/">
+            <input type="button" value="deepin_nacos" style="font-size: 25px;">
+        </a>
+
+
+        <a target="_blank" href="/port.html">
+            <input type="button" value="port.html" style="font-size: 25px;">
+        </a>
+        <a target="_blank" href="/email.html">
+            <input type="button" value="email.html" style="font-size: 25px;">
+        </a>
+
+        <a target="_blank" href="/addIllegalIPSet?illegalIP=">
+            <input type="button" value="非法IP" style="font-size: 25px;">
+        </a>
+
+        <br/>
+        <a id="application_start_time"></a>
+        <a id="notifyMsg_id"></a>
+    </div>
+
+    <br/>
+
+    <!-- border 外边框-->
+    <!-- cellpadding 内边距-->
+    <table id="search_result_table_id" cellpadding="10" cellspacing="0" border="5px">
+        <thead id="search_result_table_head">
+        <th width="150px">标题</th>
+        <th>文章内容</th>
+        </thead>
+
+        <tbody id="table_tbody_id">
+        </tbody>
+    </table>
+
+</div>
+
+<style>
+
+    /* 表格里的图片，最大填充整个宽度， */
+    #table_tbody_id img {
+        max-width: 100%;
+    }
+
+    /* 页面的格式 */
+    #my_html_body_id {
+        /* 上， 右，下，左*/
+        margin: 0% 0%;
+    }
+
+
+    /* 搜索大表格的整体的格式 */
+    #search_result_table_id {
+        border-width: 5px;
+        width: 85%;
+        align-content: center;
+        background-color: #e6e5e5;
+        margin: 0px auto;
+    }
+
+    /* 密码 的格式 */
+    #token_id {
+        background-color: lavender;
+        color: black;
+        width: 20%;
+        height: 42px;
+        font-size: 25px;
+        min-width: 68px;
+    }
+
+
+    /* 输入搜索框 的格式 */
+    #parm_id {
+        background-color: lavender;
+        color: black;
+        width: 50%;
+        height: 42px;
+        font-size: 25px;
+        min-width: 500px;
+    }
+
+
+</style>
+
+<div align="center">
+    豫ICP备20012533号
+</div>
+
+
+<script>
+    searchUrl = "https://www.darian.top/search";
+    refreshUrl = "https://www.darian.top/refresh";
+    contentDetailHtmlUrl = "https://www.darian.top/contentDetail.html";
+
+    /* 初始化连接常量 */
+    function initContantsUrl() {
+        console.log("function{initContantsUrl}.start")
+        // 当前网页的地址
+        if (new RegExp("^http://localhost").test(location.href)) {
+            searchUrl = "/search";
+            refreshUrl = "/refresh";
+            contentDetailHtmlUrl = "/contentDetail.html";
+
+        }
+        if (new RegExp("^https://darian1996.gitee.io").test(location.href)) {
+            contentDetailHtmlUrl = "https://darian1996.gitee.io/contentDetail.html";
+        }
+
+        if (new RegExp("^https://darian1996.github.io").test(location.href)) {
+            contentDetailHtmlUrl = "https://darian1996.github.io/docs_search/contentDetail";
+        }
+
+        $('#_README_DIRECTORY_DOC_id').attr("href", contentDetailHtmlUrl + "?cache=true&filePathSubDocsFilePath=_README_DIRECTORY_DOC.md");
+
+        console.log('\t[location.href]:' + location.href);
+        console.log('\t[searchUrl]:' + searchUrl);
+        console.log('\t[refreshUrl]:' + refreshUrl);
+        console.log('\t[contentDetailHtmlUrl]:' + contentDetailHtmlUrl)
+    }
+
+    // 监听 enter 事件, return false 禁止页面刷新
+    $(function () {
+        $(document).keydown(function (event) {
+            if (event.keyCode == 13) {
+                $("#submit_button_id").click();
+                // return false 禁止页面刷新
+                return false;
+            }
+        });
+    });
+
+    function replaceIllegalStr(str) {
+        console.log('function{replaceIllegalStr}.....')
+        console.log("\t[parm_value_old]replaceIllegalStr.before:" + str);
+        var reg;
+        var illegal_list = ["/", "\\",
+            "-",
+            "[", "]",
+            "{", "}",
+            "<", ">",
+            "＜", "＞",
+            "「", "」",
+            "：", "；",
+            "、", "•",
+            "^", "'", "\"",
+            "\r", "\r\n", "\\n", "\n"];
+        for (var i = 0; i < illegal_list.length; i++) {
+            if (str.indexOf(illegal_list[i]) >= 0) {
+                if (illegal_list[i] == '\\' || illegal_list[i] == '[') {
+                    reg = new RegExp('\\' + illegal_list[i], "g");
+                } else {
+                    reg = new RegExp(illegal_list[i], "g");
+                }
+                str = str.replace(reg, '');
+            }
+        }
+
+        console.log("\t自动去除非法字符 ... ... end")
+        // return str.trim();
+        return str;
+    };
+
+    function refresh_button_onclick() {
+        if (!confirm('确定重启吗！！！')) {
+            return false;
+        }
+        var token_value = getCookie("token");
+
+        if (!check_token_value(token_value)) {
+            return false;
+        }
+
+        $.ajax({
+            url: refreshUrl,
+            type: 'get',
+            dataType: 'json',
+            changeOrigin: true, // 是否跨域
+            data: null,
+            headers: {
+                'token': getCookie("token"),
+            },
+            beforeSend: function (XMLHttpRequest) {
+                $('#notifyMsg_id').html("Please waiting, Loading data ....");
+            },
+            success: function (datas, state) {
+                console.log(state);
+                $('#notifyMsg_id').html(datas.notifyMsg);
+            },
+            error: function (xhr, state, errorThrown) {
+                console.log(state);
+                $('#notifyMsg_id').html("重启失败，请联系管理员！！！");
+            }
+
+        })
+    };
+
+
+    function login_button_onclick() {
+        if (!confirm('确定登陆吗！！！')) {
+            return false;
+        }
+        var token_value = $('#token_id').val();
+        var cookie_name = 'token';
+        setCookie7Days(cookie_name, token_value);
+        $('#token_id').val("");
+    }
+
+    function submit_button_onclick() {
+        console.log('function{submit_button_onclick}......')
+        var token_value = getCookie("token");
+        var parm_value_old = $('#parm_id').val();
+        var parm_value = replaceIllegalStr(parm_value_old)
+
+        setCookie7Days('parm', parm_value);
+        $('#parm_id').val(parm_value);
+
+        if (!check_token_value(token_value) || !check_parm_value(parm_value.trim())) {
+            return;
+        }
+
+
+        $.ajax({
+            url: searchUrl,
+            type: 'get',
+            dataType: 'json',
+            changeOrigin: true, // 是否跨域
+            data: "cache=true&parm=" + encodeURIComponent(parm_value),
+            headers: {
+                'token': getCookie("token"),
+            },
+            beforeSend: function (XMLHttpRequest) {
+                $('#notifyMsg_id').html("Please waiting, Loading data ....");
+            },
+            success: function (responseBody, state) {
+
+                console.log(state);
+
+                console.log(responseBody.applicationStartTime);
+                $('#application_start_time').html("项目启动时间：" + responseBody.applicationStartTime);
+
+                $('#notifyMsg_id').html(responseBody.notifyMsg);
+                $('#parm_id').html(responseBody.parm);
+                var table_tbody_id_html = "";
+
+                for (var i = 0; i < responseBody.dataBody.length; i++) {
+                    var fileSimpleName = responseBody.dataBody[i].fileSimpleName;
+                    var contentDetail = responseBody.dataBody[i].contentDetail;
+                    var filePathSubDocsFilePath = responseBody.dataBody[i].filePathSubDocsFilePath;
+                    var gitHubUrl = responseBody.dataBody[i].gitHubUrl;
+                    var giteeUrl = responseBody.dataBody[i].giteeUrl;
+                    var editUrl = responseBody.dataBody[i].editUrl;
+
+                    /* 拼接 tr 标签 */
+
+                    table_tbody_id_html += "<tr  style='background-color: white'>";
+                    table_tbody_id_html += "<td  style='; word-break:break-all;'>" +
+                        "<br/><br/><a href=\'" + contentDetailHtmlUrl
+                        + "?cache=true&filePathSubDocsFilePath=" + filePathSubDocsFilePath
+                        + "\' target='_blank'>"
+                        + fileSimpleName
+                        + "</a>\n" +
+
+                        "<br/><br/><a href=\'" + gitHubUrl + "\' target='_blank' >GitHub</a>\n" +
+                        "<br/><a href=\'" + giteeUrl + "\' target='_blank' >Gitee</a>\n" +
+                        "<br/><a href=\'" + editUrl + "\' target='_blank' >editUrl</a>\n" +
+                        "</td>";
+                    table_tbody_id_html += "<td style=' word-break:break-all;'>" +
+                        contentDetail +
+                        "</td>";
+                    table_tbody_id_html += "</tr>";
+                }
+                $('#table_tbody_id').html(table_tbody_id_html);
+
+            }
+            ,
+            error: function (xhr, state, errorThrown) {
+                $('#notifyMsg_id').html("查询出错，请联系管理员！！！");
+                $('#table_tbody_id').html("");
+            }
+
+        })
+    };
+
+    // 监听页面的 onload 事件，打开事件
+    window.onload = function () {
+        bodyOnLoad();
+    }
+
+
+    // 用户关闭页面或刷新浏览器时会触发onunload事件
+    function bodyOnLoad() {
+        console.log("function.{bodyOnLoad}....")
+        initContantsUrl();
+        $('#notifyMsg_id').html("欢迎，你来 搜索 ... ... ");
+
+        console.log("\n");
+        console.log("\t[parm]:" + getCookie("parm"));
+
+        var parm_value = getCookie("parm");
+        if (!parm_value) {
+            // cookie 取不到值，不调用 onClick 方法
+            return false;
+        }
+
+        $('#parm_id').val(parm_value);
+        submit_button_onclick();
+    };
+
+
+</script>
+</html>

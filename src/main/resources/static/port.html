@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>port.html</title>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script>
+
+        var PORT_LIST = [2181, 6379, 8848, 9092, 3306, 6000, 6001, 6002, 6003, 6004, 6005];
+        var IP = "";
+
+        function init_add_white_ip() {
+            $.ajax({
+                url: "https://httpbin.org/ip",
+                type: 'get',
+                dataType: 'json',
+                async: false, // 异步改为同步，用来做 本身 IP 的初始化
+                changeOrigin: true, // 是否跨域
+                success: function (datas, state) {
+                    var ip = datas.origin;
+                    IP = datas.origin;
+
+
+                    var add_ip_port = "";
+
+                    PORT_LIST.forEach((port, index) => {
+                        add_ip_port = add_ip_port
+                            + "firewall-cmd --permanent --add-rich-rule='rule family='ipv4' source address='"
+                            + ip + "' port protocol='tcp' port='" + port + "' accept'\n";
+                    })
+
+                    add_ip_port += "firewall-cmd --reload\n";
+                    add_ip_port += "firewall-cmd --list-all\n";
+
+                    console.log(add_ip_port)
+                    $('#add_IP').html(add_ip_port);
+
+
+                    var delete_ip_port = "";
+                    PORT_LIST.forEach((port, index) => {
+                        delete_ip_port = delete_ip_port
+                            + "firewall-cmd " +
+                            "--permanent " +
+                            "--remove-rich-rule='rule " +
+                            "family='ipv4' " +
+                            "source " +
+                            "address='" + ip + "' " +
+                            "port protocol='tcp' " +
+                            "port='" + port + "' " +
+                            "accept' \n";
+                    })
+
+                    delete_ip_port += "firewall-cmd --reload\n";
+                    delete_ip_port += "firewall-cmd --list-all\n";
+
+                    console.log(delete_ip_port)
+                    $('#delete_IP').html(delete_ip_port);
+                }
+                ,
+                error: function (xhr, state, errorThrown) {
+                    console.log("error");
+                }
+
+            })
+        }
+
+
+        function refresh_white_ip() {
+            console.log('whiteIP[' + IP + ']');
+            $.ajax({
+                url: "/refreshWhiteIpList",
+                type: 'get',
+                dataType: 'json',
+                changeOrigin: true, // 是否跨域
+                data: {
+                    'whiteIP': IP,
+                },
+                success: function (datas, state) {
+                    var result_String = datas.dataBody;
+                    console.log(result_String);
+
+                    $('#refresh_White_IP_List').html(result_String);
+                }
+                ,
+                error: function (xhr, state, errorThrown) {
+                    console.log("error");
+                }
+
+            })
+        }
+
+        window.onload = function () {
+            init_add_white_ip();
+            refresh_white_ip();
+        }
+    </script>
+</head>
+<body>
+<div>
+    <a href="https://blog.csdn.net/leigin/article/details/92796665">https://blog.csdn.net/leigin/article/details/92796665</a>
+    &nbsp;&nbsp;&nbsp;
+    命令行下查看出口IP(你上网时暴露在公网上的IP地址)
+    &nbsp;&nbsp;&nbsp;
+    找到本机所在的公网 IP，然后开启对应的端口
+    <br/>
+    zookeeper 2181, nacos 8848, redis 6379, kafka 9092, mysql 3306,
+    <br/>
+    deepin
+    deepin_ssh 6000, kafka 6001 ,zookeeper 6002, redis 6003, nacos 6004, mysql 6005
+</div>
+<br/>
+
+
+<div align="center" style="font-size: 25px">
+    刷新 IP 白名单的运行结果
+</div>
+<textarea id="refresh_White_IP_List" style="width: 100%;height: 480px">
+
+</textarea>
+
+
+<br/>
+<div align="center" style="font-size: 25px">
+    添加 IP 白名单的 命令：
+</div>
+<textarea id="add_IP" style="width: 100%;height: 180px">
+
+</textarea>
+
+<div align="center" style="font-size: 25px">
+    删除 IP 白名单的 命令：
+</div>
+<textarea id="delete_IP" style="width: 100%;height: 180px">
+
+</textarea>
+
+</body>
+
+</html>

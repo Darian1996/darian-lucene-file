@@ -1,0 +1,1915 @@
+{
+  "7_1": {
+    "gradeNum": 7,
+    "classNum": 1,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        99
+      ],
+      "MUSIC": [
+        139
+      ],
+      "CHINESE_COMPOSITION": [
+        1
+      ],
+      "PHYSICAL_EDUCATION": [
+        128,
+        130
+      ],
+      "ENGLISH": [
+        50
+      ],
+      "PSYCHOLOGICAL_SAFETY": [
+        126
+      ],
+      "CHINESE": [
+        1
+      ],
+      "MATH": [
+        26
+      ],
+      "POLITICAL": [
+        104
+      ],
+      "PAINTING": [
+        143
+      ],
+      "BIOLOGY": [
+        93
+      ],
+      "SAFETY_EDUCATION": [
+        147
+      ],
+      "GEOGRAPHY": [
+        122
+      ],
+      "HISTORY": [
+        114
+      ]
+    }
+  },
+  "7_2": {
+    "gradeNum": 7,
+    "classNum": 2,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        99
+      ],
+      "MUSIC": [
+        139
+      ],
+      "ENGLISH": [
+        50
+      ],
+      "PHYSICAL_EDUCATION": [
+        128,
+        130
+      ],
+      "CHINESE_COMPOSITION": [
+        1
+      ],
+      "PSYCHOLOGICAL_SAFETY": [
+        126
+      ],
+      "CHINESE": [
+        1
+      ],
+      "MATH": [
+        26
+      ],
+      "POLITICAL": [
+        104
+      ],
+      "PAINTING": [
+        143
+      ],
+      "BIOLOGY": [
+        93
+      ],
+      "SAFETY_EDUCATION": [
+        147
+      ],
+      "GEOGRAPHY": [
+        122
+      ],
+      "HISTORY": [
+        114
+      ]
+    }
+  },
+  "7_3": {
+    "gradeNum": 7,
+    "classNum": 3,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        99
+      ],
+      "MUSIC": [
+        139
+      ],
+      "CHINESE_COMPOSITION": [
+        2
+      ],
+      "PHYSICAL_EDUCATION": [
+        128,
+        130
+      ],
+      "ENGLISH": [
+        51
+      ],
+      "PSYCHOLOGICAL_SAFETY": [
+        127
+      ],
+      "CHINESE": [
+        2
+      ],
+      "MATH": [
+        27
+      ],
+      "POLITICAL": [
+        105
+      ],
+      "PAINTING": [
+        143
+      ],
+      "BIOLOGY": [
+        93
+      ],
+      "SAFETY_EDUCATION": [
+        147
+      ],
+      "GEOGRAPHY": [
+        122
+      ],
+      "HISTORY": [
+        115
+      ]
+    }
+  },
+  "7_4": {
+    "gradeNum": 7,
+    "classNum": 4,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        99
+      ],
+      "MUSIC": [
+        139
+      ],
+      "ENGLISH": [
+        51
+      ],
+      "CHINESE_COMPOSITION": [
+        2
+      ],
+      "PHYSICAL_EDUCATION": [
+        128,
+        130
+      ],
+      "PSYCHOLOGICAL_SAFETY": [
+        127
+      ],
+      "CHINESE": [
+        2
+      ],
+      "MATH": [
+        27
+      ],
+      "POLITICAL": [
+        105
+      ],
+      "PAINTING": [
+        143
+      ],
+      "BIOLOGY": [
+        93
+      ],
+      "SAFETY_EDUCATION": [
+        147
+      ],
+      "GEOGRAPHY": [
+        122
+      ],
+      "HISTORY": [
+        115
+      ]
+    }
+  },
+  "7_5": {
+    "gradeNum": 7,
+    "classNum": 5,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        99
+      ],
+      "MUSIC": [
+        139
+      ],
+      "ENGLISH": [
+        52
+      ],
+      "CHINESE_COMPOSITION": [
+        3
+      ],
+      "PHYSICAL_EDUCATION": [
+        128,
+        129
+      ],
+      "PSYCHOLOGICAL_SAFETY": [
+        127
+      ],
+      "CHINESE": [
+        3
+      ],
+      "MATH": [
+        28
+      ],
+      "POLITICAL": [
+        107
+      ],
+      "PAINTING": [
+        143
+      ],
+      "BIOLOGY": [
+        94
+      ],
+      "SAFETY_EDUCATION": [
+        147
+      ],
+      "GEOGRAPHY": [
+        123
+      ],
+      "HISTORY": [
+        116
+      ]
+    }
+  },
+  "7_6": {
+    "gradeNum": 7,
+    "classNum": 6,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        99
+      ],
+      "MUSIC": [
+        139
+      ],
+      "CHINESE_COMPOSITION": [
+        3
+      ],
+      "PHYSICAL_EDUCATION": [
+        128,
+        129
+      ],
+      "ENGLISH": [
+        52
+      ],
+      "PSYCHOLOGICAL_SAFETY": [
+        127
+      ],
+      "CHINESE": [
+        3
+      ],
+      "MATH": [
+        28
+      ],
+      "POLITICAL": [
+        107
+      ],
+      "PAINTING": [
+        143
+      ],
+      "BIOLOGY": [
+        94
+      ],
+      "SAFETY_EDUCATION": [
+        147
+      ],
+      "GEOGRAPHY": [
+        123
+      ],
+      "HISTORY": [
+        116
+      ]
+    }
+  },
+  "7_7": {
+    "gradeNum": 7,
+    "classNum": 7,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        99
+      ],
+      "MUSIC": [
+        139
+      ],
+      "PHYSICAL_EDUCATION": [
+        128,
+        129
+      ],
+      "ENGLISH": [
+        53
+      ],
+      "CHINESE_COMPOSITION": [
+        4
+      ],
+      "PSYCHOLOGICAL_SAFETY": [
+        127
+      ],
+      "CHINESE": [
+        4
+      ],
+      "MATH": [
+        29
+      ],
+      "POLITICAL": [
+        107
+      ],
+      "PAINTING": [
+        143
+      ],
+      "BIOLOGY": [
+        94
+      ],
+      "SAFETY_EDUCATION": [
+        147
+      ],
+      "GEOGRAPHY": [
+        123
+      ],
+      "HISTORY": [
+        116
+      ]
+    }
+  },
+  "7_8": {
+    "gradeNum": 7,
+    "classNum": 8,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        99
+      ],
+      "MUSIC": [
+        139
+      ],
+      "CHINESE_COMPOSITION": [
+        4
+      ],
+      "PHYSICAL_EDUCATION": [
+        128,
+        129
+      ],
+      "ENGLISH": [
+        54
+      ],
+      "PSYCHOLOGICAL_SAFETY": [
+        127
+      ],
+      "CHINESE": [
+        4
+      ],
+      "MATH": [
+        29
+      ],
+      "POLITICAL": [
+        108
+      ],
+      "PAINTING": [
+        143
+      ],
+      "BIOLOGY": [
+        95
+      ],
+      "SAFETY_EDUCATION": [
+        147
+      ],
+      "GEOGRAPHY": [
+        123
+      ],
+      "HISTORY": [
+        116
+      ]
+    }
+  },
+  "7_9": {
+    "gradeNum": 7,
+    "classNum": 9,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        99
+      ],
+      "MUSIC": [
+        139
+      ],
+      "CHINESE_COMPOSITION": [
+        5
+      ],
+      "PHYSICAL_EDUCATION": [
+        129,
+        130
+      ],
+      "ENGLISH": [
+        54
+      ],
+      "PSYCHOLOGICAL_SAFETY": [
+        127
+      ],
+      "CHINESE": [
+        5
+      ],
+      "MATH": [
+        30
+      ],
+      "POLITICAL": [
+        108
+      ],
+      "PAINTING": [],
+      "BIOLOGY": [
+        95
+      ],
+      "SAFETY_EDUCATION": [
+        147
+      ],
+      "GEOGRAPHY": [
+        123
+      ],
+      "HISTORY": [
+        116
+      ]
+    }
+  },
+  "7_10": {
+    "gradeNum": 7,
+    "classNum": 10,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        99
+      ],
+      "MUSIC": [
+        139
+      ],
+      "PHYSICAL_EDUCATION": [
+        129,
+        130
+      ],
+      "CHINESE_COMPOSITION": [
+        6
+      ],
+      "ENGLISH": [
+        55
+      ],
+      "PSYCHOLOGICAL_SAFETY": [
+        127
+      ],
+      "CHINESE": [
+        6
+      ],
+      "MATH": [
+        30
+      ],
+      "POLITICAL": [
+        108
+      ],
+      "PAINTING": [
+        143
+      ],
+      "BIOLOGY": [
+        94
+      ],
+      "SAFETY_EDUCATION": [
+        147
+      ],
+      "GEOGRAPHY": [
+        123
+      ],
+      "HISTORY": [
+        116
+      ]
+    }
+  },
+  "7_11": {
+    "gradeNum": 7,
+    "classNum": 11,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        99
+      ],
+      "MUSIC": [
+        140
+      ],
+      "CHINESE_COMPOSITION": [
+        7
+      ],
+      "ENGLISH": [
+        55
+      ],
+      "PHYSICAL_EDUCATION": [
+        129,
+        130
+      ],
+      "PSYCHOLOGICAL_SAFETY": [
+        127
+      ],
+      "CHINESE": [
+        7
+      ],
+      "MATH": [
+        31
+      ],
+      "POLITICAL": [
+        108
+      ],
+      "PAINTING": [
+        143
+      ],
+      "BIOLOGY": [
+        95
+      ],
+      "SAFETY_EDUCATION": [
+        147
+      ],
+      "GEOGRAPHY": [
+        124
+      ],
+      "HISTORY": [
+        115
+      ]
+    }
+  },
+  "7_12": {
+    "gradeNum": 7,
+    "classNum": 12,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        99
+      ],
+      "MUSIC": [
+        140
+      ],
+      "ENGLISH": [
+        56
+      ],
+      "PHYSICAL_EDUCATION": [
+        129,
+        130
+      ],
+      "CHINESE_COMPOSITION": [
+        7
+      ],
+      "PSYCHOLOGICAL_SAFETY": [
+        127
+      ],
+      "CHINESE": [
+        7
+      ],
+      "MATH": [
+        31
+      ],
+      "POLITICAL": [
+        108
+      ],
+      "PAINTING": [
+        144
+      ],
+      "BIOLOGY": [
+        95
+      ],
+      "SAFETY_EDUCATION": [
+        147
+      ],
+      "GEOGRAPHY": [
+        124
+      ],
+      "HISTORY": [
+        115
+      ]
+    }
+  },
+  "7_13": {
+    "gradeNum": 7,
+    "classNum": 13,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        100
+      ],
+      "MUSIC": [
+        140
+      ],
+      "CHINESE_COMPOSITION": [
+        8
+      ],
+      "PHYSICAL_EDUCATION": [
+        129,
+        130
+      ],
+      "ENGLISH": [
+        57
+      ],
+      "PSYCHOLOGICAL_SAFETY": [
+        127
+      ],
+      "CHINESE": [
+        8
+      ],
+      "MATH": [
+        32
+      ],
+      "POLITICAL": [
+        107
+      ],
+      "PAINTING": [
+        144
+      ],
+      "BIOLOGY": [
+        96
+      ],
+      "SAFETY_EDUCATION": [
+        147
+      ],
+      "GEOGRAPHY": [
+        125
+      ],
+      "HISTORY": [
+        115
+      ]
+    }
+  },
+  "7_14": {
+    "gradeNum": 7,
+    "classNum": 14,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        100
+      ],
+      "MUSIC": [
+        140
+      ],
+      "CHINESE_COMPOSITION": [
+        8
+      ],
+      "PHYSICAL_EDUCATION": [
+        129,
+        130
+      ],
+      "ENGLISH": [
+        57
+      ],
+      "PSYCHOLOGICAL_SAFETY": [
+        127
+      ],
+      "CHINESE": [
+        8
+      ],
+      "MATH": [
+        33
+      ],
+      "POLITICAL": [
+        107
+      ],
+      "PAINTING": [
+        144
+      ],
+      "BIOLOGY": [
+        96
+      ],
+      "SAFETY_EDUCATION": [
+        147
+      ],
+      "GEOGRAPHY": [
+        125
+      ],
+      "HISTORY": [
+        115
+      ]
+    }
+  },
+  "8_1": {
+    "gradeNum": 8,
+    "classNum": 1,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        100
+      ],
+      "MUSIC": [
+        141
+      ],
+      "PHYSICAL_EDUCATION": [
+        131,
+        133
+      ],
+      "CHINESE_COMPOSITION": [
+        9
+      ],
+      "ENGLISH": [
+        58
+      ],
+      "PHYSICAL": [
+        74
+      ],
+      "CHINESE": [
+        9
+      ],
+      "MATH": [
+        34
+      ],
+      "POLITICAL": [
+        109
+      ],
+      "PAINTING": [
+        145
+      ],
+      "BIOLOGY": [
+        97
+      ],
+      "GEOGRAPHY": [
+        124
+      ],
+      "HISTORY": [
+        117
+      ]
+    }
+  },
+  "8_2": {
+    "gradeNum": 8,
+    "classNum": 2,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        100
+      ],
+      "MUSIC": [
+        141
+      ],
+      "PHYSICAL_EDUCATION": [
+        75
+      ],
+      "CHINESE_COMPOSITION": [
+        10
+      ],
+      "ENGLISH": [
+        58
+      ],
+      "PHYSICAL": [
+        75
+      ],
+      "CHINESE": [
+        10
+      ],
+      "MATH": [
+        34
+      ],
+      "POLITICAL": [
+        109
+      ],
+      "PAINTING": [
+        145
+      ],
+      "BIOLOGY": [
+        97
+      ],
+      "GEOGRAPHY": [
+        124
+      ],
+      "HISTORY": [
+        117
+      ]
+    }
+  },
+  "8_3": {
+    "gradeNum": 8,
+    "classNum": 3,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        101
+      ],
+      "MUSIC": [
+        141
+      ],
+      "ENGLISH": [
+        59
+      ],
+      "PHYSICAL_EDUCATION": [
+        131,
+        133
+      ],
+      "CHINESE_COMPOSITION": [
+        10
+      ],
+      "PHYSICAL": [
+        75
+      ],
+      "CHINESE": [
+        10
+      ],
+      "MATH": [
+        35
+      ],
+      "POLITICAL": [
+        109
+      ],
+      "PAINTING": [
+        145
+      ],
+      "BIOLOGY": [
+        97
+      ],
+      "GEOGRAPHY": [
+        124
+      ],
+      "HISTORY": [
+        118
+      ]
+    }
+  },
+  "8_4": {
+    "gradeNum": 8,
+    "classNum": 4,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        101
+      ],
+      "MUSIC": [
+        141
+      ],
+      "PHYSICAL_EDUCATION": [
+        131,
+        133
+      ],
+      "ENGLISH": [
+        60
+      ],
+      "CHINESE_COMPOSITION": [
+        11
+      ],
+      "PHYSICAL": [
+        75
+      ],
+      "CHINESE": [
+        11
+      ],
+      "MATH": [
+        35
+      ],
+      "POLITICAL": [
+        109
+      ],
+      "PAINTING": [
+        145
+      ],
+      "BIOLOGY": [
+        97
+      ],
+      "GEOGRAPHY": [
+        124
+      ],
+      "HISTORY": [
+        118
+      ]
+    }
+  },
+  "8_5": {
+    "gradeNum": 8,
+    "classNum": 5,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        101
+      ],
+      "MUSIC": [
+        141
+      ],
+      "CHINESE_COMPOSITION": [
+        12
+      ],
+      "ENGLISH": [
+        61
+      ],
+      "PHYSICAL_EDUCATION": [
+        76
+      ],
+      "PHYSICAL": [
+        76
+      ],
+      "CHINESE": [
+        12
+      ],
+      "MATH": [
+        36
+      ],
+      "POLITICAL": [
+        110
+      ],
+      "PAINTING": [
+        145
+      ],
+      "BIOLOGY": [
+        97
+      ],
+      "GEOGRAPHY": [
+        124
+      ],
+      "HISTORY": [
+        118
+      ]
+    }
+  },
+  "8_6": {
+    "gradeNum": 8,
+    "classNum": 6,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        101
+      ],
+      "MUSIC": [
+        141
+      ],
+      "ENGLISH": [
+        61
+      ],
+      "CHINESE_COMPOSITION": [
+        12
+      ],
+      "PHYSICAL_EDUCATION": [
+        76
+      ],
+      "PHYSICAL": [
+        76
+      ],
+      "CHINESE": [
+        12
+      ],
+      "MATH": [
+        36
+      ],
+      "POLITICAL": [
+        110
+      ],
+      "PAINTING": [
+        145
+      ],
+      "BIOLOGY": [
+        98
+      ],
+      "GEOGRAPHY": [
+        125
+      ],
+      "HISTORY": [
+        118
+      ]
+    }
+  },
+  "8_7": {
+    "gradeNum": 8,
+    "classNum": 7,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        101
+      ],
+      "MUSIC": [
+        141
+      ],
+      "PHYSICAL_EDUCATION": [
+        132,
+        133
+      ],
+      "CHINESE_COMPOSITION": [
+        13
+      ],
+      "ENGLISH": [
+        59
+      ],
+      "PHYSICAL": [
+        77
+      ],
+      "CHINESE": [
+        13
+      ],
+      "MATH": [
+        37
+      ],
+      "POLITICAL": [
+        111
+      ],
+      "PAINTING": [
+        145
+      ],
+      "BIOLOGY": [
+        98
+      ],
+      "GEOGRAPHY": [
+        125
+      ],
+      "HISTORY": [
+        118
+      ]
+    }
+  },
+  "8_8": {
+    "gradeNum": 8,
+    "classNum": 8,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        101
+      ],
+      "MUSIC": [
+        141
+      ],
+      "PHYSICAL_EDUCATION": [
+        132,
+        133
+      ],
+      "CHINESE_COMPOSITION": [
+        13
+      ],
+      "ENGLISH": [
+        60
+      ],
+      "PHYSICAL": [
+        77
+      ],
+      "CHINESE": [
+        13
+      ],
+      "MATH": [
+        37
+      ],
+      "POLITICAL": [
+        111
+      ],
+      "PAINTING": [
+        145
+      ],
+      "BIOLOGY": [
+        98
+      ],
+      "GEOGRAPHY": [
+        125
+      ],
+      "HISTORY": [
+        118
+      ]
+    }
+  },
+  "8_9": {
+    "gradeNum": 8,
+    "classNum": 9,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        101
+      ],
+      "MUSIC": [
+        141
+      ],
+      "PHYSICAL_EDUCATION": [
+        78
+      ],
+      "ENGLISH": [
+        62
+      ],
+      "CHINESE_COMPOSITION": [
+        14
+      ],
+      "PHYSICAL": [
+        78
+      ],
+      "CHINESE": [
+        14
+      ],
+      "MATH": [
+        38
+      ],
+      "POLITICAL": [
+        111
+      ],
+      "PAINTING": [
+        145
+      ],
+      "BIOLOGY": [
+        95
+      ],
+      "GEOGRAPHY": [
+        125
+      ],
+      "HISTORY": [
+        119
+      ]
+    }
+  },
+  "8_10": {
+    "gradeNum": 8,
+    "classNum": 10,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        101
+      ],
+      "MUSIC": [
+        141
+      ],
+      "ENGLISH": [
+        62
+      ],
+      "PHYSICAL_EDUCATION": [
+        78
+      ],
+      "CHINESE_COMPOSITION": [
+        14
+      ],
+      "PHYSICAL": [
+        78
+      ],
+      "CHINESE": [
+        14
+      ],
+      "MATH": [
+        38
+      ],
+      "POLITICAL": [
+        111
+      ],
+      "PAINTING": [
+        145
+      ],
+      "BIOLOGY": [
+        95
+      ],
+      "GEOGRAPHY": [
+        125
+      ],
+      "HISTORY": [
+        119
+      ]
+    }
+  },
+  "8_11": {
+    "gradeNum": 8,
+    "classNum": 11,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        101
+      ],
+      "MUSIC": [
+        141
+      ],
+      "ENGLISH": [
+        63
+      ],
+      "PHYSICAL_EDUCATION": [
+        78
+      ],
+      "CHINESE_COMPOSITION": [
+        15
+      ],
+      "PHYSICAL": [
+        78
+      ],
+      "CHINESE": [
+        15
+      ],
+      "MATH": [
+        39
+      ],
+      "POLITICAL": [
+        111
+      ],
+      "PAINTING": [
+        145
+      ],
+      "BIOLOGY": [
+        96
+      ],
+      "GEOGRAPHY": [
+        123
+      ],
+      "HISTORY": [
+        119
+      ]
+    }
+  },
+  "8_12": {
+    "gradeNum": 8,
+    "classNum": 12,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        101
+      ],
+      "MUSIC": [
+        141
+      ],
+      "CHINESE_COMPOSITION": [
+        15
+      ],
+      "ENGLISH": [
+        63
+      ],
+      "PHYSICAL_EDUCATION": [
+        79
+      ],
+      "PHYSICAL": [
+        79
+      ],
+      "CHINESE": [
+        15
+      ],
+      "MATH": [
+        39
+      ],
+      "POLITICAL": [
+        112
+      ],
+      "PAINTING": [
+        145
+      ],
+      "BIOLOGY": [
+        96
+      ],
+      "GEOGRAPHY": [
+        123
+      ],
+      "HISTORY": [
+        119
+      ]
+    }
+  },
+  "8_13": {
+    "gradeNum": 8,
+    "classNum": 13,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        101
+      ],
+      "MUSIC": [
+        142
+      ],
+      "ENGLISH": [
+        64
+      ],
+      "CHINESE_COMPOSITION": [
+        16
+      ],
+      "PHYSICAL_EDUCATION": [
+        79
+      ],
+      "PHYSICAL": [
+        79
+      ],
+      "CHINESE": [
+        16
+      ],
+      "MATH": [
+        40
+      ],
+      "POLITICAL": [
+        112
+      ],
+      "PAINTING": [
+        145
+      ],
+      "BIOLOGY": [
+        93
+      ],
+      "GEOGRAPHY": [
+        122
+      ],
+      "HISTORY": [
+        119
+      ]
+    }
+  },
+  "8_14": {
+    "gradeNum": 8,
+    "classNum": 14,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        101
+      ],
+      "MUSIC": [
+        142
+      ],
+      "ENGLISH": [
+        64
+      ],
+      "CHINESE_COMPOSITION": [
+        16
+      ],
+      "PHYSICAL_EDUCATION": [
+        79
+      ],
+      "PHYSICAL": [
+        79
+      ],
+      "CHINESE": [
+        16
+      ],
+      "MATH": [
+        40
+      ],
+      "POLITICAL": [
+        112
+      ],
+      "PAINTING": [
+        145
+      ],
+      "BIOLOGY": [
+        93
+      ],
+      "GEOGRAPHY": [
+        122
+      ],
+      "HISTORY": [
+        119
+      ]
+    }
+  },
+  "8_15": {
+    "gradeNum": 8,
+    "classNum": 15,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        101
+      ],
+      "MUSIC": [
+        142
+      ],
+      "CHINESE_COMPOSITION": [
+        17
+      ],
+      "PHYSICAL_EDUCATION": [
+        74
+      ],
+      "ENGLISH": [
+        65
+      ],
+      "PHYSICAL": [
+        74
+      ],
+      "CHINESE": [
+        17
+      ],
+      "MATH": [
+        41
+      ],
+      "POLITICAL": [
+        112
+      ],
+      "PAINTING": [
+        145
+      ],
+      "BIOLOGY": [
+        94
+      ],
+      "GEOGRAPHY": [
+        122
+      ],
+      "HISTORY": [
+        117
+      ]
+    }
+  },
+  "8_16": {
+    "gradeNum": 8,
+    "classNum": 16,
+    "courseTeacherIdMap": {
+      "MICROCOMPUTER": [
+        101
+      ],
+      "MUSIC": [
+        142
+      ],
+      "CHINESE_COMPOSITION": [
+        17
+      ],
+      "PHYSICAL_EDUCATION": [
+        131,
+        134
+      ],
+      "ENGLISH": [
+        65
+      ],
+      "PHYSICAL": [
+        74
+      ],
+      "CHINESE": [
+        17
+      ],
+      "MATH": [
+        41
+      ],
+      "POLITICAL": [
+        112
+      ],
+      "PAINTING": [
+        145
+      ],
+      "BIOLOGY": [
+        94
+      ],
+      "GEOGRAPHY": [
+        122
+      ],
+      "HISTORY": [
+        117
+      ]
+    }
+  },
+  "9_1": {
+    "gradeNum": 9,
+    "classNum": 1,
+    "courseTeacherIdMap": {
+      "POLITICAL": [
+        104
+      ],
+      "PHYSICAL_EDUCATION": [
+        135,
+        137
+      ],
+      "CHINESE_COMPOSITION": [
+        18
+      ],
+      "ENGLISH": [
+        66
+      ],
+      "PHYSICAL": [
+        80
+      ],
+      "CHEMISTRY": [
+        87
+      ],
+      "CHINESE": [
+        18
+      ],
+      "MATH": [
+        42
+      ],
+      "HISTORY": [
+        114
+      ]
+    }
+  },
+  "9_2": {
+    "gradeNum": 9,
+    "classNum": 2,
+    "courseTeacherIdMap": {
+      "POLITICAL": [
+        104
+      ],
+      "PHYSICAL_EDUCATION": [
+        135,
+        137
+      ],
+      "CHINESE_COMPOSITION": [
+        18
+      ],
+      "ENGLISH": [
+        66
+      ],
+      "PHYSICAL": [
+        80
+      ],
+      "CHEMISTRY": [
+        88
+      ],
+      "CHINESE": [
+        18
+      ],
+      "MATH": [
+        42
+      ],
+      "HISTORY": [
+        114
+      ]
+    }
+  },
+  "9_3": {
+    "gradeNum": 9,
+    "classNum": 3,
+    "courseTeacherIdMap": {
+      "POLITICAL": [
+        104
+      ],
+      "ENGLISH": [
+        67
+      ],
+      "CHINESE_COMPOSITION": [
+        19
+      ],
+      "PHYSICAL_EDUCATION": [
+        80
+      ],
+      "PHYSICAL": [
+        80
+      ],
+      "CHEMISTRY": [
+        88
+      ],
+      "CHINESE": [
+        19
+      ],
+      "MATH": [
+        43
+      ],
+      "HISTORY": [
+        114
+      ]
+    }
+  },
+  "9_4": {
+    "gradeNum": 9,
+    "classNum": 4,
+    "courseTeacherIdMap": {
+      "POLITICAL": [
+        104
+      ],
+      "ENGLISH": [
+        67
+      ],
+      "PHYSICAL_EDUCATION": [
+        81
+      ],
+      "CHINESE_COMPOSITION": [
+        19
+      ],
+      "PHYSICAL": [
+        81
+      ],
+      "CHEMISTRY": [
+        88
+      ],
+      "CHINESE": [
+        19
+      ],
+      "MATH": [
+        43
+      ],
+      "HISTORY": [
+        120
+      ]
+    }
+  },
+  "9_5": {
+    "gradeNum": 9,
+    "classNum": 5,
+    "courseTeacherIdMap": {
+      "POLITICAL": [
+        110
+      ],
+      "PHYSICAL_EDUCATION": [
+        135,
+        137
+      ],
+      "ENGLISH": [
+        68
+      ],
+      "CHINESE_COMPOSITION": [
+        20
+      ],
+      "PHYSICAL": [
+        81
+      ],
+      "CHEMISTRY": [
+        89
+      ],
+      "CHINESE": [
+        20
+      ],
+      "MATH": [
+        44
+      ],
+      "HISTORY": [
+        120
+      ]
+    }
+  },
+  "9_6": {
+    "gradeNum": 9,
+    "classNum": 6,
+    "courseTeacherIdMap": {
+      "POLITICAL": [
+        110
+      ],
+      "PHYSICAL_EDUCATION": [
+        135,
+        137
+      ],
+      "CHINESE_COMPOSITION": [
+        20
+      ],
+      "ENGLISH": [
+        68
+      ],
+      "PHYSICAL": [
+        81
+      ],
+      "CHEMISTRY": [
+        89
+      ],
+      "CHINESE": [
+        20
+      ],
+      "MATH": [
+        44
+      ],
+      "HISTORY": [
+        120
+      ]
+    }
+  },
+  "9_7": {
+    "gradeNum": 9,
+    "classNum": 7,
+    "courseTeacherIdMap": {
+      "POLITICAL": [
+        106
+      ],
+      "ENGLISH": [
+        69
+      ],
+      "PHYSICAL_EDUCATION": [
+        82
+      ],
+      "CHINESE_COMPOSITION": [
+        21
+      ],
+      "PHYSICAL": [
+        82
+      ],
+      "CHEMISTRY": [
+        89
+      ],
+      "CHINESE": [
+        21
+      ],
+      "MATH": [
+        45
+      ],
+      "HISTORY": [
+        120
+      ]
+    }
+  },
+  "9_8": {
+    "gradeNum": 9,
+    "classNum": 8,
+    "courseTeacherIdMap": {
+      "POLITICAL": [
+        106
+      ],
+      "PHYSICAL_EDUCATION": [
+        82
+      ],
+      "CHINESE_COMPOSITION": [
+        21
+      ],
+      "ENGLISH": [
+        69
+      ],
+      "PHYSICAL": [
+        82
+      ],
+      "CHEMISTRY": [
+        90
+      ],
+      "CHINESE": [
+        21
+      ],
+      "MATH": [
+        46
+      ],
+      "HISTORY": [
+        120
+      ]
+    }
+  },
+  "9_9": {
+    "gradeNum": 9,
+    "classNum": 9,
+    "courseTeacherIdMap": {
+      "POLITICAL": [
+        106
+      ],
+      "PHYSICAL_EDUCATION": [
+        136,
+        138
+      ],
+      "CHINESE_COMPOSITION": [
+        22
+      ],
+      "ENGLISH": [
+        70
+      ],
+      "PHYSICAL": [
+        83
+      ],
+      "CHEMISTRY": [
+        90
+      ],
+      "CHINESE": [
+        22
+      ],
+      "MATH": [
+        46
+      ],
+      "HISTORY": [
+        117
+      ]
+    }
+  },
+  "9_10": {
+    "gradeNum": 9,
+    "classNum": 10,
+    "courseTeacherIdMap": {
+      "POLITICAL": [
+        106
+      ],
+      "PHYSICAL_EDUCATION": [
+        136,
+        138
+      ],
+      "CHINESE_COMPOSITION": [
+        22
+      ],
+      "ENGLISH": [
+        71
+      ],
+      "PHYSICAL": [
+        84
+      ],
+      "CHEMISTRY": [
+        90
+      ],
+      "CHINESE": [
+        22
+      ],
+      "MATH": [
+        47
+      ],
+      "HISTORY": [
+        117
+      ]
+    }
+  },
+  "9_11": {
+    "gradeNum": 9,
+    "classNum": 11,
+    "courseTeacherIdMap": {
+      "POLITICAL": [
+        113
+      ],
+      "PHYSICAL_EDUCATION": [
+        136,
+        138
+      ],
+      "CHINESE_COMPOSITION": [
+        23
+      ],
+      "ENGLISH": [
+        71
+      ],
+      "PHYSICAL": [
+        84
+      ],
+      "CHEMISTRY": [
+        91
+      ],
+      "CHINESE": [
+        23
+      ],
+      "MATH": [
+        47
+      ],
+      "HISTORY": [
+        121
+      ]
+    }
+  },
+  "9_12": {
+    "gradeNum": 9,
+    "classNum": 12,
+    "courseTeacherIdMap": {
+      "POLITICAL": [
+        113
+      ],
+      "ENGLISH": [
+        72
+      ],
+      "CHINESE_COMPOSITION": [
+        24
+      ],
+      "PHYSICAL_EDUCATION": [
+        85
+      ],
+      "PHYSICAL": [
+        85
+      ],
+      "CHEMISTRY": [
+        92
+      ],
+      "CHINESE": [
+        24
+      ],
+      "MATH": [
+        48
+      ],
+      "HISTORY": [
+        121
+      ]
+    }
+  },
+  "9_13": {
+    "gradeNum": 9,
+    "classNum": 13,
+    "courseTeacherIdMap": {
+      "POLITICAL": [
+        113
+      ],
+      "ENGLISH": [
+        72
+      ],
+      "CHINESE_COMPOSITION": [
+        24
+      ],
+      "PHYSICAL_EDUCATION": [
+        136,
+        138
+      ],
+      "PHYSICAL": [
+        85
+      ],
+      "CHEMISTRY": [
+        92
+      ],
+      "CHINESE": [
+        24
+      ],
+      "MATH": [
+        48
+      ],
+      "HISTORY": [
+        121
+      ]
+    }
+  },
+  "9_14": {
+    "gradeNum": 9,
+    "classNum": 14,
+    "courseTeacherIdMap": {
+      "POLITICAL": [
+        113
+      ],
+      "CHINESE_COMPOSITION": [
+        25
+      ],
+      "PHYSICAL_EDUCATION": [
+        85
+      ],
+      "ENGLISH": [
+        73
+      ],
+      "PHYSICAL": [
+        85
+      ],
+      "CHEMISTRY": [
+        92
+      ],
+      "CHINESE": [
+        25
+      ],
+      "MATH": [
+        49
+      ],
+      "HISTORY": [
+        121
+      ]
+    }
+  },
+  "9_15": {
+    "gradeNum": 9,
+    "classNum": 15,
+    "courseTeacherIdMap": {
+      "POLITICAL": [
+        113
+      ],
+      "ENGLISH": [
+        73
+      ],
+      "CHINESE_COMPOSITION": [
+        25
+      ],
+      "PHYSICAL_EDUCATION": [
+        86
+      ],
+      "PHYSICAL": [
+        86
+      ],
+      "CHEMISTRY": [
+        87
+      ],
+      "CHINESE": [
+        25
+      ],
+      "MATH": [
+        49
+      ],
+      "HISTORY": [
+        121
+      ]
+    }
+  }
+}

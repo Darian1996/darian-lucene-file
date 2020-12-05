@@ -1,0 +1,102 @@
+@startuml
+
+!include ../plantuml-samples/my-all-c4.puml
+
+group 加载相关的配置信息
+
+
+activate Application
+Application -> Application : MyGitRepConfig
+
+activate Application
+deactivate Application
+note right:  GitRepostory 信息
+
+
+Application -> Application : MyLuceneConfig
+activate Application
+deactivate Application
+note right:  LuceneRepostory 信息
+Application -> Application : MyTokenConfig
+activate Application
+deactivate Application
+note right:  TokenRepostory 信息
+deactivate Application
+end
+
+group 初始化索引库和自定义文件库
+box 索引库
+Participant LuceneRepository
+end box
+Application -> LuceneRepository:#crateIndex()
+
+
+LuceneRepository -> LuceneRepository:#crateIndex()
+note right: 加载索引文件的方法
+activate LuceneRepository
+deactivate LuceneRepository
+
+
+group : createIndex
+LuceneRepository -> MyLuceneConfig:
+activate LuceneRepository
+MyLuceneConfig -> MyLuceneConfig:
+note right: 获取需要符合要检索的文件名的表达式，\n并进行检索
+
+activate MyLuceneConfig
+deactivate MyLuceneConfig
+
+
+LuceneRepository -> LuceneRepository:
+activate LuceneRepository
+deactivate LuceneRepository
+note right: 匹配上所有的文件，返回一个 List
+
+LuceneRepository -> CustomerFileRepository:
+CustomerFileRepository -> CustomerFileRepository:
+
+activate CustomerFileRepository
+deactivate CustomerFileRepository
+note right : for 循环读取每一个文件，读取它们的基本信息\n 保存在 CustomerFileRepository 中间，（不包含文件内容）
+LuceneRepository -> LuceneRepository:
+activate LuceneRepository
+deactivate LuceneRepository
+note right: 把 `文件唯一标识` ，文件名，\n文件内容（去掉特殊字符的处理，纯文本）放在索引库中
+
+LuceneRepository -> CustomerFileRepository:
+CustomerFileRepository -> CustomerFileRepository:
+
+activate CustomerFileRepository
+deactivate CustomerFileRepository
+note right: 设置 已经初始化完成的标识\n 内部文件不允许再进行修改
+deactivate LuceneRepository
+end
+
+group 预加载每个文件
+
+Application -> CustomerFileRepository:
+activate Application
+CustomerFileRepository -> CustomerFileRepository:
+activate CustomerFileRepository
+deactivate CustomerFileRepository
+note right: 获取所有文件的 `唯一标识` 的集合
+
+Application -> CustomerFileService:
+CustomerFileService -> CustomerFileService:
+activate CustomerFileService
+
+note right: 依次加载每一个文件\n 加载文件进行内容的全部加载\n（`.md`内容里边的图片链接已经全部替换为 gitee 的CDN地址）
+
+CustomerFileService -> CustomerFileRepository: 文件加载
+CustomerFileRepository -> CustomerFileRepository:
+note right: 预加载每个文件
+activate CustomerFileRepository
+
+deactivate CustomerFileRepository
+CustomerFileService --> Application:
+deactivate CustomerFileService
+deactivate Application
+end
+end
+
+@enduml

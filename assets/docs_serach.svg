@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1005px" preserveAspectRatio="none" style="width:653px;height:1005px;" version="1.1" viewBox="0 0 653 1005" width="653.75px" zoomAndPan="magnify"><defs/><g><text fill="#222222" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="122.5" x="264.375" y="32.5549">搜索文件流程图</text><rect fill="#FFFFFF" height="686.3159" style="stroke: #008000; stroke-width: 1.25;" width="12.5" x="25" y="185.7861"/><rect fill="#FFFFFF" height="630.8301" style="stroke: #008000; stroke-width: 1.25;" width="12.5" x="126.25" y="223.772"/><rect fill="#FFFFFF" height="630.8301" style="stroke: #008000; stroke-width: 1.25;" width="12.5" x="303.75" y="223.772"/><rect fill="#FFFFFF" height="44.2358" style="stroke: #008000; stroke-width: 1.25;" width="12.5" x="310" y="271.7578"/><rect fill="#FFFFFF" height="313.6792" style="stroke: #008000; stroke-width: 1.25;" width="12.5" x="310" y="494.187"/><rect fill="#FFFFFF" height="35" style="stroke: #008000; stroke-width: 1.25;" width="12.5" x="316.25" y="568.9087"/><rect fill="#FFFFFF" height="35" style="stroke: #008000; stroke-width: 1.25;" width="12.5" x="316.25" y="681.1304"/><rect fill="#FFFFFF" height="35" style="stroke: #008000; stroke-width: 1.25;" width="12.5" x="316.25" y="772.8662"/><rect fill="#FFFFFF" height="44.2358" style="stroke: #008000; stroke-width: 1.25;" width="12.5" x="502.5" y="401.9653"/><line style="stroke: #008000; stroke-width: 1.25; stroke-dasharray: 5.0,5.0;" x1="31.25" x2="31.25" y1="145.3003" y2="894.6021"/><line style="stroke: #008000; stroke-width: 1.25; stroke-dasharray: 5.0,5.0;" x1="132.5" x2="132.5" y1="145.3003" y2="894.6021"/><line style="stroke: #008000; stroke-width: 1.25; stroke-dasharray: 5.0,5.0;" x1="310" x2="310" y1="145.3003" y2="894.6021"/><line style="stroke: #008000; stroke-width: 1.25; stroke-dasharray: 5.0,5.0;" x1="508.125" x2="508.125" y1="145.3003" y2="894.6021"/><text fill="#222222" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="35" x="10" y="141.4551">用户</text><ellipse cx="31.25" cy="56.4001" fill="#1565C0" rx="10" ry="10" style="stroke: #1565C0; stroke-width: 1.25;"/><path d="M31.25,66.4001 L31.25,100.1501 M15,76.4001 L47.5,76.4001 M31.25,100.1501 L15,118.9001 M31.25,100.1501 L47.5,118.9001 " fill="none" style="stroke: #1565C0; stroke-width: 1.25;"/><text fill="#222222" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="35" x="10" y="913.407">用户</text><ellipse cx="31.25" cy="928.5022" fill="#1565C0" rx="10" ry="10" style="stroke: #1565C0; stroke-width: 1.25;"/><path d="M31.25,938.5022 L31.25,972.2522 M15,948.5022 L47.5,948.5022 M31.25,972.2522 L15,991.0022 M31.25,972.2522 L47.5,991.0022 " fill="none" style="stroke: #1565C0; stroke-width: 1.25;"/><rect fill="#1565C0" height="41.4001" style="stroke: #1565C0; stroke-width: 0.0;" width="135" x="65" y="102.6501"/><text fill="#FFFFFF" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="117.5" x="73.75" y="131.4551">NiuBiController</text><rect fill="#1565C0" height="41.4001" style="stroke: #1565C0; stroke-width: 0.0;" width="135" x="65" y="893.3521"/><text fill="#FFFFFF" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="117.5" x="73.75" y="922.157">NiuBiController</text><rect fill="#1565C0" height="41.4001" style="stroke: #1565C0; stroke-width: 0.0;" width="135" x="242.5" y="102.6501"/><text fill="#FFFFFF" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="117.5" x="251.25" y="131.4551">LuceneService</text><rect fill="#1565C0" height="41.4001" style="stroke: #1565C0; stroke-width: 0.0;" width="135" x="242.5" y="893.3521"/><text fill="#FFFFFF" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="117.5" x="251.25" y="922.157">LuceneService</text><rect fill="#1565C0" height="41.4001" style="stroke: #1565C0; stroke-width: 0.0;" width="161.25" x="428.125" y="102.6501"/><text fill="#FFFFFF" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="143.75" x="436.875" y="131.4551">LuceneRepository</text><rect fill="#1565C0" height="41.4001" style="stroke: #1565C0; stroke-width: 0.0;" width="161.25" x="428.125" y="893.3521"/><text fill="#FFFFFF" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="17.5" lengthAdjust="spacingAndGlyphs" textLength="143.75" x="436.875" y="922.157">LuceneRepository</text><rect fill="#FFFFFF" height="686.3159" style="stroke: #008000; stroke-width: 1.25;" width="12.5" x="25" y="185.7861"/><rect fill="#FFFFFF" height="630.8301" style="stroke: #008000; stroke-width: 1.25;" width="12.5" x="126.25" y="223.772"/><rect fill="#FFFFFF" height="630.8301" style="stroke: #008000; stroke-width: 1.25;" width="12.5" x="303.75" y="223.772"/><rect fill="#FFFFFF" height="44.2358" style="stroke: #008000; stroke-width: 1.25;" width="12.5" x="310" y="271.7578"/><rect fill="#FFFFFF" height="313.6792" style="stroke: #008000; stroke-width: 1.25;" width="12.5" x="310" y="494.187"/><rect fill="#FFFFFF" height="35" style="stroke: #008000; stroke-width: 1.25;" width="12.5" x="316.25" y="568.9087"/><rect fill="#FFFFFF" height="35" style="stroke: #008000; stroke-width: 1.25;" width="12.5" x="316.25" y="681.1304"/><rect fill="#FFFFFF" height="35" style="stroke: #008000; stroke-width: 1.25;" width="12.5" x="316.25" y="772.8662"/><rect fill="#FFFFFF" height="44.2358" style="stroke: #008000; stroke-width: 1.25;" width="12.5" x="502.5" y="401.9653"/><polygon fill="#F6363F" points="117.5,180.7861,130,185.7861,117.5,190.7861,122.5,185.7861" style="stroke: #F6363F; stroke-width: 1.25;"/><line style="stroke: #F6363F; stroke-width: 1.25;" x1="37.5" x2="125" y1="185.7861" y2="185.7861"/><text fill="#000000" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="60" x="46.25" y="179.9902">发起请求</text><polygon fill="#F6363F" points="288.75,218.772,301.25,223.772,288.75,228.772,293.75,223.772" style="stroke: #F6363F; stroke-width: 1.25;"/><line style="stroke: #F6363F; stroke-width: 1.25;" x1="138.75" x2="296.25" y1="223.772" y2="223.772"/><text fill="#000000" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="66.25" x="147.5" y="217.9761">doSearch</text><line style="stroke: #F6363F; stroke-width: 1.25;" x1="316.25" x2="375" y1="255.5078" y2="255.5078"/><line style="stroke: #F6363F; stroke-width: 1.25;" x1="375" x2="375" y1="255.5078" y2="271.7578"/><line style="stroke: #F6363F; stroke-width: 1.25;" x1="323.75" x2="375" y1="271.7578" y2="271.7578"/><polygon fill="#F6363F" points="336.25,266.7578,323.75,271.7578,336.25,276.7578,331.25,271.7578" style="stroke: #F6363F; stroke-width: 1.25;"/><text fill="#000000" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="105" x="331.25" y="249.7119">查询本身的缓存</text><polygon fill="#008000" points="152.5,310.9937,140,315.9937,152.5,320.9937,147.5,315.9937" style="stroke: #008000; stroke-width: 1.25;"/><line style="stroke: #008000; stroke-width: 1.25;" x1="145" x2="302.5" y1="315.9937" y2="315.9937"/><text fill="#000000" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="135" x="160" y="310.1978">缓存中存在直接返回</text><polygon fill="#F6363F" points="493.75,348.9795,506.25,353.9795,493.75,358.9795,498.75,353.9795" style="stroke: #F6363F; stroke-width: 1.25;"/><line style="stroke: #F6363F; stroke-width: 1.25;" x1="316.25" x2="501.25" y1="353.9795" y2="353.9795"/><text fill="#000000" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="90" x="325" y="348.1836">进行全文检索</text><line style="stroke: #F6363F; stroke-width: 1.25;" x1="508.75" x2="567.5" y1="385.7153" y2="385.7153"/><line style="stroke: #F6363F; stroke-width: 1.25;" x1="567.5" x2="567.5" y1="385.7153" y2="401.9653"/><line style="stroke: #F6363F; stroke-width: 1.25;" x1="516.25" x2="567.5" y1="401.9653" y2="401.9653"/><polygon fill="#F6363F" points="528.75,396.9653,516.25,401.9653,528.75,406.9653,523.75,401.9653" style="stroke: #F6363F; stroke-width: 1.25;"/><text fill="#000000" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="115" x="523.75" y="379.9194">全文检索 Lucene</text><polygon fill="#F6363F" points="330,441.2012,317.5,446.2012,330,451.2012,325,446.2012" style="stroke: #F6363F; stroke-width: 1.25;"/><line style="stroke: #F6363F; stroke-width: 1.25;" x1="322.5" x2="507.5" y1="446.2012" y2="446.2012"/><text fill="#000000" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="135" x="337.5" y="440.4053">返回全文检索的结果</text><line style="stroke: #F6363F; stroke-width: 1.25;" x1="316.25" x2="375" y1="477.937" y2="477.937"/><line style="stroke: #F6363F; stroke-width: 1.25;" x1="375" x2="375" y1="477.937" y2="494.187"/><line style="stroke: #F6363F; stroke-width: 1.25;" x1="323.75" x2="375" y1="494.187" y2="494.187"/><polygon fill="#F6363F" points="336.25,489.187,323.75,494.187,336.25,499.187,331.25,494.187" style="stroke: #F6363F; stroke-width: 1.25;"/><text fill="#000000" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="168.75" x="331.25" y="472.1411">遍历整个 全文检索的集合</text><line style="stroke: #F6363F; stroke-width: 1.25;" x1="328.75" x2="381.25" y1="558.9087" y2="558.9087"/><line style="stroke: #F6363F; stroke-width: 1.25;" x1="381.25" x2="381.25" y1="558.9087" y2="575.1587"/><line style="stroke: #F6363F; stroke-width: 1.25;" x1="330" x2="381.25" y1="575.1587" y2="575.1587"/><polygon fill="#F6363F" points="342.5,570.1587,330,575.1587,342.5,580.1587,337.5,575.1587" style="stroke: #F6363F; stroke-width: 1.25;"/><text fill="#000000" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="106.25" x="337.5" y="532.627">1. 如果是图片，</text><text fill="#000000" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="140" x="341.25" y="553.1128">替换整个页面的 URL</text><line style="stroke: #F6363F; stroke-width: 1.25;" x1="328.75" x2="381.25" y1="671.1304" y2="671.1304"/><line style="stroke: #F6363F; stroke-width: 1.25;" x1="381.25" x2="381.25" y1="671.1304" y2="687.3804"/><line style="stroke: #F6363F; stroke-width: 1.25;" x1="330" x2="381.25" y1="687.3804" y2="687.3804"/><polygon fill="#F6363F" points="342.5,682.3804,330,687.3804,342.5,692.3804,337.5,687.3804" style="stroke: #F6363F; stroke-width: 1.25;"/><text fill="#000000" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="98.75" x="337.5" y="644.8486">2. 如果是md，</text><text fill="#000000" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="155" x="341.25" y="665.3345">替换 md 文件中的 URL</text><line style="stroke: #F6363F; stroke-width: 1.25;" x1="328.75" x2="381.25" y1="762.8662" y2="762.8662"/><line style="stroke: #F6363F; stroke-width: 1.25;" x1="381.25" x2="381.25" y1="762.8662" y2="779.1162"/><line style="stroke: #F6363F; stroke-width: 1.25;" x1="330" x2="381.25" y1="779.1162" y2="779.1162"/><polygon fill="#F6363F" points="342.5,774.1162,330,779.1162,342.5,784.1162,337.5,779.1162" style="stroke: #F6363F; stroke-width: 1.25;"/><text fill="#000000" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="76.25" x="337.5" y="757.0703">3. 放入缓存</text><polygon fill="#008000" points="146.25,849.6021,133.75,854.6021,146.25,859.6021,141.25,854.6021" style="stroke: #008000; stroke-width: 1.25;"/><line style="stroke: #008000; stroke-width: 1.25;" x1="138.75" x2="308.75" y1="854.6021" y2="854.6021"/><text fill="#000000" font-family="'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace" font-size="15" lengthAdjust="spacingAndGlyphs" textLength="63.75" x="153.75" y="848.8062">返回 信息</text><polygon fill="#F6363F" points="45,867.1021,32.5,872.1021,45,877.1021,40,872.1021" style="stroke: #F6363F; stroke-width: 1.25;"/><line style="stroke: #F6363F; stroke-width: 1.25;" x1="37.5" x2="131.25" y1="872.1021" y2="872.1021"/><!--MD5=[2739d75fc947b4a74b0aa01fd92e01d5]
+@startuml state-sample
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+skinparam ComponentStyle uml2
+skinparam Shadowing false
+
+skinparam Default {
+    FontName "'Input Mono','Microsoft YaHei Mono',Menlo, Monaco, 'Courier New', monospace"
+    FontColor #222222
+    FontSize  14
+    FontStyle plain
+    Shadowing false
+    TextAlignment center
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+
+skinparam Note {
+    BackgroundColor #90A4AE
+    BorderColor #90A4AE
+    BorderThickness 1
+    FontColor White
+    Shadowing false
+    TextAlignment left
+}
+
+skinparam Note<<quit>> {
+
+    BackgroundColor #F9A825
+    BorderColor #F9A825
+}
+
+skinparam Sequence {
+    ActorBorderThickness 1
+    LifeLineBorderColor GREEN
+    ParticipantBorderThickness 0
+    Shadowing false
+
+
+    GroupBorderThickness 1
+    GroupBorderColor #1565C0
+    GroupBackgroundColor #BBDEFB
+}
+
+skinparam Activity {
+
+    StartColor #37A77C
+    EndColor #F6363F
+    AttributeFontColor white
+    AttributeFontSize  15
+    AttributeFontname  Droid Sans Mono
+
+    BackgroundColor #BBDEFB
+    BorderColor #90CAF9
+    BorderThickness 1
+
+    ArrowThickness 1
+
+
+    BarColor   #0D47A1
+
+
+    DiamondBackgroundColor   #FFE0B2
+    DiamondBorderColor    #FFCC80
+
+
+}
+
+skinparam Class {
+    BackgroundColor #E3F2FD
+    BorderColor #64B5F6
+    BorderThickness 1
+
+
+    StereotypeFontColor #589DF6
+    StereotypeFontSize 14
+}
+
+
+
+skinparam Interface {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+    FontSize 14
+
+
+    StereotypeFontColor #589DF6
+    StereotypeFontSize 1
+}
+
+
+
+skinparam Participant {
+    BackgroundColor #1565C0
+    BorderColor #1565C0
+    FontColor White
+    Shadowing false
+}
+
+skinparam Actor {
+    BackgroundColor #1565C0
+    BorderColor #1565C0
+    Shadowing false
+}
+
+skinparam UseCase {
+    BackgroundColor #64B5F6
+    BorderColor #64B5F6
+    Shadowing false
+    ArrowThickness 1
+    ArrowColor #1565C0
+
+    ActorBackgroundColor #1565C0
+    ActorBorderColor #0D47A1
+    ActorShadowing false
+
+}
+
+
+skinparam State {
+    FontSize           17
+
+    AttributeFontSize  14
+
+    BackgroundColor    #BBDEFB
+    BorderColor        #90CAF9
+    StartColor #37A77C
+    EndColor #F6363F
+}
+
+skinparam Partition {
+    BorderColor #424242
+    BorderStyle dashed
+
+    BorderThickness 1
+}
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam Queue {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+skinparam Agent {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+skinparam Artifact {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+
+skinparam Boundary {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+skinparam Card {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+
+skinparam Cloud {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+
+skinparam Component {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+skinparam Control {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+skinparam Database {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+
+skinparam Entity {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+skinparam File {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+skinparam Folder {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+
+}
+skinparam Frame {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+skinparam Node {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+
+
+skinparam Package {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+skinparam Stack {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+
+skinparam Rectangle {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+
+skinparam Storage {
+    BackgroundColor #E3F2FD
+    BorderColor #424242
+}
+
+skinparam rectangle<<usercase>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor #424242
+    BorderColor #424242
+    BorderStyle dashed
+    BackgroundColor White
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam Arrow {
+    Color #616161
+    FontColor #616161
+    FontSize 12
+}
+
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor #424242
+    BorderColor #424242
+    BorderStyle dashed
+    BackgroundColor White
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam actor<<person>> {
+  BorderColor #0D47A1
+  BackgroundColor #1565C0
+}
+
+skinparam actor<<internal_person>> {
+  BorderColor #424242
+  BackgroundColor #616161
+}
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1565C0
+    BorderColor #0D47A1
+}
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #616161
+    BorderColor #424242
+}
+
+skinparam rectangle<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1976D2
+    BorderColor #1565C0
+}
+
+skinparam rectangle<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #757575
+    BorderColor #616161
+}
+
+skinparam database<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1976D2
+    BorderColor #1565C0
+}
+
+skinparam database<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #757575
+    BorderColor #616161
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1E88E5
+    BorderColor #1E88E5
+}
+
+skinparam database<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1E88E5
+    BorderColor #1E88E5
+}
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<component>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #222222
+    BackgroundColor #90CAF9
+    BorderColor #64B5F6
+}
+
+skinparam database<<component>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #222222
+    BackgroundColor #90CAF9
+    BorderColor #64B5F6
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam ArrowColor #F6363F
+skinparam NoteFontColor red
+skinparam NoteBackgroundColor white
+
+skinparam ArrowFontColor black
+
+
+title 搜索文件流程图
+
+Actor 用户 as  actor
+
+
+actor -> NiuBiController : 发起请求
+activate actor
+
+NiuBiController ->  LuceneService : doSearch
+activate NiuBiController
+activate LuceneService
+
+LuceneService -> LuceneService : 查询本身的缓存
+activate LuceneService
+LuceneService -[#green]> NiuBiController : 缓存中存在直接返回
+deactivate LuceneService
+
+
+
+LuceneService ->  LuceneRepository : 进行全文检索
+
+LuceneRepository -> LuceneRepository : 全文检索 Lucene
+activate LuceneRepository
+LuceneRepository -> LuceneService : 返回全文检索的结果
+deactivate LuceneRepository
+
+
+LuceneService -> LuceneService : 遍历整个 全文检索的集合
+activate LuceneService
+
+LuceneService -> LuceneService : 1. 如果是图片，\n 替换整个页面的 URL
+activate LuceneService
+deactivate LuceneService
+
+LuceneService -> LuceneService : 2. 如果是md，\n 替换 md 文件中的 URL
+activate LuceneService
+deactivate LuceneService
+
+LuceneService -> LuceneService : 3. 放入缓存
+activate LuceneService
+deactivate LuceneService
+
+
+deactivate LuceneService
+LuceneService -[#green]> NiuBiController :  返回 信息
+deactivate LuceneService
+
+
+deactivate NiuBiController
+
+NiuBiController -> actor
+deactivate actor
+
+@enduml
+
+PlantUML version 1.2020.07(Sun Apr 19 19:42:40 CST 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.6+8-b765.25
+Operating System: Windows 10
+Default Encoding: GBK
+Language: zh
+Country: CN
+--></g></svg>

@@ -1,0 +1,57 @@
+@startuml state-sample
+
+
+title 搜索文件流程图
+
+Actor 用户 as  actor
+
+
+actor -> NiuBiController : 发起请求
+activate actor
+
+NiuBiController ->  LuceneService : doSearch
+activate NiuBiController
+activate LuceneService
+
+LuceneService -> LuceneService : 查询本身的缓存
+activate LuceneService
+LuceneService -[#green]> NiuBiController : 缓存中存在直接返回
+deactivate LuceneService
+
+
+
+LuceneService ->  LuceneRepository : 进行全文检索
+
+LuceneRepository -> LuceneRepository : 全文检索 Lucene
+activate LuceneRepository
+LuceneRepository -> LuceneService : 返回全文检索的结果
+deactivate LuceneRepository
+
+
+LuceneService -> LuceneService : 遍历整个 全文检索的集合
+activate LuceneService
+
+LuceneService -> LuceneService : 1. 如果是图片，\n 替换整个页面的 URL
+activate LuceneService
+deactivate LuceneService
+
+LuceneService -> LuceneService : 2. 如果是md，\n 替换 md 文件中的 URL
+activate LuceneService
+deactivate LuceneService
+
+LuceneService -> LuceneService : 3. 放入缓存
+activate LuceneService
+deactivate LuceneService
+
+
+deactivate LuceneService
+LuceneService -[#green]> NiuBiController :  返回 信息
+deactivate LuceneService
+
+
+deactivate NiuBiController
+
+NiuBiController -> actor
+deactivate actor
+
+@enduml
