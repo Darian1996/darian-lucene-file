@@ -4,6 +4,7 @@ import com.darian.darianlucenefile.config.DocumentContants;
 import com.darian.darianlucenefile.config.DarianGitRepConfig;
 import com.darian.darianlucenefile.config.DarianLuceneConfig;
 import com.darian.darianlucenefile.config.DarianTokenConfig;
+import com.darian.darianlucenefile.config.MailProperties;
 import com.darian.darianlucenefile.repository.CustomerFileRepository;
 import com.darian.darianlucenefile.repository.LuceneRepository;
 import com.darian.darianlucenefile.service.CustomerFileService;
@@ -14,6 +15,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.PropertySource;
 
 
 import java.time.LocalDateTime;
@@ -28,7 +30,8 @@ import java.time.format.DateTimeFormatter;
  */
 @Slf4j
 @SpringBootApplication
-@EnableConfigurationProperties
+@EnableConfigurationProperties(MailProperties.class)
+@PropertySource({"classpath:/META-INF/spring/mail.properties"})
 public class DarianLuceneFileApplication {
 
 

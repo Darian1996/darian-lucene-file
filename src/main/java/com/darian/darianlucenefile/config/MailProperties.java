@@ -20,7 +20,6 @@ import java.util.Properties;
 @Slf4j
 @Configuration
 @ConfigurationProperties("mail")
-@PropertySource({"classpath:/mail.properties"})
 public class MailProperties implements InitializingBean {
     private String to;
     private String username;
