@@ -1,7 +1,7 @@
 package com.darian.darianlucenefile.service;
 
-import com.darian.darianlucenefile.config.DocumentContants;
 import com.darian.darianlucenefile.config.DarianGitRepConfig;
+import com.darian.darianlucenefile.config.DocumentContants;
 import com.darian.darianlucenefile.domain.CustomerFile;
 import com.darian.darianlucenefile.exception.CustomerRuntimeException;
 import com.darian.darianlucenefile.repository.CustomerFileRepository;
@@ -99,7 +99,8 @@ public class CustomerFileService {
         }
         if (responseFile.getFileSimpleName().endsWith(".bat")
                 || responseFile.getFileSimpleName().endsWith(".java")
-                || responseFile.getFileSimpleName().endsWith(".sh")) {
+                || responseFile.getFileSimpleName().endsWith(".sh")
+                || responseFile.getFileSimpleName().endsWith(".puml")) {
             return onlyReadFileString(new File(responseFile.getFileFullName()));
         }
         return null;
@@ -121,7 +122,11 @@ public class CustomerFileService {
                 fileContentsb.append(DocumentContants.MD_CODE_JAVA_START)
                         .append(CustomerFileUtils.readFileToString(itemFile, DocumentContants.UTF_8))
                         .append(DocumentContants.MD_CODE_END);
-            }else if (filePath.endsWith(".sh")){
+            } else if (filePath.endsWith(".sh")) {
+                fileContentsb.append(DocumentContants.MD_CODE_BASH_START)
+                        .append(CustomerFileUtils.readFileToString(itemFile, DocumentContants.UTF_8))
+                        .append(DocumentContants.MD_CODE_END);
+            } else if (filePath.endsWith(".puml")) {
                 fileContentsb.append(DocumentContants.MD_CODE_BASH_START)
                         .append(CustomerFileUtils.readFileToString(itemFile, DocumentContants.UTF_8))
                         .append(DocumentContants.MD_CODE_END);
@@ -136,7 +141,7 @@ public class CustomerFileService {
              *  }
              */
 
-            else{
+            else {
                 fileContentsb.append("");
             }
 
