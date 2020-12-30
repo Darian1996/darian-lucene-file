@@ -163,7 +163,7 @@ public class ShellUtils {
      * @param shString
      * @return
      */
-    private static String runShString(String shString) {
+    public static String runShString(String shString) {
         if (System.getProperty("os.name").contains("Windows")) {
             log.debug("系统是 windows 系统，不执行 sh 命令 ... ... ");
             return "系统是 windows 系统，不执行 sh 命令 ... ... ";

@@ -1,5 +1,6 @@
 package com.darian.darianlucenefile.config;
 
+import com.darian.darianlucenefile.service.IPPortsWhiteService;
 import com.darian.darianlucenefile.utils.AssertUtils;
 import com.darian.darianlucenefile.utils.ShellUtils;
 import lombok.Data;
@@ -35,6 +36,7 @@ public class DarianIpPortConfig implements InitializingBean {
                 .collect(Collectors.toList());
 
         ShellUtils.PORT_S = portList;
+        IPPortsWhiteService.PORT_S = portList;
         log.info("portList:" + portList);
     }
 }
