@@ -1,8 +1,13 @@
 package com.darian.darianlucenefile.controller;
 
-import com.darian.darianlucenefile.config.DocumentContants;
+import com.darian.darianlucenefile.constants.DocumentConstants;
 import com.darian.darianlucenefile.domain.CustomerFile;
 import com.darian.darianlucenefile.domain.CustomerResponse;
+import com.darian.darianlucenefile.domain.request.AddIllegalIPSetRequest;
+import com.darian.darianlucenefile.domain.request.GetCustomerFileRequest;
+import com.darian.darianlucenefile.domain.request.RefreshWhiteIpListRequest;
+import com.darian.darianlucenefile.domain.request.SearchJsonRequest;
+import com.darian.darianlucenefile.domain.request.SendEmailRequest;
 import com.darian.darianlucenefile.exception.CustomerRuntimeException;
 import com.darian.darianlucenefile.filter.ServerResponseFilterUtils;
 import com.darian.darianlucenefile.filter.ip.IPContainer;
@@ -20,7 +25,6 @@ import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import reactor.core.publisher.Mono;
 
@@ -54,30 +58,22 @@ public class NiuBiController {
 
     @ResponseBody
     @RequestMapping(value = "/addIllegalIPSet", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public CustomerResponse addIllegalIPSet(
-            @RequestParam(value = "illegalIP", required = false) String illegalIP) {
-        log.debug("start [ /search ] ...");
-
+    public CustomerResponse addIllegalIPSet(AddIllegalIPSetRequest addIllegalIPSetRequest) {
+        String illegalIP = addIllegalIPSetRequest.getIllegalIP();
         AssertUtils.assertNotBlank(illegalIP, "illegalIP must be not blank");
         IPContainer.ILLEGAL_IP_SET.add(illegalIP);
-
         return CustomerResponse.ok("success");
     }
 
     @ResponseBody
     @RequestMapping(value = "/search", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public Mono<CustomerResponse> searchSearchJson(
-            @RequestParam(value = "parm", required = false) String parm,
-            @RequestParam(value = "cache", required = false, defaultValue = "false") boolean cache) {
-        log.debug("start [ /search ] ...");
-
-        return Mono.justOrEmpty(luceneService.doSearch(parm, cache));
+    public Mono<CustomerResponse> searchJson(SearchJsonRequest request) {
+        return Mono.justOrEmpty(luceneService.search(request));
     }
 
     @ResponseBody
     @RequestMapping(value = "/refresh", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Mono<CustomerResponse> refresh() {
-        log.debug("start [ /refresh ] ...");
 
         shellService.doRestart();
         return Mono.justOrEmpty(CustomerResponse.ok("success "));
@@ -85,15 +81,16 @@ public class NiuBiController {
 
     @RequestMapping(value = "/getCustomerFile", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
-    public Mono<CustomerResponse> getCustomerFile(
-            @RequestParam(value = "filePathSubDocsFilePath", required = false) String filePathSubDocsFilePath,
-            @RequestParam(value = "cache", required = false, defaultValue = "true") boolean cache) {
+    public Mono<CustomerResponse> getCustomerFile(GetCustomerFileRequest request) {
+
+        String filePathSubDocsFilePath = request.getFilePathSubDocsFilePath();
+        Boolean cache = request.getCache();
         log.debug("[TestRestController.getCustomerFile].filePathSubDocsFilePath:" + filePathSubDocsFilePath);
 
         AssertUtils.assertTrue(StringUtils.hasText(filePathSubDocsFilePath), "filePathSubDocsFilePath不能为空");
 
         try {
-            filePathSubDocsFilePath = URLDecoder.decode(filePathSubDocsFilePath, DocumentContants.UTF_8);
+            filePathSubDocsFilePath = URLDecoder.decode(filePathSubDocsFilePath, DocumentConstants.UTF_8);
             log.debug("[TestRestController.getContent].filePathSubGitFilePath.decode:" + filePathSubDocsFilePath);
         } catch (UnsupportedEncodingException e) {
             throw new CustomerRuntimeException("查询文件，解码报错");
@@ -104,7 +101,8 @@ public class NiuBiController {
 
     @RequestMapping("/getImage")
     public Mono<Void> getImagesId(ServerHttpResponse response,
-                                  @RequestParam(value = "filePathSubDocsFilePath", required = false) String filePathSubDocsFilePath) {
+                                  GetCustomerFileRequest request) {
+        String filePathSubDocsFilePath = request.getFilePathSubDocsFilePath();
         CustomerFile customerFile = customerFileService.doGetCustomerFile(filePathSubDocsFilePath, true);
         String filePath = customerFile.getFileFullName();
 
@@ -132,8 +130,9 @@ public class NiuBiController {
 
     @RequestMapping(value = "/refreshWhiteIpList", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
-    public Mono<CustomerResponse> refreshWhiteIpList(
-            @RequestParam(value = "whiteIP", required = false) String whiteIP) {
+    public Mono<CustomerResponse> refreshWhiteIpList(RefreshWhiteIpListRequest request) {
+
+        String whiteIP = request.getWhiteIP();
         AssertUtils.assertTrue(StringUtils.hasText(whiteIP), "whiteIP不能为空");
 
         return Mono.justOrEmpty(CustomerResponse.ok(ipPortsWhiteService.refreshWhiteIpList(whiteIP)));
@@ -141,10 +140,11 @@ public class NiuBiController {
 
     @RequestMapping(value = "/sendEmail", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
-    public Mono<CustomerResponse> sendEmail(
-            @RequestParam(required = false) String emailTo,
-            @RequestParam(required = false) String emailTitle,
-            @RequestParam(required = false) String emailBody) {
+    public Mono<CustomerResponse> sendEmail(SendEmailRequest request) {
+
+        String emailTo = request.getEmailTo();
+        String emailTitle = request.getEmailTitle();
+        String emailBody = request.getEmailBody();
 
         AssertUtils.assertTrue(StringUtils.hasText(emailTo), "emailTo不能为空");
         AssertUtils.assertTrue(StringUtils.hasText(emailTitle), "emailTitle不能为空");

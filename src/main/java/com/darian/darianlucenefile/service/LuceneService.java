@@ -2,6 +2,7 @@ package com.darian.darianlucenefile.service;
 
 import com.darian.darianlucenefile.domain.CustomerFile;
 import com.darian.darianlucenefile.domain.CustomerResponse;
+import com.darian.darianlucenefile.domain.request.SearchJsonRequest;
 import com.darian.darianlucenefile.repository.CustomerFileRepository;
 import com.darian.darianlucenefile.repository.LuceneRepository;
 import com.darian.darianlucenefile.utils.AssertUtils;
@@ -36,19 +37,33 @@ public class LuceneService {
                     .weigher(Weighers.singleton())
                     .build();
 
-    public CustomerResponse doSearch(String param, boolean cache) {
+    public CustomerResponse search(SearchJsonRequest request) {
+
+        String param = request.getParam();
+        boolean cache = Boolean.TRUE.equals(request.getCache());
+
+        param = param.replaceAll("-", "");
+        param = param.replaceAll("\\+", "");
+
         AssertUtils.assertTrue(StringUtils.hasText(param), "查询参数不能等于空");
 
-        return CacheFunctionUtils.getCacheOrNotCache(cache,
-                () -> searchConcurrentLinkedHashMap.get(param),
-                () -> this.doSearch(param),
-                value -> searchConcurrentLinkedHashMap.put(param, value));
+        String finalParam = param;
+
+        request.setParam(finalParam);
+
+        CustomerResponse response = CacheFunctionUtils.getCacheOrNotCache(cache,
+                () -> searchConcurrentLinkedHashMap.get(finalParam),
+                () -> this.doSearch(finalParam),
+                value -> searchConcurrentLinkedHashMap.put(finalParam, value));
+
+        response.setRequest(request);
+        return response;
     }
 
     private CustomerResponse doSearch(String param) {
         AssertUtils.assertTrue(StringUtils.hasText(param), "查询参数不能等于空");
 
-        param = param.replaceAll("-", "");
+
 
         List<CustomerFile> luceneResponseList = luceneRepository.multiFiledQueryParser(param);
 

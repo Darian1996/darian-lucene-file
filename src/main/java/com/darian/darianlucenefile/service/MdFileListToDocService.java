@@ -4,7 +4,7 @@ import com.darian.darianlucenefile.config.DarianGitRepConfig;
 import com.darian.darianlucenefile.config.DarianLuceneConfig;
 
 
-import com.darian.darianlucenefile.config.DocumentContants;
+import com.darian.darianlucenefile.constants.DocumentConstants;
 import com.darian.darianlucenefile.utils.AssertUtils;
 import com.darian.darianlucenefile.utils.CustomerFileUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -195,7 +195,7 @@ public class MdFileListToDocService implements InitializingBean {
     public static boolean isNotComplete(File itemFile) {
         String fileContentString = "";
         try {
-            fileContentString = CustomerFileUtils.readFileToString(itemFile, DocumentContants.UTF_8);
+            fileContentString = CustomerFileUtils.readFileToString(itemFile, DocumentConstants.UTF_8);
         } catch (IOException e) {
             log.error("[MdToDocService.isNotComplete]读取文件读取错误:", e);
         }

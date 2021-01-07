@@ -1,7 +1,7 @@
 package com.darian.darianlucenefile.domain;
 
 
-import com.darian.darianlucenefile.config.DocumentContants;
+import com.darian.darianlucenefile.constants.DocumentConstants;
 import com.darian.darianlucenefile.exception.CustomerRuntimeException;
 import com.darian.darianlucenefile.other.RegularExpressionsUtils;
 import com.darian.darianlucenefile.utils.CustomerFileUtils;
@@ -57,11 +57,11 @@ public class ConvertUtils {
             String fileContent = null;
             if (filePath.endsWith(".bat")) {
                 // 保存的时候，需要转化为 ASCII 码，在CMD 运行时，才不会乱码 bat 文件用 GBK 读取，
-                fileContent = CustomerFileUtils.readFileToString(itemFile, DocumentContants.GBK);
+                fileContent = CustomerFileUtils.readFileToString(itemFile, DocumentConstants.GBK);
             } else if (filePath.endsWith(".md")
                     || filePath.endsWith(".java")
                     || filePath.endsWith(".sh")) {
-                fileContent = RegularExpressionsUtils.doInsertContextIndexPre(itemFile, DocumentContants.UTF_8);
+                fileContent = RegularExpressionsUtils.doInsertContextIndexPre(itemFile, DocumentConstants.UTF_8);
             } else {
                 fileContent = "";
             }

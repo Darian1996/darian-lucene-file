@@ -1,12 +1,10 @@
 package com.darian.darianlucenefile.domain;
 
-import com.darian.darianlucenefile.config.DocumentContants;
-import com.darian.darianlucenefile.config.LoggerContants;
+import com.darian.darianlucenefile.constants.DocumentConstants;
+import com.darian.darianlucenefile.constants.LoggerConstants;
 import com.darian.darianlucenefile.utils.LocalDateTimeUtils;
 import lombok.Data;
 import org.slf4j.MDC;
-
-import java.util.Date;
 
 /***
  *
@@ -15,7 +13,7 @@ import java.util.Date;
  * @date 2020/4/13  2:57
  */
 @Data
-public class CustomerResponse<T> {
+public class CustomerResponse<T, R> {
     private String code;
     private String notifyMsg;
     private T dataBody;
@@ -27,33 +25,35 @@ public class CustomerResponse<T> {
      */
     private String applicationStartTime;
 
-    public static <T> CustomerResponse<T> ok(String notifyMsg, T dataBody) {
-        CustomerResponse<T> customerResponse = new CustomerResponse<>();
+    private R request;
+
+    public static <T, R> CustomerResponse<T, R> ok(String notifyMsg, T dataBody) {
+        CustomerResponse<T, R> customerResponse = new CustomerResponse<>();
         customerResponse.setCode("200");
         customerResponse.setNotifyMsg(notifyMsg);
         customerResponse.setDataBody(dataBody);
         customerResponse.setTime(LocalDateTimeUtils.getNowString());
-        customerResponse.setApplicationStartTime(DocumentContants.APPLICATION_START_TIME);
-        customerResponse.setTraceId(MDC.get(LoggerContants.TRACE_ID_KEY));
+        customerResponse.setApplicationStartTime(DocumentConstants.APPLICATION_START_TIME);
+        customerResponse.setTraceId(MDC.get(LoggerConstants.TRACE_ID_KEY));
         return customerResponse;
     }
 
-    public static <T> CustomerResponse<T> ok(T dataBody) {
+    public static <T, R> CustomerResponse<T, R> ok(T dataBody) {
         return ok("success", dataBody);
     }
 
-    public static <T> CustomerResponse<T> error(String errorMsg) {
+    public static <T, R> CustomerResponse<T, R> error(String errorMsg) {
         return error(errorMsg, null);
     }
 
-    public static <T> CustomerResponse<T> error(String errorMsg, T dataBody) {
-        CustomerResponse<T> customerResponse = new CustomerResponse<>();
+    public static <T, R> CustomerResponse<T, R> error(String errorMsg, T dataBody) {
+        CustomerResponse<T, R> customerResponse = new CustomerResponse<>();
         customerResponse.setCode("500");
         customerResponse.setNotifyMsg(errorMsg);
         customerResponse.setDataBody(dataBody);
         customerResponse.setTime(LocalDateTimeUtils.getNowString());
-        customerResponse.setApplicationStartTime(DocumentContants.APPLICATION_START_TIME);
-        customerResponse.setTraceId(MDC.get(LoggerContants.TRACE_ID_KEY));
+        customerResponse.setApplicationStartTime(DocumentConstants.APPLICATION_START_TIME);
+        customerResponse.setTraceId(MDC.get(LoggerConstants.TRACE_ID_KEY));
         return customerResponse;
     }
 }

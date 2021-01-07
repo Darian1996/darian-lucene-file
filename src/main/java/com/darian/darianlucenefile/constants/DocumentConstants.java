@@ -1,4 +1,4 @@
-package com.darian.darianlucenefile.config;
+package com.darian.darianlucenefile.constants;
 
 /***
  *
@@ -6,7 +6,7 @@ package com.darian.darianlucenefile.config;
  * @author <a href="mailto:1934849492@qq.com">Darian</a> 
  * @date 2020/4/17  22:54
  */
-public class DocumentContants {
+public class DocumentConstants {
 
     public static String FILE_CONTENT_DETAIL_INDEX_NAME = "fileContentDetail";
 

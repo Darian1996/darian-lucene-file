@@ -1,7 +1,7 @@
 package com.darian.darianlucenefile.service;
 
 import com.darian.darianlucenefile.config.DarianGitRepConfig;
-import com.darian.darianlucenefile.config.DocumentContants;
+import com.darian.darianlucenefile.constants.DocumentConstants;
 import com.darian.darianlucenefile.domain.CustomerFile;
 import com.darian.darianlucenefile.exception.CustomerRuntimeException;
 import com.darian.darianlucenefile.repository.CustomerFileRepository;
@@ -113,23 +113,23 @@ public class CustomerFileService {
             StringBuffer fileContentsb = new StringBuffer();
             if (filePath.endsWith(".bat")) {
                 // 保存的时候，需要转化为 ASCII 码，在CMD 运行时，才不会乱码 bat 文件用 GBK 读取，
-                fileContentsb.append(DocumentContants.MD_CODE_BASH_START)
-                        .append(CustomerFileUtils.readFileToString(itemFile, DocumentContants.GBK))
-                        .append(DocumentContants.MD_CODE_END);
+                fileContentsb.append(DocumentConstants.MD_CODE_BASH_START)
+                        .append(CustomerFileUtils.readFileToString(itemFile, DocumentConstants.GBK))
+                        .append(DocumentConstants.MD_CODE_END);
             } else if (filePath.endsWith(".md")) {
-                fileContentsb.append(CustomerFileUtils.readFileToString(itemFile, DocumentContants.UTF_8));
+                fileContentsb.append(CustomerFileUtils.readFileToString(itemFile, DocumentConstants.UTF_8));
             } else if (filePath.endsWith(".java")) {
-                fileContentsb.append(DocumentContants.MD_CODE_JAVA_START)
-                        .append(CustomerFileUtils.readFileToString(itemFile, DocumentContants.UTF_8))
-                        .append(DocumentContants.MD_CODE_END);
+                fileContentsb.append(DocumentConstants.MD_CODE_JAVA_START)
+                        .append(CustomerFileUtils.readFileToString(itemFile, DocumentConstants.UTF_8))
+                        .append(DocumentConstants.MD_CODE_END);
             } else if (filePath.endsWith(".sh")) {
-                fileContentsb.append(DocumentContants.MD_CODE_BASH_START)
-                        .append(CustomerFileUtils.readFileToString(itemFile, DocumentContants.UTF_8))
-                        .append(DocumentContants.MD_CODE_END);
+                fileContentsb.append(DocumentConstants.MD_CODE_BASH_START)
+                        .append(CustomerFileUtils.readFileToString(itemFile, DocumentConstants.UTF_8))
+                        .append(DocumentConstants.MD_CODE_END);
             } else if (filePath.endsWith(".puml")) {
-                fileContentsb.append(DocumentContants.MD_CODE_BASH_START)
-                        .append(CustomerFileUtils.readFileToString(itemFile, DocumentContants.UTF_8))
-                        .append(DocumentContants.MD_CODE_END);
+                fileContentsb.append(DocumentConstants.MD_CODE_BASH_START)
+                        .append(CustomerFileUtils.readFileToString(itemFile, DocumentConstants.UTF_8))
+                        .append(DocumentConstants.MD_CODE_END);
             }
 
             //            图片可以读取为 Base64
@@ -173,7 +173,7 @@ public class CustomerFileService {
 
             String imgFullName = imagePathPre + escapeAssetsImgPre;
 
-            String imgCustomerFileKey = imgFullName.substring(DocumentContants.DOCS_FILE_PATH.length());
+            String imgCustomerFileKey = imgFullName.substring(DocumentConstants.DOCS_FILE_PATH.length());
 
             //
             imgCustomerFileKey = DarianGitRepConfig.replaceTo_(imgCustomerFileKey);

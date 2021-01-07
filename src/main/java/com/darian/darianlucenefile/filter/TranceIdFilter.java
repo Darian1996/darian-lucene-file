@@ -1,6 +1,6 @@
 package com.darian.darianlucenefile.filter;
 
-import com.darian.darianlucenefile.config.LoggerContants;
+import com.darian.darianlucenefile.constants.LoggerConstants;
 import org.slf4j.MDC;
 import org.springframework.boot.web.reactive.filter.OrderedWebFilter;
 import org.springframework.stereotype.Component;
@@ -19,7 +19,7 @@ import java.util.UUID;
  */
 @Component
 public class TranceIdFilter implements OrderedWebFilter {
-    private String TraceId_log_key = LoggerContants.TRACE_ID_KEY;
+    private String TraceId_log_key = LoggerConstants.TRACE_ID_KEY;
 
     @Override
     public int getOrder() {

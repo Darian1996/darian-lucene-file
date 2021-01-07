@@ -37,8 +37,10 @@
 
     <div align="center">
         <form id="form">
-            <input id="parm_id" maxlength="50" autocomplete="OFF" type="text"
-                   onkeypress="submit_button_onclick()" placeholder="请在这里输入关键词^_^"/>
+            <input id="param_id" maxlength="50" autocomplete="OFF" type="text"
+                   placeholder="请在这里输入关键词^_^"/>
+            <!--                   onkeypress="submit_button_onclick()" -->
+
 
             <input type="button" id="submit_button_id" class="customer_button" value="搜索"
                    onclick="submit_button_onclick()"/>
@@ -63,9 +65,9 @@
             <input type="button" value="gitee/projects" style="font-size: 25px;">
         </a>
 
-<!--        <a target="_blank" href="http://www.darian.top:8848/nacos/">-->
-<!--            <input type="button" value="nacos" style="font-size: 25px;">-->
-<!--        </a>-->
+        <!--        <a target="_blank" href="http://www.darian.top:8848/nacos/">-->
+        <!--            <input type="button" value="nacos" style="font-size: 25px;">-->
+        <!--        </a>-->
 
         <a target="_blank" href="http://www.darian.top:6004/nacos/">
             <input type="button" value="deepin_nacos" style="font-size: 25px;">
@@ -139,7 +141,7 @@
 
 
     /* 输入搜索框 的格式 */
-    #parm_id {
+    #param_id {
         background-color: lavender;
         color: black;
         width: 50%;
@@ -200,7 +202,7 @@
 
     function replaceIllegalStr(str) {
         console.log('function{replaceIllegalStr}.....')
-        console.log("\t[parm_value_old]replaceIllegalStr.before:" + str);
+        console.log("\t[param_value_old]replaceIllegalStr.before:" + str);
         var reg;
         var illegal_list = ["/", "\\",
             "-",
@@ -277,13 +279,14 @@
     function submit_button_onclick() {
         console.log('function{submit_button_onclick}......')
         var token_value = getCookie("token");
-        var parm_value_old = $('#parm_id').val();
-        var parm_value = replaceIllegalStr(parm_value_old)
+        var param_value_old = $('#param_id').val();
+        var param_value = replaceIllegalStr(param_value_old)
 
-        setCookie7Days('parm', parm_value);
-        $('#parm_id').val(parm_value);
+        console.log('param_value:' + param_value)
+        setCookie7Days('param', param_value);
+        $('#param_id').val(param_value);
 
-        if (!check_token_value(token_value) || !check_parm_value(parm_value.trim())) {
+        if (!check_token_value(token_value) || !check_param_value(param_value.trim())) {
             return;
         }
 
@@ -293,7 +296,7 @@
             type: 'get',
             dataType: 'json',
             changeOrigin: true, // 是否跨域
-            data: "cache=true&parm=" + encodeURIComponent(parm_value),
+            data: "cache=true&param=" + encodeURIComponent(param_value),
             headers: {
                 'token': getCookie("token"),
             },
@@ -304,11 +307,16 @@
 
                 console.log(state);
 
-                console.log(responseBody.applicationStartTime);
+                console.log('responseBody.applicationStartTime' + responseBody.applicationStartTime);
                 $('#application_start_time').html("项目启动时间：" + responseBody.applicationStartTime);
 
                 $('#notifyMsg_id').html(responseBody.notifyMsg);
-                $('#parm_id').html(responseBody.parm);
+
+                param_value = responseBody.request.param;
+                console.log('responseBody.request.param:' + param_value)
+                $('#param_id').val(param_value);
+                setCookie7Days('param', param_value);
+
                 var table_tbody_id_html = "";
 
                 for (var i = 0; i < responseBody.dataBody.length; i++) {
@@ -363,15 +371,15 @@
         $('#notifyMsg_id').html("欢迎，你来 搜索 ... ... ");
 
         console.log("\n");
-        console.log("\t[parm]:" + getCookie("parm"));
+        console.log("\t[param]:" + getCookie("param"));
 
-        var parm_value = getCookie("parm");
-        if (!parm_value) {
+        var param_value = getCookie("param");
+        if (!param_value) {
             // cookie 取不到值，不调用 onClick 方法
             return false;
         }
 
-        $('#parm_id').val(parm_value);
+        $('#param_id').val(param_value);
         submit_button_onclick();
     };
 

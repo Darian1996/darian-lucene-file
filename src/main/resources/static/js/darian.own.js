@@ -43,11 +43,11 @@ function check_token_value(token_value) {
         "用户没有登录 ... ... ");
 }
 
-function check_parm_value(parm_value) {
+function check_param_value(param_value) {
     $('#table_tbody_id').html("");
 
-    return check_obj(parm_value,
-        'function{check_parm_value}...',
+    return check_obj(param_value,
+        'function{check_param_value}...',
         "请输入关键词 ... ... ");
 }
 

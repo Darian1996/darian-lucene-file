@@ -1,13 +1,13 @@
 package com.darian.darianlucenefile.config;
 
 
+import com.darian.darianlucenefile.constants.DocumentConstants;
 import com.darian.darianlucenefile.utils.AssertUtils;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.util.StringUtils;
 
 
@@ -105,7 +105,7 @@ public class DarianLuceneConfig implements InitializingBean {
         pattern = Pattern.compile(patternString);
         AssertUtils.assertTrue(Objects.nonNull(pattern), "darian.lucene.config.pattern must not null");
 
-        DocumentContants.DOCS_FILE_PATH = docsFilePath;
+        DocumentConstants.DOCS_FILE_PATH = docsFilePath;
 
     }
 

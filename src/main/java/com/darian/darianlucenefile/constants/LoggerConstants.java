@@ -1,7 +1,7 @@
 
-package com.darian.darianlucenefile.config;
+package com.darian.darianlucenefile.constants;
 
-public class LoggerContants {
+public class LoggerConstants {
 
     public static final String TRACE_ID_KEY = "traceId";
 
