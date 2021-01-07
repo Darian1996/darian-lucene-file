@@ -4,7 +4,10 @@ import com.darian.darianlucenefile.utils.ShellUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /***
  *
@@ -15,6 +18,8 @@ import java.util.Set;
 @Service
 @Slf4j
 public class IPPortsWhiteService {
+
+    public static List<Integer> PORT_S = new ArrayList<>();
 
     /**
      * 传进来想要添加的 IP
@@ -33,6 +38,8 @@ public class IPPortsWhiteService {
 
         Set<String> allWhiteIPSet = ShellUtils.getAllWhiteIPSet();
 
+        ArrayList<String> shStringList = new ArrayList<>();
+
         if (allWhiteIPSet != null) {
             if (allWhiteIPSet.size() <= 1) {
                 log.debug("(allWhiteIPSet.size() <= 1) 不需要处理");
@@ -43,8 +50,22 @@ public class IPPortsWhiteService {
                  * 清空已经存在在白名单里边的 IP
                  */
                 for (String deleteIP : allWhiteIPSet) {
-                    resultString += ShellUtils.firewall_bash_delete_ip_white(deleteIP);
-                    resultString += "\n";
+                    for (Integer port : PORT_S) {
+                        String one_bash_String =
+                                "firewall-cmd " +
+                                        "--permanent " +
+                                        "--remove-rich-rule='rule " +
+                                        "family='ipv4' " +
+                                        "source " +
+                                        "address='" + deleteIP + "' " +
+                                        "port protocol='tcp' " +
+                                        "port='" + port + "' " +
+                                        "accept'";
+
+                        shStringList.add(one_bash_String);
+                    }
+                    //resultString += ShellUtils.firewall_bash_delete_ip_white(deleteIP);
+                    //resultString += "\n";
                 }
             }
         }
@@ -52,13 +73,34 @@ public class IPPortsWhiteService {
         /**
          * 把这个 IP 添加到 所有的端口里边
          */
-        resultString += ShellUtils.firewall_bash_add_ip_white(whiteIP);
-        resultString += "\n";
+        for (Integer port : PORT_S) {
+            String one_bash_String =
+                    "firewall-cmd " +
+                            "--permanent " +
+                            "--add-rich-rule='rule " +
+                            "family='ipv4' " +
+                            "source address='" + whiteIP + "' " +
+                            "port protocol='tcp' " +
+                            "port='" + port + "' " +
+                            "accept'";
+
+            shStringList.add(one_bash_String);
+        }
+
+        //resultString += ShellUtils.firewall_bash_add_ip_white(whiteIP);
+        //resultString += "\n";
 
         /**
          * 查询当前的所有信息
          */
-        resultString += ShellUtils.firewall_cmd_list_all();
-        return resultString;
+        shStringList.add("firewall-cmd --list-all");
+
+        String shString = shStringList.stream().collect(Collectors.joining("\n"));
+        log.info("\n" + shString);
+
+
+        //resultString += ShellUtils.firewall_cmd_list_all();
+        return ShellUtils.runShString(shString);
     }
+
 }
