@@ -1,2 +1,2 @@
 org.springframework.boot.SpringApplicationRunListener=\
-  com.darian.darianlucenefile.listener.CustomerListener
+  com.darian.darianlucenefile.config.listener.CustomerListener

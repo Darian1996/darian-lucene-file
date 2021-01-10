@@ -1,4 +1,4 @@
-package com.darian.darianlucenefile.listener;
+package com.darian.darianlucenefile.config.listener;
 
 import com.darian.darianlucenefile.config.DarianGitRepConfig;
 import com.darian.darianlucenefile.config.DarianLuceneConfig;
@@ -40,6 +40,7 @@ public class CustomerListener implements SpringApplicationRunListener, Ordered {
     public CustomerListener(SpringApplication application, String[] args) {
         this.application = application;
         this.args = args;
+
         this.startTime = System.currentTimeMillis();
     }
 
