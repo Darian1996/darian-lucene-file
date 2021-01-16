@@ -40,6 +40,7 @@ public class LuceneService {
     public CustomerResponse search(SearchJsonRequest request) {
 
         String param = request.getParam();
+        AssertUtils.assertTrue(StringUtils.hasText(param), "查询参数不能等于空");
         boolean cache = Boolean.TRUE.equals(request.getCache());
 
         param = param.replaceAll("-", "");
