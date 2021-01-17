@@ -184,7 +184,7 @@
         <root additivity="false" level="info">
             <AppenderRef ref="SYSTEM_OUT_APPEND"/>
             <AppenderRef ref="APP_DEFAULT_APPEND"/>
-            <AppenderRef ref="APP_DEBUG_APPEND"/>
+<!--            <AppenderRef ref="APP_DEBUG_APPEND"/>-->
             <AppenderRef ref="APP_INFO_APPEND"/>
             <AppenderRef ref="APP_WARN_APPEND"/>
             <AppenderRef ref="APP_ERROR_APPEND"/>

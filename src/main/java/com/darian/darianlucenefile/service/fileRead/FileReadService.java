@@ -28,7 +28,6 @@ public class FileReadService {
                 String processName = fileReadProcessor.getClass().getSimpleName();
 
                 String fileSimpleName = customerFile.getFileSimpleName();
-                String filePathSubDocsFilePath = customerFile.getFilePathSubDocsFilePath();
 
                 boolean success = false;
                 try {
@@ -39,12 +38,12 @@ public class FileReadService {
                     LOGGER.error("[FileReadService][error]", e);
                 } finally {
                     long end = System.currentTimeMillis();
-                    LOGGER.info("[FileReadService][{}][{}][{}][{}][{}]",
+                    LOGGER.info("[FileReadService][{}][{}][{}][{}]",
                             processName,
                             end - start + "ms",
                             success,
-                            fileSimpleName,
-                            filePathSubDocsFilePath);
+                            fileSimpleName
+                            );
                 }
             }
         }
