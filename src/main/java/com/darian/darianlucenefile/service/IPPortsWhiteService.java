@@ -90,6 +90,7 @@ public class IPPortsWhiteService {
         //resultString += ShellUtils.firewall_bash_add_ip_white(whiteIP);
         //resultString += "\n";
 
+        shStringList.add("firewall-cmd --reload");
         /**
          * 查询当前的所有信息
          */
