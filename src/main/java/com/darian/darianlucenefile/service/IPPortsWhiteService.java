@@ -41,9 +41,9 @@ public class IPPortsWhiteService {
         ArrayList<String> shStringList = new ArrayList<>();
 
         if (allWhiteIPSet != null) {
-            if (allWhiteIPSet.size() <= 1) {
+            if (allWhiteIPSet.size() <= 2) {
                 log.debug("(allWhiteIPSet.size() <= 1) 不需要处理");
-            } else if (allWhiteIPSet.size() == 2 && allWhiteIPSet.contains(whiteIP)) {
+            } else if (allWhiteIPSet.size() == 3 && allWhiteIPSet.contains(whiteIP)) {
                 log.debug("(allWhiteIPSet.size() == 2 && allWhiteIPSet.contains(whiteIP)) 不需要处理");
             } else {
                 /**
