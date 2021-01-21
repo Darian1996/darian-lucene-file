@@ -137,6 +137,7 @@ public class DarianGitRepConfig implements InitializingBean {
                 .replaceAll("\\^", "_")
                 .replaceAll("'", "_")
                 .replaceAll(" ", "_")
+                .replaceAll("-", "_")
                 ;
     }
 
