@@ -184,8 +184,11 @@
             contentDetailHtmlUrl = "https://darian1996.gitee.io/contentDetail.html";
         }
 
+        /* 借助于 gitPage 的页面渲染，直接渲染, darian-lucene-file 记得打开 gitpage */
         if (new RegExp("^https://darian1996.github.io").test(location.href)) {
-            contentDetailHtmlUrl = "https://darian1996.github.io/docs_search/contentDetail";
+            // 将本页面的 js css 统一防止在某个目录下，就可以实现了。
+            // https://darian1996.github.io/darian-lucene-file/src/main/resources/static/index.html
+            contentDetailHtmlUrl = "https://darian1996.github.io/darian-lucene-file/src/main/resources/static/contentDetail.html";
         }
 
         $('#_README_DIRECTORY_DOC_id').attr("href", contentDetailHtmlUrl + "?cache=true&filePathSubDocsFilePath=_README_DIRECTORY_DOC.md");
