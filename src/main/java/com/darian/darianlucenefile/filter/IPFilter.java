@@ -1,10 +1,14 @@
 package com.darian.darianlucenefile.filter;
 
+import com.darian.darianlucenefile.config.DarianIpPortConfig;
 import com.darian.darianlucenefile.filter.ip.IPContainer;
 import com.darian.darianlucenefile.utils.AssertUtils;
 import com.darian.darianlucenefile.utils.MailUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
@@ -23,12 +27,14 @@ import java.util.stream.Stream;
  * @date 2020/11/24  下午7:33
  */
 @Component
-public class IPFilter implements WebFilter, EnvironmentAware {
+public class IPFilter implements WebFilter, EnvironmentAware, ApplicationContextAware {
 
     private static final Logger VISITOR_IP_MONITOR_LOGGER = LoggerFactory.getLogger("VISITOR_IP_MONITOR");
 
 
     private String[] activeProfiles;
+
+    private DarianIpPortConfig darianIpPortConfig;
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
@@ -36,8 +42,8 @@ public class IPFilter implements WebFilter, EnvironmentAware {
 
         // dev 环境，去掉
         if (Stream.of(activeProfiles)
-                .anyMatch(str ->
-                        Objects.equals(str, "dev") || Objects.equals(str, "devLinux"))) {
+                .anyMatch(str -> Objects.equals(str, "dev") || Objects.equals(str, "devLinux"))
+                || darianIpPortConfig.getWhiteIpNotSendEmail().equals(realIpString)) {
             return chain.filter(exchange);
         }
 
@@ -66,5 +72,11 @@ public class IPFilter implements WebFilter, EnvironmentAware {
     public void setEnvironment(Environment environment) {
         String[] environmentActiveProfiles = environment.getActiveProfiles();
         activeProfiles = environmentActiveProfiles;
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        darianIpPortConfig = applicationContext.getBean(DarianIpPortConfig.class);
+        AssertUtils.assertNotBlank(darianIpPortConfig.getWhiteIpNotSendEmail(), "darianIpPortConfig.whiteIpNotSendEmail 不能为空");
     }
 }

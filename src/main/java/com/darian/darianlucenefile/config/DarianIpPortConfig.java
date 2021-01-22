@@ -27,6 +27,11 @@ public class DarianIpPortConfig implements InitializingBean {
 
     private String whitePort;
 
+    /**
+     * 白名单 里的 IP 不发送访问应用的消息
+     */
+    private String whiteIpNotSendEmail = "127.0.0.1";
+
 
     @Override
     public void afterPropertiesSet() throws Exception {
