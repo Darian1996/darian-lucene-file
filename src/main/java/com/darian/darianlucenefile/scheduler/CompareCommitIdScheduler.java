@@ -17,6 +17,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 @EnableScheduling
 @Slf4j
 public class CompareCommitIdScheduler {
+    
 
     private static String DOCS_OLD_COMMIT_ID = ShellUtils.getDocsCommitId();
 
