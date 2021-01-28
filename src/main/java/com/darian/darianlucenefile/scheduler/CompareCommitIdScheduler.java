@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
-
 /***
  * 定时任务
  *
@@ -18,20 +17,23 @@ import org.springframework.scheduling.annotation.Scheduled;
 @Slf4j
 public class CompareCommitIdScheduler {
 
-    private static String DOCS_LAST_COMMIT_ID = ShellUtils.getDocsCommitId();
+    private static String DOCS_OLD_COMMIT_ID = ShellUtils.getDocsCommitId();
 
-    private static String DARIAN_LUCENE_LAST_COMMIT_ID = ShellUtils.getDarianLuceneCommitId();
+    private static String DARIAN_LUCENE_OLD_COMMIT_ID = ShellUtils.getDarianLuceneCommitId();
 
     /**
      * 每 1 分钟执行一次
      */
     @Scheduled(cron = "0 */1 * * * ?")
     public void scheduler() {
-        String docsCommitId = ShellUtils.getDocsCommitId();
-        String darianLuceneCommitId = ShellUtils.getDarianLuceneCommitId();
-        if (!DOCS_LAST_COMMIT_ID.equals(docsCommitId) || !DARIAN_LUCENE_LAST_COMMIT_ID.equals(darianLuceneCommitId)) {
-            log.info("有新文件更新 ... ... ");
+        String docsNewCommitId = ShellUtils.getDocsCommitId();
+        String darianLuceneNewCommitId = ShellUtils.getDarianLuceneCommitId();
+        if (!DOCS_OLD_COMMIT_ID.equals(docsNewCommitId)) {
+            log.info(String.format("[docs][find_new_commit][%s][TO][%s]", DOCS_OLD_COMMIT_ID, docsNewCommitId));
             ShellUtils.thisAppplicationReStartSh();
+        } if (!DARIAN_LUCENE_OLD_COMMIT_ID.equals(darianLuceneNewCommitId)) {
+            ShellUtils.thisAppplicationReStartSh();
+            log.info(String.format("[darian_lucene_file][find_new_commit][%s][TO][%s]", DARIAN_LUCENE_OLD_COMMIT_ID, darianLuceneNewCommitId));
         }
     }
 }
