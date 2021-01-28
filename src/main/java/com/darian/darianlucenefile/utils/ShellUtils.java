@@ -40,20 +40,20 @@ public class ShellUtils {
      * @return
      */
     public static String getDocsCommitId() {
-        runShString("cd /software/docs \n git pull gitee master");
-        String getLastCommitId = "cd /software/docs \n git log --pretty=format:\"%H\" | head -1  | awk '{print $1}'";
+        runShString("cd /software/GitHub_Repositories/docs \n git pull gitee master");
+        String getLastCommitId = "cd /software/GitHub_Repositories/docs \n git log --pretty=format:\"%H\" | head -1  | awk '{print $1}'";
         return runShString(getLastCommitId);
     }
 
     public static String getDarianLuceneCommitId() {
-        runShString("cd /software/darian-lucene-file \n git pull gitee master");
-        String getLastCommitId = "cd /software/darian-lucene-file \n git log --pretty=format:\"%H\" | head -1  | awk '{print $1}'";
+        runShString("cd /software/GitHub_Repositories/darian-lucene-file \n git pull gitee master");
+        String getLastCommitId = "cd /software/GitHub_Repositories/darian-lucene-file \n git log --pretty=format:\"%H\" | head -1  | awk '{print $1}'";
         return runShString(getLastCommitId);
     }
 
     public static String getDarianLuceneVertxCommitId() {
-        runShString("cd /software/darian-lucene-vertx \n git pull gitee master");
-        String getLastCommitId = "cd /software/darian-lucene-vertx \n git log --pretty=format:'%H' | head -1  | awk '{print $1}'";
+        runShString("cd /software/GitHub_Repositories/darian-lucene-vertx \n git pull gitee master");
+        String getLastCommitId = "cd /software/GitHub_Repositories/darian-lucene-vertx \n git log --pretty=format:'%H' | head -1  | awk '{print $1}'";
         return runShString(getLastCommitId);
     }
 
