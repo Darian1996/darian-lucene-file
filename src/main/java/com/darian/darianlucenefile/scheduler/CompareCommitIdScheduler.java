@@ -1,5 +1,6 @@
 package com.darian.darianlucenefile.scheduler;
 
+import com.darian.darianlucenefile.utils.MailUtils;
 import com.darian.darianlucenefile.utils.ShellUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
@@ -28,12 +29,22 @@ public class CompareCommitIdScheduler {
     public void scheduler() {
         String docsNewCommitId = ShellUtils.getDocsCommitId();
         String darianLuceneNewCommitId = ShellUtils.getDarianLuceneCommitId();
+        String mailContent = null;
+        String mailTitle = null;
         if (!DOCS_OLD_COMMIT_ID.equals(docsNewCommitId)) {
-            log.info(String.format("[docs][find_new_commit][%s][TO][%s]", DOCS_OLD_COMMIT_ID, docsNewCommitId));
-            ShellUtils.thisAppplicationReStartSh();
-        } if (!DARIAN_LUCENE_OLD_COMMIT_ID.equals(darianLuceneNewCommitId)) {
-            ShellUtils.thisAppplicationReStartSh();
-            log.info(String.format("[darian_lucene_file][find_new_commit][%s][TO][%s]", DARIAN_LUCENE_OLD_COMMIT_ID, darianLuceneNewCommitId));
+            mailTitle = "[docs][find_new_commit]";
+            mailContent = mailTitle + String.format("[%s][TO][%s]", DOCS_OLD_COMMIT_ID, docsNewCommitId);
         }
+        if (!DARIAN_LUCENE_OLD_COMMIT_ID.equals(darianLuceneNewCommitId)) {
+            mailTitle = "[darian_lucene_file][find_new_commit]";
+            mailContent = mailTitle + String.format("[%s][TO][%s]", DARIAN_LUCENE_OLD_COMMIT_ID, darianLuceneNewCommitId);
+        }
+
+        if (mailContent != null && mailContent.length() > 0) {
+            MailUtils.sendMail(mailTitle, mailContent);
+            log.info(mailContent);
+            ShellUtils.thisAppplicationReStartSh();
+        }
+
     }
 }
