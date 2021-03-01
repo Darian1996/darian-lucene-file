@@ -46,9 +46,16 @@ public class MdFileListToDocService implements InitializingBean {
 
     private static String MD_DOC_STRING = "";
 
+    private static String PUML_SVG_DOC_STRING = "";
+
     public String getDirectoryDocMD() {
         AssertUtils.assertTrue(IS_FINISHED, "DOC_目录生成未完成");
         return MD_DOC_STRING;
+    }
+
+    public String getPumlAndSVGMD() {
+        AssertUtils.assertTrue(IS_FINISHED, "DOC_目录生成未完成");
+        return PUML_SVG_DOC_STRING;
     }
 
     public String generoterMdToDoc() {
@@ -58,6 +65,7 @@ public class MdFileListToDocService implements InitializingBean {
         getFileFullNameList(docsFilePath, pattern);
 
         MD_DOC_STRING = RESULT_STRING_LIST.stream().collect(Collectors.joining("\n"));
+        PUML_SVG_DOC_STRING = PUML_AND_SVG_STRING_LIST.stream().collect(Collectors.joining("\n"));
         IS_FINISHED = true;
         return MD_DOC_STRING;
     }
@@ -68,6 +76,8 @@ public class MdFileListToDocService implements InitializingBean {
     }
 
     static List<String> RESULT_STRING_LIST = new ArrayList<>();
+
+    static List<String> PUML_AND_SVG_STRING_LIST = new ArrayList<>();
 
     static {
         RESULT_STRING_LIST.add("# Darian: 自动生成目录 darian-lucene-file");
@@ -152,6 +162,9 @@ public class MdFileListToDocService implements InitializingBean {
                         System.out.println(outLineString);
                     }
                     RESULT_STRING_LIST.add(outLineString);
+                    if (itemFileFullName.endsWith("svg") || itemFileFullName.endsWith("puml")) {
+                        PUML_AND_SVG_STRING_LIST.add(outLineString);
+                    }
                 }
 
             }
@@ -174,6 +187,7 @@ public class MdFileListToDocService implements InitializingBean {
                 }
 
                 RESULT_STRING_LIST.add(outString);
+                PUML_AND_SVG_STRING_LIST.add(outString);
                 getFileFullNameList(tempList[i].toString(), pattern, fileStringList, deep + 1);
             }
         }

@@ -40,6 +40,9 @@ public class MDFileReadProcessor implements FileReadProcessor {
         if ("_README_DIRECTORY_DOC.md".equals(customerFile.getFilePathSubDocsFilePath())) {
             return mdFileListToDocService.getDirectoryDocMD();
         }
+        if ("_README_PUML_SVG_DOC.md".equals(customerFile.getFilePathSubDocsFilePath())) {
+            return mdFileListToDocService.getPumlAndSVGMD();
+        }
 
         customerFile.setContentDetail(onlyReadFileString(customerFile));
 
