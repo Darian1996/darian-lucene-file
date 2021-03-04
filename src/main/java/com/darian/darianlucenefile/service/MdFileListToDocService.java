@@ -114,13 +114,17 @@ public class MdFileListToDocService implements InitializingBean {
         });
 
         for (int i = 0; i < tempList.length; i++) {
-            if (tempList[i].isFile()) {
+            File itemFileOrDirectory = tempList[i];
+            //if (itemFileOrDirectory.getName().contains("_")) {
+            //    log.error(itemFileOrDirectory.getName());
+            //}
+            if (itemFileOrDirectory.isFile()) {
                 // 完整的路径, 从盘符开始一直计算
-                File itemFile = tempList[i];
-                String fileFullName = tempList[i].toString();
+                File itemFile = itemFileOrDirectory;
+                String fileFullName = itemFileOrDirectory.toString();
                 fileStringList.add(fileFullName);
                 // 文件名，不包含路径
-                String fileName = tempList[i].getName();
+                String fileName = itemFileOrDirectory.getName();
                 if (pattern.matcher(fileName).find()) {
                     String outLineString = "- ";
 
@@ -131,16 +135,16 @@ public class MdFileListToDocService implements InitializingBean {
                     }
 
                     String itemFileFullName = itemFile.toString();
-                    outLineString += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\""
+                    outLineString += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='"
                             + DarianGitRepConfig.getGitHubUrlFromFullName(itemFileFullName)
-                            + "\"  target=\"_blank\">GitHub</a>";
-                    outLineString += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\""
+                            + "'  target='_blank'>GitHub</a>";
+                    outLineString += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='"
                             + DarianGitRepConfig.getGiteeUrlFromFullName(itemFileFullName)
-                            + "\"  target=\"_blank\">Gitee</a>";
-                    outLineString += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\""
+                            + "'  target='_blank'>Gitee</a>";
+                    outLineString += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='"
                             + "/contentDetail.html?cache=true&filePathSubDocsFilePath="
                             + DarianGitRepConfig.getFilePathSubDocsPath(itemFileFullName)
-                            + "\"  target=\"_blank\">MD_DOC</a>";
+                            + "'  target='_blank'>MD_DOC</a>";
 
                     String editUrl = DarianGitRepConfig.getGiteeWebIdeEditUrlFromFullName(itemFileFullName);
 
@@ -149,9 +153,9 @@ public class MdFileListToDocService implements InitializingBean {
                         editUrl  = DarianGitRepConfig.getGiteeUrlFromFullName(itemFileFullName).replaceAll("/tree/", "/edit/");
                     }
 
-                    outLineString += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\""
+                    outLineString += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='"
                             + editUrl
-                            + "\"  target=\"_blank\">edit</a>";
+                            + "' target='_blank'>edit</a>";
 
 
                     for (int deepi = 0; deepi < deep; deepi++) {
@@ -169,8 +173,8 @@ public class MdFileListToDocService implements InitializingBean {
 
             }
             // 文件夹，需要递归以后，根据目录的深度生成对应的目录，需要层次往后边依次增加
-            if (tempList[i].isDirectory()) {
-                String directoryName = tempList[i].getName();
+            if (itemFileOrDirectory.isDirectory()) {
+                String directoryName = itemFileOrDirectory.getName();
                 // 过滤的文件夹
                 if (INGORE_DIRECTORIES.contains(directoryName)) {
                     continue;
@@ -188,7 +192,7 @@ public class MdFileListToDocService implements InitializingBean {
 
                 RESULT_STRING_LIST.add(outString);
                 PUML_AND_SVG_STRING_LIST.add(outString);
-                getFileFullNameList(tempList[i].toString(), pattern, fileStringList, deep + 1);
+                getFileFullNameList(itemFileOrDirectory.toString(), pattern, fileStringList, deep + 1);
             }
         }
         return fileStringList;
